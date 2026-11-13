@@ -1,0 +1,11 @@
+{
+  "upstream": "https://github.com/NumerionLabs/apex",
+  "revision": "80e544eff6bbc2b09022a4f780fc9665256a884e",
+  "license": "CC BY-NC 4.0; upstream code not redistributed",
+  "source_patch": "lazy apex_topk import only",
+  "seed": 38026,
+  "steps_per_stage": 1500,
+  "device": "cuda",
+  "adaptation": "same 64-dimensional native modules; ADMET+descriptor labels; pilot split; 1500-step default vs upstream 100000; batch variance clamped at 1e-8; factorizer checkpoint selected by validation embedding NMSE",
+  "topk_extension_run": false
+}

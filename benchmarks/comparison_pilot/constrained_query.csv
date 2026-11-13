@@ -1,0 +1,7 @@
+method,selected,teacher_feasible_precision,true_top20_recall,mean_teacher_herg
+shi_eq11,20,0.7,0.25,4.83791937828064
+shi_calibrated,20,0.8,0.4,4.744555425643921
+learned_additive,20,0.9,0.5,4.737671542167663
+cp16,20,0.85,0.75,4.6625971555709835
+apex_pilot,20,0.8,0.1,4.993432331085205
+apex_molecular_surrogate,20,0.95,0.45,4.739906907081604

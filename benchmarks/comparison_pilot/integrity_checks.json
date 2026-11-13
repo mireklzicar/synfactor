@@ -1,0 +1,11 @@
+{
+  "canonical_product_split_disjoint": true,
+  "all_basis_products_training_only": true,
+  "all_predictions_finite": true,
+  "additive_reconstruction_max_abs_errors": {
+    "shi_eq11": 5.7220458984375e-06,
+    "shi_calibrated": 4.291534423828125e-06,
+    "learned_additive": 3.410605131648481e-13,
+    "apex_pilot": 0.00023366620803244587
+  }
+}

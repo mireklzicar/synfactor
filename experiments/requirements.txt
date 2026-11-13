@@ -1,0 +1,3 @@
+# Additional dependencies for the optional APEX pilot and report figure.
+tensorboard==2.21.0
+matplotlib==3.9.4

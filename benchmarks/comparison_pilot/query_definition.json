@@ -1,0 +1,11 @@
+{
+  "objective": "minimize teacher hERG pChEMBL prediction",
+  "constraint": "LogD between validation-teacher 25th and 75th percentiles",
+  "logd_lower": 2.3839586973190308,
+  "logd_upper": 4.500193119049072,
+  "k": 20,
+  "test_candidates": 805,
+  "teacher_feasible_candidates": 389,
+  "oracle_top20_mean_herg": 4.668462872505188,
+  "scope": "805 held-out products; brute-force query evaluation, NOT apex_topk timing or trillion-scale retrieval"
+}

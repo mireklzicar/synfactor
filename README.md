@@ -21,6 +21,14 @@ ADMET measurements. The small example below uses a different space and split;
 it does not reproduce the figure's exact numbers.
 [Archived research metrics](benchmarks/paper_model_summary.csv).
 
+An additional [prior-art comparison pilot](experiments/README.md) evaluates
+Shi et al.'s basis-product formula, a learned additive control, CP16 and an
+ADMET adaptation using upstream APEX modules on 18 teacher outputs and six
+classical descriptors. It also audits descriptor histograms with an additive
+convolution control; native SpaceProp was unavailable without a license.
+See the [pilot results](benchmarks/comparison_pilot/README.md) for the separate
+dataset, limitations and reproducible commands.
+
 ## Quick start
 
 Python 3.11 is tested. Create an environment and install dependencies; for CUDA,

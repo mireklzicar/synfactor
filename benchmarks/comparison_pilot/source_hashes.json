@@ -1,0 +1,14 @@
+{
+  "chemistry.py": "b70bbce40472ac3143aee1365005491fee6ee3a326a62caf071bd20b983180e1",
+  "data/reactions.tsv": "a7d877109689fb678a346a5b4166199b772d15621e41c99cae0c80c86b2249cb",
+  "data/synthon_space_1M.tsv": "d234a99d2695ed5e5269fe162bba12b99be1cd9c8d5ec0c43e57fa4180aee841",
+  "experiments/__init__.py": "d5b0b420b37c03da1ba66c726fe2ca17e5cd2f72b538f4d36a532a18315edb95",
+  "experiments/apex_pilot.py": "767c194b8bf5b8b584ed596d48ea196cac92cc62f4e4bc1cd4ced40cd86c7053",
+  "experiments/baselines.py": "6b48d76c48891f5cff9e8dbef19282db2f3fb69ba3e6785d8499ec23ca3875bf",
+  "experiments/compare.py": "9185f08b11148ca732ed0f49ff33c4b6fac7c437ab44c5080b82ceade4f8bf90",
+  "experiments/histograms.py": "03a8039b7055dc17b44cd7ef99a0de13d6039d1c7a06eb8716e6d49ddd5c0b3d",
+  "experiments/prepare_apex.py": "b28d41d0fbb6285d47627cfc4a77309fd8f0e2ed2d09fbd32f37d5c8ac8720b9",
+  "experiments/report.py": "2fda6ade4222b925ac7a7c4079a450a70df2f12dea0d072ab2877bcccfa7563a",
+  "model.py": "8811b2e88d06b550acd880375b2ce9cc0787640d73331f36f6f3186796525b38",
+  "teachers.py": "daba8f1f444711f2f3e8695824706c3e10e238db903ea3fa935d72059c3a6fab"
+}

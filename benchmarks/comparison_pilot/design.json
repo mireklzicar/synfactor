@@ -1,0 +1,24 @@
+{
+  "seed": 38026,
+  "space_sha256": "d234a99d2695ed5e5269fe162bba12b99be1cd9c8d5ec0c43e57fa4180aee841",
+  "reactions": [
+    "22a",
+    "269946b",
+    "270302a",
+    "273584b",
+    "273584c",
+    "4a",
+    "274552a",
+    "275592a"
+  ],
+  "tuples": 4400,
+  "unique_products": 4400,
+  "synthon_rows": 300,
+  "basis_unique_products": 290,
+  "split_unique_products": {
+    "train": 3180,
+    "test": 805,
+    "validation": 415
+  },
+  "preparation_seconds": 2.143215346004581
+}

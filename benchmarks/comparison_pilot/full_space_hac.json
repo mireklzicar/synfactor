@@ -1,0 +1,249 @@
+{
+  "method": "exact additive HAC convolution control, not native SpaceProp",
+  "counting_unit": "syntactic synthon combinations; not deduplicated molecules; invalid assemblies not checked",
+  "synthon_rows": 6273,
+  "reactions": 41,
+  "tuple_count": 985500,
+  "excluded_reactions_not_proved_atom_conserving": [
+    "270196a"
+  ],
+  "histogram": {
+    "11": 1,
+    "12": 7,
+    "13": 27,
+    "14": 78,
+    "15": 193,
+    "16": 370,
+    "17": 740,
+    "18": 1291,
+    "19": 2173,
+    "20": 3605,
+    "21": 5688,
+    "22": 8525,
+    "23": 11687,
+    "24": 15266,
+    "25": 18272,
+    "26": 20395,
+    "27": 22242,
+    "28": 23299,
+    "29": 24623,
+    "30": 25776,
+    "31": 26956,
+    "32": 30550,
+    "33": 37266,
+    "34": 44960,
+    "35": 51885,
+    "36": 56731,
+    "37": 59932,
+    "38": 60659,
+    "39": 58646,
+    "40": 53962,
+    "41": 47351,
+    "42": 41473,
+    "43": 37321,
+    "44": 34369,
+    "45": 30768,
+    "46": 26597,
+    "47": 21770,
+    "48": 17019,
+    "49": 13211,
+    "50": 10846,
+    "51": 9105,
+    "52": 7476,
+    "53": 6047,
+    "54": 4603,
+    "55": 3252,
+    "56": 2236,
+    "57": 1701,
+    "58": 1265,
+    "59": 949,
+    "60": 714,
+    "61": 486,
+    "62": 314,
+    "63": 238,
+    "64": 187,
+    "65": 114,
+    "66": 75,
+    "67": 59,
+    "68": 33,
+    "69": 19,
+    "70": 14,
+    "71": 7,
+    "72": 9,
+    "73": 9,
+    "74": 17,
+    "75": 26,
+    "76": 12,
+    "81": 2,
+    "83": 1
+  },
+  "reaction_counts": [
+    {
+      "reaction_id": "11a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "1458a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "1626a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "188690a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "207a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "20a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "2230a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "22a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "232682a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "240690a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "2430a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "269862a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "269946b",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "269946c",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "269956a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "269982a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "26a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "270004a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "270084a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "270302a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "2708a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "271570a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "273464a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "273584b",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "273584c",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "274078a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "274090a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "2740a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "274552a",
+      "tuples": 389017
+    },
+    {
+      "reaction_id": "275292b",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "275592a",
+      "tuples": 389017
+    },
+    {
+      "reaction_id": "27a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "34a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "38a",
+      "tuples": 4964
+    },
+    {
+      "reaction_id": "40a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "4a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "512a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "527a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "62a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "6a",
+      "tuples": 5329
+    },
+    {
+      "reaction_id": "7a",
+      "tuples": 5329
+    }
+  ],
+  "synthon_feature_seconds": 0.4126482819847297,
+  "schema_validation_and_convolution_seconds": 0.015940807992592454,
+  "condition": "HAC counts assume successful assembly; atom conservation checked for every schema"
+}

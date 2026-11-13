@@ -1,0 +1,11 @@
+{
+  "torch": "2.9.0",
+  "numpy": "1.26.4",
+  "pandas": "2.2.3",
+  "scipy": "1.14.1",
+  "rdkit": "2025.9.1",
+  "tensorboard": "2.21.0",
+  "matplotlib": "3.9.4",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4090"
+}

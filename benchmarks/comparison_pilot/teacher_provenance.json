@@ -1,0 +1,72 @@
+{
+  "rdkit_teacher.json": {
+    "teacher": "RDKit descriptors",
+    "load_label_encode_seconds": 3.603237055998761
+  },
+  "herg-chemeleon-baseline_teacher.json": {
+    "teacher": "openadmet/herg-chemeleon-baseline",
+    "revision": "5c4fb081dfec62a5108423d0f86ec99023551bd8",
+    "checkpoint_sha256": "93f6527a4766d6c5373eaccf229a0aaf24961a51553f7af87825bbdfca146945",
+    "embedding": "frozen post-message-passing fingerprint",
+    "load_label_encode_seconds": 8.86430214799475
+  },
+  "permeability-logd-ppb-chemeleon-baseline_teacher.json": {
+    "teacher": "openadmet/permeability-logd-ppb-chemeleon-baseline",
+    "revision": "6fb7782db474a9c9198d4ace3a5c6b6a6abb304b",
+    "checkpoint_sha256": "73ebd61824e40dfe3af24f81e4389ae950b69954ac9c596ef13bdf7b4b15a752",
+    "embedding": "frozen post-message-passing fingerprint",
+    "load_label_encode_seconds": 7.092567348008743
+  },
+  "cyp1a2-cyp2d6-cyp3a4-cyp2c9-chemeleon-v1_teacher.json": {
+    "teacher": "openadmet/cyp1a2-cyp2d6-cyp3a4-cyp2c9-chemeleon-v1",
+    "revision": "ef24cf941ae21c7d7a64df378a846bd2066eceda",
+    "checkpoint_sha256": "81d15cc43a3608f1aab465b1e690d86fd41c420615094cca1439c2e52f3b4e7b",
+    "embedding": "frozen post-message-passing fingerprint",
+    "load_label_encode_seconds": 7.364309903990943
+  },
+  "microsomal-clearance-chemeleon-v1_teacher.json": {
+    "teacher": "openadmet/microsomal-clearance-chemeleon-v1",
+    "revision": "e13549384674e70a536097b7175932e36d5ff271",
+    "checkpoint_sha256": "dd143760b58af67a9c698759830c62b7daabaedbd17b96556b1c508d927a9ffc",
+    "embedding": "frozen post-message-passing fingerprint",
+    "load_label_encode_seconds": 19.726955720980186
+  },
+  "pxr-chemeleon-v1_teacher.json": {
+    "teacher": "openadmet/pxr-chemeleon-v1",
+    "revision": "6273778544ccbac389456ca0cbf802d3e26ec949",
+    "checkpoint_sha256": "cf91846df3bcc9815588bb5f73c952a85e473299e61f19836261e6ea571add43",
+    "embedding": "frozen post-message-passing fingerprint",
+    "load_label_encode_seconds": 23.2280556600017
+  },
+  "logd-chemprop_foundation_minimol-v1_teacher.json": {
+    "teacher": "openadmet/logd-chemprop_foundation_minimol-v1",
+    "revision": "d9007fdfb18c0ceda4471207ea4dcdd5d071d65b",
+    "checkpoint_sha256": "cad7bb39a778575ac1ed97ada2f0c478fce0c6d2675b0b49e1f8521895c47163",
+    "embedding": "frozen post-message-passing fingerprint",
+    "load_label_encode_seconds": 6.673730198992416
+  },
+  "logd-chemprop_foundation_surrogate-v1_teacher.json": {
+    "teacher": "openadmet/logd-chemprop_foundation_surrogate-v1",
+    "revision": "local checkpoint",
+    "checkpoint_sha256": "02dabe755d39f6e4d14bd51ed853c46202e1171899de9c6d2edfe57eeb6068a5",
+    "embedding": "frozen post-message-passing fingerprint",
+    "target_order_source": "hash-matched benchmarks/adapter_smoke.json",
+    "load_label_encode_seconds": 6.572325051005464
+  },
+  "mpbp-chemprop_foundation_minimol-v1_teacher.json": {
+    "teacher": "openadmet/mpbp-chemprop_foundation_minimol-v1",
+    "revision": "local checkpoint",
+    "checkpoint_sha256": "2ef6b99245807561ae17ea6b0bd519e3f821926abd531809212aec02d0c7571b",
+    "embedding": "frozen post-message-passing fingerprint",
+    "target_order_source": "hash-matched benchmarks/adapter_smoke.json",
+    "load_label_encode_seconds": 4.91523071899428
+  },
+  "mpbp-chemprop_foundation_surrogate-v1_teacher.json": {
+    "teacher": "openadmet/mpbp-chemprop_foundation_surrogate-v1",
+    "revision": "local checkpoint",
+    "checkpoint_sha256": "ad7ae434a0890c8a24df9cf163d1ef23bf478d78a5360fa1b78207fc379cfc3c",
+    "embedding": "frozen post-message-passing fingerprint",
+    "target_order_source": "hash-matched benchmarks/adapter_smoke.json",
+    "load_label_encode_seconds": 4.534981345990673
+  }
+}
