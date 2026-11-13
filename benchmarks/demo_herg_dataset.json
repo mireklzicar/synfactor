@@ -1,0 +1,28 @@
+{
+  "teacher": "openadmet/herg-chemeleon-baseline",
+  "revision": "5c4fb081dfec62a5108423d0f86ec99023551bd8",
+  "checkpoint_sha256": "93f6527a4766d6c5373eaccf229a0aaf24961a51553f7af87825bbdfca146945",
+  "embedding": "frozen post-message-passing fingerprint",
+  "targets": [
+    "pchembl_value_mean"
+  ],
+  "seed": 38026,
+  "synthon_rows": 6273,
+  "unique_capped_synthons": 2732,
+  "sampled_products": 3000,
+  "uncappable_rows_excluded": 0,
+  "assembly_failures": 0,
+  "split_counts": {
+    "train": 2068,
+    "validation": 318,
+    "test": 614
+  },
+  "space_sha256": "d234a99d2695ed5e5269fe162bba12b99be1cd9c8d5ec0c43e57fa4180aee841",
+  "timing_seconds": {
+    "capping_sampling_assembly": 2.578165168000851,
+    "teacher_load": 17.793017121002777,
+    "synthon_encoding": 1.5149608810024802,
+    "product_teacher": 2.6793617049988825
+  },
+  "device": "cuda"
+}

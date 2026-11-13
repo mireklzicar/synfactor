@@ -1,0 +1,27 @@
+{
+  "device": "NVIDIA GeForce RTX 4090",
+  "torch": "2.9.0+cu128",
+  "slot_sizes": [
+    32768,
+    29100
+  ],
+  "rank": 16,
+  "distinct_tuples_per_sweep": 953548800,
+  "block": 4096,
+  "seconds": [
+    0.025548817007802427,
+    0.025375988014275208,
+    0.02557689099921845,
+    0.03343588000279851,
+    0.036291919997893274
+  ],
+  "median_scores_per_second": 37281653975.42405,
+  "copy_to_host": false,
+  "max_error_vs_float64": 4.0167960513315393e-07,
+  "extrapolated_seconds": {
+    "1000000000": 0.026822844304579322,
+    "1000000000000": 26.822844304579323,
+    "20000000000000": 536.4568860915864
+  },
+  "scope": "warm two-slot Cartesian matrix kernel + affine; optional host copy; no training, encoder, assembly, ranking, filtering or disk persistence"
+}

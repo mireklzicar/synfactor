@@ -1,0 +1,18 @@
+name: example and scoring checks
+on: [push, pull_request]
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install torch==2.9.0 --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python prepare.py --out runs/rdkit
+      - run: python train.py --data runs/rdkit
+      - run: python score.py --reaction 11a --top-k 5
+      - run: python score.py --reaction 274552a --top-k 5

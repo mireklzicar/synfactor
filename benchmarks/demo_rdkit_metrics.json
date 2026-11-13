@@ -1,0 +1,85 @@
+{
+  "device": "cpu",
+  "torch": "2.9.0+cu128",
+  "seed": 38026,
+  "rank": 16,
+  "best_epoch": 266,
+  "training_seconds": 6.452452356024878,
+  "factor_export_seconds": 0.013045378989772871,
+  "max_float16_cache_difference": 0.0022192001342773438,
+  "factor_payload_bytes": 200736,
+  "metrics": [
+    {
+      "split": "train",
+      "components": "all",
+      "target": "RDKit_CrippenLogP",
+      "n": 2068,
+      "spearman": 0.9989155065639482,
+      "mae": 0.06665758043527603
+    },
+    {
+      "split": "train",
+      "components": 2,
+      "target": "RDKit_CrippenLogP",
+      "n": 1960,
+      "spearman": 0.9989338065240528,
+      "mae": 0.06496158987283707
+    },
+    {
+      "split": "train",
+      "components": 3,
+      "target": "RDKit_CrippenLogP",
+      "n": 108,
+      "spearman": 0.9981708536968762,
+      "mae": 0.0974365696310997
+    },
+    {
+      "split": "validation",
+      "components": "all",
+      "target": "RDKit_CrippenLogP",
+      "n": 318,
+      "spearman": 0.9821013788737386,
+      "mae": 0.2668015956878662
+    },
+    {
+      "split": "validation",
+      "components": 2,
+      "target": "RDKit_CrippenLogP",
+      "n": 302,
+      "spearman": 0.9844515396953439,
+      "mae": 0.2452993392944336
+    },
+    {
+      "split": "validation",
+      "components": 3,
+      "target": "RDKit_CrippenLogP",
+      "n": 16,
+      "spearman": 0.9647058823529412,
+      "mae": 0.6726573705673218
+    },
+    {
+      "split": "test",
+      "components": "all",
+      "target": "RDKit_CrippenLogP",
+      "n": 614,
+      "spearman": 0.9774114279437028,
+      "mae": 0.3025955259799957
+    },
+    {
+      "split": "test",
+      "components": 2,
+      "target": "RDKit_CrippenLogP",
+      "n": 584,
+      "spearman": 0.9783781904691647,
+      "mae": 0.2921440601348877
+    },
+    {
+      "split": "test",
+      "components": 3,
+      "target": "RDKit_CrippenLogP",
+      "n": 30,
+      "spearman": 0.9270300333704115,
+      "mae": 0.5060509443283081
+    }
+  ]
+}

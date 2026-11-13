@@ -1,0 +1,9 @@
+-r requirements.txt
+chemprop==2.2.1
+lightning==2.5.0.post0
+pydantic==2.11.7
+loguru==0.7.3
+huggingface-hub==0.34.4
+PyYAML==6.0.2
+phx-class-registry==5.0.0
+openadmet-models @ git+https://github.com/OpenADMET/openadmet-models.git@55dd001549885f8d8095af14733d61f36fc046c0

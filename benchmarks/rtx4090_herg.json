@@ -1,0 +1,67 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "torch": "2.9.0+cu128",
+  "gpu_already_busy": true,
+  "notes": "Bounded warm measurements under concurrent GPU load. Excludes disk output and molecular assembly.",
+  "teacher_load_seconds": 7.186115732998587,
+  "teacher_featurize_seconds": 0.35940022801514715,
+  "teacher": {
+    "n_products": 4953,
+    "warm_seconds": [
+      2.7513132489984855,
+      2.6609099770139437,
+      2.641081759997178
+    ],
+    "batch_size": 256
+  },
+  "cp16": {
+    "reaction": "s_22",
+    "tile_shape": [
+      4096,
+      4096
+    ],
+    "rank": 16,
+    "scores_per_repeat": 1006632960,
+    "iterations": 60,
+    "warm_seconds": [
+      0.02447172100073658,
+      0.016495549003593624,
+      0.0378131200268399,
+      0.037773052987176925,
+      0.03782287801732309
+    ],
+    "max_absolute_error_vs_float64": 4.052615967253814e-07,
+    "precision": "float32 factors from float16 cache, TF32 enabled, float32 accumulation/output",
+    "scope": "matrix multiplication plus affine scaling; factors resident on GPU; repeated tile, no output persistence"
+  },
+  "cp16_with_d2h": {
+    "scores_per_repeat": 1006632960,
+    "warm_seconds": [
+      0.2684713470225688,
+      0.2606407510174904,
+      0.27683009702013806
+    ],
+    "scope": "same kernel plus every float32 score transferred to pinned CPU memory, no disk writes"
+  },
+  "cp16_distinct": {
+    "reaction": "s_22",
+    "slot_sizes": [
+      32768,
+      29100
+    ],
+    "distinct_synthon_tuples_per_sweep": 953548800,
+    "warm_seconds": [
+      0.0159212629951071,
+      0.022031826025340706,
+      0.024749775999225676,
+      0.02203449100488797,
+      0.02320704099838622
+    ],
+    "with_d2h_seconds": [
+      0.2782568250258919,
+      0.2781462339917198,
+      0.2733438790019136
+    ],
+    "scope": "All distinct row combinations within a real two-slot reaction subset; batched 4096x4096 matrix multiplication plus affine, resident factors, float32 scores; output discarded after each block. Molecular identity duplicates not removed."
+  }
+}

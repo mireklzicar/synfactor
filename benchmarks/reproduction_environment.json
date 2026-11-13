@@ -1,0 +1,25 @@
+{
+  "python": "3.11.8",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.14.1",
+    "torch": "2.9.0",
+    "rdkit": "2025.9.1",
+    "chemprop": "2.2.1",
+    "lightning": "2.5.0.post0",
+    "openadmet-models": "0.2.0+13.g55dd001",
+    "huggingface-hub": "0.34.4",
+    "phx-class-registry": "5.0.0"
+  },
+  "openadmet_source_commit": "55dd001549885f8d8095af14733d61f36fc046c0",
+  "validation": [
+    "fresh venv dependency installation",
+    "public pinned hERG model download",
+    "3000-product RDKit CPU fit and hERG GPU fit",
+    "all nine OpenADMET encoders and prediction heads on two molecules",
+    "two- and three-slot Cartesian scoring vs independent tuple enumeration",
+    "float16 cached factors vs direct network predictions",
+    "GPU matrix timing with and without host copies"
+  ]
+}

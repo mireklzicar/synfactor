@@ -1,0 +1,18 @@
+{
+  "source": "Frozen Enamine REAL v5a CP16 research cache, reaction s_22, two-slot subset",
+  "shape_A": [
+    32768,
+    16
+  ],
+  "shape_B": [
+    29100,
+    16
+  ],
+  "dtype": "float16",
+  "distinct_row_tuples": 953548800,
+  "contains": "Learned hERG factors and output affine coefficients only; no chemical structures, vendor identifiers or teacher weights",
+  "source_model_sha256": "93f6527a4766d6c5373eaccf229a0aaf24961a51553f7af87825bbdfca146945",
+  "cp16_artifact_sha256": "f13f2db363745f861bc7e108b7b765041c98df7c53cdb8e3df763c13f28f0439",
+  "npz_sha256": "7dbeba4bec913d001f19c4d7e2667a2ecc887eeb4542fb18dcc37f2bcfc69705",
+  "qualification": "teacher-distilled approximation; kernel benchmark, not experimental hERG validation"
+}

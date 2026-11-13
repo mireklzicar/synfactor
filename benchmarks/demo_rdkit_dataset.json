@@ -1,0 +1,33 @@
+{
+  "teacher": "RDKit CrippenLogP",
+  "embedding": "Morgan counts (512) + 4 descriptors",
+  "targets": [
+    "RDKit_CrippenLogP"
+  ],
+  "seed": 38026,
+  "synthon_rows": 6273,
+  "unique_capped_synthons": 2732,
+  "sampled_products": 3000,
+  "uncappable_rows_excluded": 0,
+  "assembly_failures": 0,
+  "split_counts": {
+    "train": 2068,
+    "validation": 318,
+    "test": 614
+  },
+  "space_sha256": "d234a99d2695ed5e5269fe162bba12b99be1cd9c8d5ec0c43e57fa4180aee841",
+  "timing_seconds": {
+    "capping_sampling_assembly": 2.576035954989493,
+    "teacher_load": 2.4139881134033203e-06,
+    "synthon_encoding": 0.43685960498987697,
+    "product_teacher": 0.659835048019886
+  },
+  "device": "cpu",
+  "versions": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.14.1",
+    "torch": "2.9.0",
+    "rdkit": "2025.9.1"
+  }
+}
