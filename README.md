@@ -1,5 +1,8 @@
 # SynFactor
 
+[![Example and scoring checks](https://github.com/mireklzicar/synfactor/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mireklzicar/synfactor/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/github/license/mireklzicar/synfactor)](LICENSE)
+
 **Learn small synthon vectors once. Predict product properties by multiplying them.**
 
 SynFactor distills a full-molecule property model into a neural rank-16 CP
@@ -28,6 +31,8 @@ classical descriptors. It also audits descriptor histograms with an additive
 convolution control; native SpaceProp was unavailable without a license.
 See the [pilot results](benchmarks/comparison_pilot/README.md) for the separate
 dataset, limitations and reproducible commands.
+
+For research discussions about factorized representations, scientific search, or evaluation, contact [Miroslav Lžičař](mailto:lzicar2000@gmail.com). For reproducibility questions and bug reports, please [open an issue](https://github.com/mireklzicar/synfactor/issues).
 
 ## Quick start
 
