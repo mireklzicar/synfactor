@@ -168,6 +168,10 @@ def main():
     p.add_argument("--epochs", type=int, default=120)
     p.add_argument("--ensemble", type=int, default=1)
     p.add_argument("--disagreement", type=float, default=0.)
+    p.add_argument("--information-fraction", type=float, default=0.,
+                   help="Fraction of each batch selected by conditional frozen-feature information gain")
+    p.add_argument("--information-pool", type=int, default=20000)
+    p.add_argument("--information-quality", type=float, default=.25)
     p.add_argument("--features", default="features.npy")
     p.add_argument("--objective", choices=["stored", "raw"], default="stored")
     p.add_argument("--chemical-filter", action="store_true")
@@ -178,6 +182,10 @@ def main():
         p.error("Invalid exploration/screen fraction")
     if args.ensemble < 1 or args.budget < 10 or args.batch < 10:
         p.error("Need positive ensemble and at least ten initial/total queries")
+    if not 0 <= args.information_fraction < 1-args.explore or args.information_pool < args.batch:
+        p.error("Information and exploration fractions must leave exploitation; pool must fit a batch")
+    if args.information_fraction and (args.ensemble != 1 or args.rerank != "none"):
+        p.error("Information acquisition currently requires a single CP model without reranking")
     if (args.out / "observed.csv").exists():
         raise ValueError("Use a fresh output directory; refusing to overwrite a run")
     args.out.mkdir(parents=True, exist_ok=True)
@@ -233,7 +241,8 @@ def main():
                                     additive=args.additive, device=args.device, seed=args.seed + iteration*17 + member*101)
             fit.append(model.fit(rows[train], rids[train], y, epochs=args.epochs))
             members.append(model.predict(rows, rids))
-            del model
+            if not args.information_fraction:
+                del model
         fit_done = time.perf_counter()
         predictions = np.mean(members, axis=0)
         disagreement = np.std(members, axis=0)
@@ -244,6 +253,7 @@ def main():
         if count == 0:
             break
         n_explore = min(int(round(count * args.explore)), count-1)
+        n_information = min(int(round(count*args.information_fraction)), count-n_explore-1)
         pool_size = min(int((~queried & eligible).sum()), max(count*10, int(len(rows)*args.screen_fraction)))
         pool = np.argpartition(predictions, -pool_size)[-pool_size:]
         scores = predictions[pool].copy()
@@ -272,10 +282,32 @@ def main():
         if args.rerank != "none":
             scores += args.disagreement * disagreement[pool]
         references = train[np.argsort(-y, kind="stable")[:100]]
-        chosen = diverse_select(pool, scores, count-n_explore, packed, manifest["bitorder"], references,
+        chosen = diverse_select(pool, scores, count-n_explore-n_information, packed, manifest["bitorder"], references,
                                 args.diversity, args.device, **diversity_kwargs)
         remaining = ~queried & eligible
         remaining[chosen] = False
+        information = None
+        if n_information:
+            from .information import LinearInformation
+            # An independent RNG leaves the existing random-acquisition stream
+            # unchanged. Both pool halves use structures/predictions, not labels.
+            info_rng = np.random.default_rng(args.seed+7919*iteration)
+            info_available = np.flatnonzero(remaining)
+            pool_count = min(args.information_pool, len(info_available))
+            random_pool = info_rng.choice(info_available, size=pool_count//2, replace=False)
+            eligible_pool = pool[remaining[pool]]
+            elite_count = min(pool_count-len(random_pool), len(eligible_pool))
+            elite_pool = eligible_pool[np.argsort(-predictions[eligible_pool], kind="stable")[:elite_count]]
+            information_pool = np.unique(np.concatenate([random_pool, elite_pool]))
+            train_phi = model.acquisition_features(rows[train], rids[train])
+            information_model = LinearInformation(train_phi, y, members[0][train], device=args.device)
+            ix, information = information_model.select(
+                model.acquisition_features(rows[information_pool], rids[information_pool]),
+                predictions[information_pool], n_information, quality_weight=args.information_quality,
+                condition_features=model.acquisition_features(rows[chosen], rids[chosen]))
+            informed = information_pool[ix]
+            chosen = np.concatenate([chosen, informed]); remaining[informed] = False
+            del information_model, model
         random = rng.choice(np.flatnonzero(remaining), size=n_explore, replace=False)
         acquired = np.concatenate([chosen, random])
         got = oracle.query(acquired); queried[acquired] = True
@@ -283,7 +315,7 @@ def main():
         summary = dict(iteration=iteration, calls=len(oracle.observed), best_utility=max(oracle.values),
                        batch_mean=float(got.mean()), batch_positive=int(np.sum(got>0)),
                        fit_seconds=fit_done-t0, round_seconds=time.perf_counter()-t0, elapsed_seconds=elapsed,
-                       fit=fit, fine_fit=refit)
+                       fit=fit, fine_fit=refit, information=information)
         history.append(summary); save()
         print(f"round={iteration} calls={len(oracle.observed)} best={max(oracle.values):.4f} batch={got.mean():.3f} elapsed={elapsed:.1f}s", flush=True)
         del predictions, members, disagreement; gc.collect()

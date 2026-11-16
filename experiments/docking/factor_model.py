@@ -171,3 +171,35 @@ class FactorRegressor:
             pred = self.model.combine(self.cached_factors, self.cached_additive, rr, ri)
             output[start:start + len(rr)] = (pred * self.y_scale + self.y_mean).cpu().numpy()
         return output
+
+    @torch.no_grad()
+    def acquisition_features(self, tuples, reaction_ids, batch_size=131072):
+        """Cached learned linear components for a bounded acquisition pool.
+
+        Columns: rank CP products/sqrt(rank), optional three additive terms,
+        reaction one-hot, intercept. No target labels or per-product MLP calls.
+        Only construct these for acquired rows and shortlisted candidates, not
+        all 100M products. Components are on the normalized target scale.
+        """
+        rows, reactions = self._inputs(tuples, reaction_ids)
+        if self.model is None:
+            raise RuntimeError("Call fit first")
+        if batch_size < 1:
+            raise ValueError("batch_size must be positive")
+        width = self.rank + (3 if self.additive else 0) + self.n_reactions + 1
+        output = np.empty((len(rows), width), dtype=np.float32)
+        for start in range(0, len(rows), batch_size):
+            rr = torch.tensor(rows[start:start+batch_size], device=self.device)
+            ri = torch.tensor(reactions[start:start+batch_size], device=self.device)
+            factors = self.cached_factors
+            cp = factors[0, rr[:, 0]] * factors[1, rr[:, 1]]
+            cp *= torch.where(rr[:, 2, None] >= 0, factors[2, rr[:, 2].clamp_min(0)], 1.)
+            blocks = [cp / math.sqrt(self.rank)]
+            if self.cached_additive is not None:
+                a = self.cached_additive
+                blocks.append(torch.stack([a[0, rr[:, 0]], a[1, rr[:, 1]],
+                    torch.where(rr[:, 2] >= 0, a[2, rr[:, 2].clamp_min(0)], 0.)], dim=1))
+            blocks.append(torch.nn.functional.one_hot(ri, self.n_reactions).float())
+            blocks.append(torch.ones((len(rr), 1), device=self.device))
+            output[start:start+len(rr)] = torch.cat(blocks, dim=1).cpu().numpy()
+        return output

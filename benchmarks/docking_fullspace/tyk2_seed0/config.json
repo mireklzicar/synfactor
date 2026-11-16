@@ -1,0 +1,37 @@
+{
+  "target": "tyk2",
+  "seed": 0,
+  "information_fraction": 0.2,
+  "sweep_seconds": 300,
+  "budget": 10000,
+  "warm_charged": 1000,
+  "batch_size": 1000,
+  "rank": 64,
+  "additive": true,
+  "epochs": 180,
+  "diversity": 0.5,
+  "diversity_features": "capped-synthon Morgan512 OR",
+  "information_quality": 0.25,
+  "space_sha256": {
+    "reactions.txt": "90f73900e599c10d629dfc73dd2ec100c942d22d0a648b388a6bf7ea571ab9ea",
+    "syntons.txt": "8a7ad5977b11f015fdb94cd13c6966da94e8f2d5db447d6613226a3adb9efc0b"
+  },
+  "products": 296350180179,
+  "warm": {
+    "ids_sha256": "43882047808138191452ce6fab9a4de4a4be5be51dc425ef1788201919b99894",
+    "matrix_sha256": "97c2c84b032976b600793fd38c62dcc4e86de8c9b257d08d771042640b08c9c0",
+    "csv_sha256": "6c32d21a1de9429b0b2957922daaf486d4f39f0791241dcda079a36adad14179",
+    "candidates_sha256": "1ea0408e3dc891a604436cce702c9bad30ff54056a87e506901a06b3b2541597"
+  },
+  "grid_sha256": "0435f65ff9c7ec62f3316cee8d584b9a353c80371118437ed1d6bf1d2c1fe108",
+  "oracle_protocol_sha256": "902a297ad04e83f2f47a3a161ec8ae1787d0e0098cff8b589e601df192f60c9b",
+  "max_cell_seconds": 3600,
+  "code_sha256": {
+    "live.py": "a6702129ec9f6ce1286cc823dd345e4572d5b0e651baff0ac4c49d372ce71ca0",
+    "factor_model.py": "e07d70bb48016a9befde43824db74456b6cf20b1d2e5322e87505f07c61de753",
+    "cartesian.py": "022a182dbb80fcb26e10df728d913e45dd1bab452ae7c2bac5b71409978fa098",
+    "information.py": "02e5bb1b15320477e1d93c873d034c6784216d159242d7fdd8b3d2dbd2903d81",
+    "fullspace.py": "21e9c7341ff52d3107001bd34b7cac6d8d1108ef8add6c5b59cb9d1ffb731acb",
+    "run.py": "67d1e6bd87d09c92bdff6f83f18a3196559db2b506683b1deed1a3ead99bc460"
+  }
+}

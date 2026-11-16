@@ -1,0 +1,30 @@
+{
+  "targets": [
+    "kif11",
+    "pyrd",
+    "tgfr1"
+  ],
+  "seeds": [
+    0,
+    1
+  ],
+  "source_sha256": {
+    "experiments/docking/run.py": "67d1e6bd87d09c92bdff6f83f18a3196559db2b506683b1deed1a3ead99bc460",
+    "experiments/docking/information.py": "02e5bb1b15320477e1d93c873d034c6784216d159242d7fdd8b3d2dbd2903d81",
+    "experiments/docking/factor_model.py": "e07d70bb48016a9befde43824db74456b6cf20b1d2e5322e87505f07c61de753",
+    "experiments/docking/evaluate.py": "603a77a50106a6848acdc2881cbfb0ba30074bb426c6317a08d61781c6ba52ce"
+  },
+  "information_fraction": 0.2,
+  "information_quality": 0.25,
+  "information_pool": 20000,
+  "interpretation": "conditional Gaussian linear information gain on frozen neural CP features; not exact neural-network information gain",
+  "budget": 10000,
+  "batch": 1000,
+  "rank": 64,
+  "additive": true,
+  "epochs": 180,
+  "diversity": 0.5,
+  "objective": "raw",
+  "explore": 0.1,
+  "evaluation_max_seconds_per_solve": 30
+}

@@ -40,6 +40,19 @@ target/seed runs at a 10,000-query budget. This is an initial benchmark, with
 separate stronger-baseline and 10M/100M surrogate-scale comparisons;
 [code and protocol](experiments/docking/README.md) include the limitations.
 
+An optional [information-gain acquisition arm](experiments/docking/INFORMATION.md)
+updates its uncertainty approximation after every neural refit. Six paired
+Freedom 1M runs showed mixed gains over the existing CP64 acquisition policy.
+The [full-Freedom integration](experiments/docking/LIVE.md) also measured a
+complete **296-billion-route GPU score sweep with top-20,000 selection in
+19.82 seconds**, after 5.32 seconds of fitting and factor caching.
+[Qualification records](benchmarks/docking_fullspace/README.md) distinguish
+this surrogate-scoring measurement from actual docking and search quality.
+The [first full-space TYK2 result](benchmarks/docking_fullspace/tyk2_seed0/README.md)
+beats both SpaceHASTEN variants on OPDiv, trails GA-DCSO v14 on unfiltered
+scores/OPDiv, and has a small druglike-portfolio advantage over GA. This is one
+target and seed; the twelve-target pilot is in progress.
+
 For research discussions about factorized representations, scientific search, or evaluation, contact [Miroslav Lžičař](mailto:lzicar2000@gmail.com). For reproducibility questions and bug reports, please [open an issue](https://github.com/mireklzicar/synfactor/issues).
 
 ## Quick start

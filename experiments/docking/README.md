@@ -9,6 +9,11 @@ The [initial results and query traces](../../benchmarks/docking_pilot/README.md)
 compare against unchanged archived GA-DCSO implementations and separately label
 adapted SpaceHASTEN and historical comparisons.
 
+The optional [information-directed acquisition](INFORMATION.md) adds
+nonredundant batch selection under a frozen-feature uncertainty approximation.
+The [full Freedom / Dock-12 integration](LIVE.md) streams Cartesian GPU scoring
+and connects selected routes to the existing live Glide oracle.
+
 ## Selected method
 
 - Capped-synthon Morgan count features (512 bins) and four RDKit descriptors.

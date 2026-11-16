@@ -1,0 +1,535 @@
+{
+  "target": "tyk2",
+  "seed": 0,
+  "charged_calls": 10000,
+  "charged_warm": 1000,
+  "history_path": "/home/mirekl/DeepMedChem_Papers/synfactor/runs/docking_live_campaign/suite_info20/sf_freedom_seed0_tyk2_info20/state.json",
+  "history_sha256": "b9b401ef8230be0eda5301abecc3c79ef802b4c19829d53b2c98f0a9b1007c50",
+  "rdkit": "2026.09.2",
+  "gate_path": "/home/mirekl/DeepMedChem_Prod/dmc-navigator-prod/src/dmc_navigator_prod/core/filters.py",
+  "gate_sha256": "28a01da8a9da1a87b43604363fd044294a3c1f5617e48e167c1f302f3969b3c1",
+  "fingerprint": "Morgan radius2/2048/no chirality; conflicts Tc>=0.30; portfolios STRICT Tc<0.30",
+  "canonical_duplicates": "best score; ties by product_id; original SMILES retained for gate/fingerprints",
+  "eligibility": "status valid, finite score and valid original SMILES; failures remain charged",
+  "grid_sha256": "0435f65ff9c7ec62f3316cee8d584b9a353c80371118437ed1d6bf1d2c1fe108",
+  "warm_sha256": "6c32d21a1de9429b0b2957922daaf486d4f39f0791241dcda079a36adad14179",
+  "grid_verified_against_cohort": true,
+  "warm_verified_against_cohort": true,
+  "comparison_verified": true,
+  "identity_evidence": {
+    "config_sha256": "d9c32cb06b45a9e0e296002afc993183eaccf057cee276b699aea23d85a64939",
+    "warm_sources": {
+      "ids_sha256": "43882047808138191452ce6fab9a4de4a4be5be51dc425ef1788201919b99894",
+      "candidates_sha256": "1ea0408e3dc891a604436cce702c9bad30ff54056a87e506901a06b3b2541597",
+      "matrix_sha256": "97c2c84b032976b600793fd38c62dcc4e86de8c9b257d08d771042640b08c9c0",
+      "csv_sha256": "6c32d21a1de9429b0b2957922daaf486d4f39f0791241dcda079a36adad14179"
+    },
+    "batch_response_sha256": {
+      "batch_01": "56faf9b84bd4a4570bea02b2d1189991536d023a6388714d5a1dc54ab4791382",
+      "batch_02": "53000372317a36dfa71c96b428acbd4fb5aa51b078bd40cd1d6e6d99d55c5e8b",
+      "batch_03": "1a48784162caf14f2ffef2a2a9e6e9bb1c3b6a8d404927c131fda96d5aa5202b",
+      "batch_04": "f2ab67861c091c112552cd7bf93e98e2f2aa366aa1c81270c3a31194f1d987ab",
+      "batch_05": "860364aa5cdd83632ea45aeaa71ae5fad1e06e4ca9229731f5b8cb3e06b1afa4",
+      "batch_06": "3471970b1df562fd06166bce6c5af862ba36851bf14b8d9c7d578c78fcab863a",
+      "batch_07": "fb6de23f2fe07512b76e4d30630ac6aefc57f973aeb9a2ef0f0e9a796d7df5ea",
+      "batch_08": "641fbda2672dad9953e8c9ba625bfeeda9c1babc3292737aa9c98bf2f9e3c6f1",
+      "batch_09": "92e6c6d554ea637eba581c249e55b75564635543e30adb77ba356415c2a5eeb5"
+    }
+  },
+  "grid_note": "KIF11/PYRD/TGFR1 legacy continuity *_spacehasten grids; BRD4 repaired3MXF/JQ1 BD1",
+  "solver_time_limit_seconds": 30.0,
+  "cells": [
+    {
+      "method": "synfactor",
+      "reference": {},
+      "audit": {
+        "charged_input_rows": 10000,
+        "valid_route_rows": 9952,
+        "unique_valid_molecules": 9952,
+        "duplicate_molecules_removed": 0,
+        "exclusions": {
+          "docking_status_not_valid": 48
+        },
+        "druglike_failures": {
+          "MolWt>500.0": 8265,
+          "HBA>10": 1,
+          "F>1": 174,
+          "MolLogP_out[-10.0,5.0]": 126,
+          "alert:nitro": 125,
+          "FractionCSP3_out[0.1,0.8]": 63,
+          "amide>2": 176,
+          "TPSA>140.0": 126,
+          "alert:michael_enone": 39,
+          "RotB>10": 220,
+          "AromaticRings_out[1,5]": 18,
+          "alert:aldehyde": 1,
+          "HBD>5": 2,
+          "alert:n_oxide": 2
+        },
+        "charged_calls": 10000
+      },
+      "domains": {
+        "all-valid": {
+          "eligible_molecules": 9952,
+          "scores": {
+            "molecular_top100_count": 100,
+            "molecular_top100_mean": -9.60007,
+            "molecular_top1000_count": 1000,
+            "molecular_top1000_mean": -8.716752
+          },
+          "portfolios": [
+            {
+              "metric": "GPDiv",
+              "status": "feasible",
+              "selected_count": 100,
+              "value": 7.846699999999999,
+              "raw_mean": -7.846699999999999,
+              "feasible_lower_bound": 7.846699999999999,
+              "upper_bound": 9.600069999999999,
+              "certified": false,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 0.31952380400616676
+            },
+            {
+              "metric": "OPDiv",
+              "status": "feasible",
+              "selected_count": 100,
+              "value": 7.846699999999999,
+              "raw_mean": -7.846699999999999,
+              "feasible_lower_bound": 7.846699999999999,
+              "upper_bound": 9.600069999999999,
+              "certified": false,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 36.09594457101775
+            }
+          ],
+          "graph_seconds": 4.912279865995515,
+          "historical_bound_not_reused_reason": "no_saved_cell"
+        },
+        "druglike-v1": {
+          "eligible_molecules": 614,
+          "scores": {
+            "molecular_top100_count": 100,
+            "molecular_top100_mean": -6.9517999999999995,
+            "molecular_top1000_count": 614,
+            "molecular_top1000_mean": null
+          },
+          "portfolios": [
+            {
+              "metric": "GPDiv",
+              "status": "feasible",
+              "selected_count": 100,
+              "value": 6.6060799999999995,
+              "raw_mean": -6.6060799999999995,
+              "feasible_lower_bound": 6.6060799999999995,
+              "upper_bound": 6.9518,
+              "certified": false,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 0.001089796016458422
+            },
+            {
+              "metric": "OPDiv",
+              "status": "optimal",
+              "selected_count": 100,
+              "value": 6.6108899999999995,
+              "raw_mean": -6.6108899999999995,
+              "feasible_lower_bound": 6.6108899999999995,
+              "upper_bound": 6.610890002288339,
+              "certified": true,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 0.026206029986497015
+            }
+          ],
+          "graph_seconds": 0.29332807497121394,
+          "historical_bound_not_reused_reason": "no_saved_cell"
+        }
+      }
+    },
+    {
+      "method": "spacehasten_fast",
+      "reference": {
+        "run_id": "sh_freedom_seed0_tyk2_spacehasten_fast",
+        "family": "spacehasten",
+        "method": "spacehasten_fast",
+        "target_id": "tyk2",
+        "seed": 0,
+        "charged": 10000,
+        "valid": 9839,
+        "adaptive_valid": 8842,
+        "adaptive_failed": 158,
+        "top1_mean": -9.069,
+        "top10_mean": -8.935500000000001,
+        "top100_mean": -8.42417,
+        "top1000_mean": -7.472257,
+        "diverse100_mean": -7.207730000000001,
+        "diverse100_count": 100,
+        "diverse100_scanned": 1850,
+        "diverse100_warm_share": 0.9,
+        "diverse100_reactions": 13,
+        "top100_warm_share": 0.06,
+        "top100_dominant_reaction_share": 0.38,
+        "top100_reactions": 6,
+        "grid_sha256": "0435f65ff9c7ec62f3316cee8d584b9a353c80371118437ed1d6bf1d2c1fe108",
+        "warm_sha256": "6c32d21a1de9429b0b2957922daaf486d4f39f0791241dcda079a36adad14179"
+      },
+      "audit": {
+        "charged_input_rows": 9839,
+        "valid_route_rows": 9839,
+        "unique_valid_molecules": 9839,
+        "duplicate_molecules_removed": 0,
+        "exclusions": {},
+        "druglike_failures": {
+          "MolWt>500.0": 8897,
+          "MolLogP_out[-10.0,5.0]": 112,
+          "F>1": 200,
+          "amide>2": 72,
+          "alert:michael_enone": 28,
+          "alert:nitro": 14,
+          "RotB>10": 73,
+          "TPSA>140.0": 24,
+          "FractionCSP3_out[0.1,0.8]": 17,
+          "HBD>5": 1,
+          "AromaticRings_out[1,5]": 8,
+          "alert:n_oxide": 1
+        },
+        "charged_calls": 10000
+      },
+      "domains": {
+        "all-valid": {
+          "eligible_molecules": 9839,
+          "scores": {
+            "molecular_top100_count": 100,
+            "molecular_top100_mean": -8.42417,
+            "molecular_top1000_count": 1000,
+            "molecular_top1000_mean": -7.472257
+          },
+          "portfolios": [
+            {
+              "metric": "GPDiv",
+              "status": "feasible",
+              "selected_count": 100,
+              "value": 7.20773,
+              "raw_mean": -7.20773,
+              "feasible_lower_bound": 7.20773,
+              "upper_bound": 8.42417,
+              "certified": false,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 0.33744431199738756
+            },
+            {
+              "metric": "OPDiv",
+              "status": "feasible",
+              "selected_count": 100,
+              "value": 7.20773,
+              "raw_mean": -7.20773,
+              "feasible_lower_bound": 7.20773,
+              "upper_bound": 8.42417,
+              "certified": false,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 58.225608198030386
+            }
+          ],
+          "graph_seconds": 4.966628250025678,
+          "historical_bound_not_reused_reason": "rdkit_version_mismatch"
+        },
+        "druglike-v1": {
+          "eligible_molecules": 392,
+          "scores": {
+            "molecular_top100_count": 100,
+            "molecular_top100_mean": -6.92437,
+            "molecular_top1000_count": 392,
+            "molecular_top1000_mean": null
+          },
+          "portfolios": [
+            {
+              "metric": "GPDiv",
+              "status": "feasible",
+              "selected_count": 100,
+              "value": 6.0252099999999995,
+              "raw_mean": -6.0252099999999995,
+              "feasible_lower_bound": 6.0252099999999995,
+              "upper_bound": 6.924369999999999,
+              "certified": false,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 0.0005691139958798885
+            },
+            {
+              "metric": "OPDiv",
+              "status": "optimal",
+              "selected_count": 100,
+              "value": 6.033810000000001,
+              "raw_mean": -6.033810000000001,
+              "feasible_lower_bound": 6.033810000000001,
+              "upper_bound": 6.0338100024878605,
+              "certified": true,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 0.021360741986427456
+            }
+          ],
+          "graph_seconds": 0.8069456089870073,
+          "historical_bound_not_reused_reason": "rdkit_version_mismatch"
+        }
+      },
+      "archive_path": "/home/mirekl/SynthonBench_ICML/synthonbench_v2_orion/three_seed_revision/druglike_v1/archives/sh_freedom_seed0_tyk2_spacehasten_fast.json.gz",
+      "archive_sha256": "1ed86d8d0c08e231fb89b4ab60c5d541286164b5de23b4a1b2296135637a5f31"
+    },
+    {
+      "method": "spacehasten_accurate",
+      "reference": {
+        "run_id": "sh_freedom_seed0_tyk2_spacehasten_accurate",
+        "family": "spacehasten",
+        "method": "spacehasten_accurate",
+        "target_id": "tyk2",
+        "seed": 0,
+        "charged": 10000,
+        "valid": 9965,
+        "adaptive_valid": 8968,
+        "adaptive_failed": 32,
+        "top1_mean": -10.87,
+        "top10_mean": -10.463,
+        "top100_mean": -9.95294,
+        "top1000_mean": -9.201996,
+        "diverse100_mean": -7.312439999999999,
+        "diverse100_count": 100,
+        "diverse100_scanned": 6286,
+        "diverse100_warm_share": 0.88,
+        "diverse100_reactions": 13,
+        "top100_warm_share": 0.0,
+        "top100_dominant_reaction_share": 0.93,
+        "top100_reactions": 3,
+        "grid_sha256": "0435f65ff9c7ec62f3316cee8d584b9a353c80371118437ed1d6bf1d2c1fe108",
+        "warm_sha256": "6c32d21a1de9429b0b2957922daaf486d4f39f0791241dcda079a36adad14179"
+      },
+      "audit": {
+        "charged_input_rows": 9965,
+        "valid_route_rows": 9965,
+        "unique_valid_molecules": 9965,
+        "duplicate_molecules_removed": 0,
+        "exclusions": {},
+        "druglike_failures": {
+          "MolWt>500.0": 9247,
+          "F>1": 125,
+          "MolLogP_out[-10.0,5.0]": 37,
+          "amide>2": 72,
+          "alert:michael_enone": 28,
+          "alert:nitro": 15,
+          "RotB>10": 71,
+          "TPSA>140.0": 24,
+          "FractionCSP3_out[0.1,0.8]": 20,
+          "HBD>5": 1,
+          "AromaticRings_out[1,5]": 8,
+          "alert:n_oxide": 1
+        },
+        "charged_calls": 10000
+      },
+      "domains": {
+        "all-valid": {
+          "eligible_molecules": 9965,
+          "scores": {
+            "molecular_top100_count": 100,
+            "molecular_top100_mean": -9.95294,
+            "molecular_top1000_count": 1000,
+            "molecular_top1000_mean": -9.201996
+          },
+          "portfolios": [
+            {
+              "metric": "GPDiv",
+              "status": "feasible",
+              "selected_count": 100,
+              "value": 7.31244,
+              "raw_mean": -7.31244,
+              "feasible_lower_bound": 7.31244,
+              "upper_bound": 9.952940000000003,
+              "certified": false,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 0.36129293200792745
+            },
+            {
+              "metric": "OPDiv",
+              "status": "feasible",
+              "selected_count": 100,
+              "value": 7.31244,
+              "raw_mean": -7.31244,
+              "feasible_lower_bound": 7.31244,
+              "upper_bound": 9.952940000000003,
+              "certified": false,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 58.43917883600807
+            }
+          ],
+          "graph_seconds": 4.960804872040171,
+          "historical_bound_not_reused_reason": "rdkit_version_mismatch"
+        },
+        "druglike-v1": {
+          "eligible_molecules": 316,
+          "scores": {
+            "molecular_top100_count": 100,
+            "molecular_top100_mean": -6.54307,
+            "molecular_top1000_count": 316,
+            "molecular_top1000_mean": null
+          },
+          "portfolios": [
+            {
+              "metric": "GPDiv",
+              "status": "feasible",
+              "selected_count": 100,
+              "value": 6.030409999999999,
+              "raw_mean": -6.030409999999999,
+              "feasible_lower_bound": 6.030409999999999,
+              "upper_bound": 6.54307,
+              "certified": false,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 0.000402014993596822
+            },
+            {
+              "metric": "OPDiv",
+              "status": "optimal",
+              "selected_count": 100,
+              "value": 6.03256,
+              "raw_mean": -6.03256,
+              "feasible_lower_bound": 6.03256,
+              "upper_bound": 6.0325600027424,
+              "certified": true,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 0.012187479995191097
+            }
+          ],
+          "graph_seconds": 0.03864639805397019,
+          "historical_bound_not_reused_reason": "rdkit_version_mismatch"
+        }
+      },
+      "archive_path": "/home/mirekl/SynthonBench_ICML/synthonbench_v2_orion/three_seed_revision/druglike_v1/archives/sh_freedom_seed0_tyk2_spacehasten_accurate.json.gz",
+      "archive_sha256": "02123a88d764e44984a554f7160de2c073f242ae4fb332b203dfc978ca1969e1"
+    },
+    {
+      "method": "ga_dcso_v14_screening",
+      "reference": {
+        "run_id": "nav_freedom_seed0_tyk2_ga_dcso_v14_screening",
+        "family": "navigator",
+        "method": "ga_dcso_v14_screening",
+        "target_id": "tyk2",
+        "seed": 0,
+        "charged": 10000,
+        "valid": 9941,
+        "adaptive_valid": 8944,
+        "adaptive_failed": 56,
+        "top1_mean": -11.38,
+        "top10_mean": -11.148,
+        "top100_mean": -10.665999999999999,
+        "top1000_mean": -9.482502,
+        "diverse100_mean": -8.27683,
+        "diverse100_count": 100,
+        "diverse100_scanned": 3040,
+        "diverse100_warm_share": 0.12,
+        "diverse100_reactions": 11,
+        "top100_warm_share": 0.0,
+        "top100_dominant_reaction_share": 1.0,
+        "top100_reactions": 1,
+        "grid_sha256": "0435f65ff9c7ec62f3316cee8d584b9a353c80371118437ed1d6bf1d2c1fe108",
+        "warm_sha256": "6c32d21a1de9429b0b2957922daaf486d4f39f0791241dcda079a36adad14179"
+      },
+      "audit": {
+        "charged_input_rows": 9941,
+        "valid_route_rows": 9941,
+        "unique_valid_molecules": 9941,
+        "duplicate_molecules_removed": 0,
+        "exclusions": {},
+        "druglike_failures": {
+          "MolWt>500.0": 8556,
+          "F>1": 195,
+          "MolLogP_out[-10.0,5.0]": 70,
+          "amide>2": 145,
+          "TPSA>140.0": 57,
+          "alert:nitro": 28,
+          "FractionCSP3_out[0.1,0.8]": 67,
+          "alert:michael_enone": 64,
+          "RotB>10": 130,
+          "alert:vinyl_sulfone": 1,
+          "AromaticRings_out[1,5]": 35,
+          "HBD>5": 4,
+          "alert:n_oxide": 2
+        },
+        "charged_calls": 10000
+      },
+      "domains": {
+        "all-valid": {
+          "eligible_molecules": 9941,
+          "scores": {
+            "molecular_top100_count": 100,
+            "molecular_top100_mean": -10.665999999999999,
+            "molecular_top1000_count": 1000,
+            "molecular_top1000_mean": -9.482502
+          },
+          "portfolios": [
+            {
+              "metric": "GPDiv",
+              "status": "feasible",
+              "selected_count": 100,
+              "value": 8.276829999999999,
+              "raw_mean": -8.276829999999999,
+              "feasible_lower_bound": 8.276829999999999,
+              "upper_bound": 10.666000000000002,
+              "certified": false,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 0.37613580899778754
+            },
+            {
+              "metric": "OPDiv",
+              "status": "feasible",
+              "selected_count": 100,
+              "value": 8.276829999999999,
+              "raw_mean": -8.276829999999999,
+              "feasible_lower_bound": 8.276829999999999,
+              "upper_bound": 9.624270004231182,
+              "certified": false,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 34.23936948599294
+            }
+          ],
+          "graph_seconds": 5.000427218037657,
+          "historical_bound_not_reused_reason": "rdkit_version_mismatch"
+        },
+        "druglike-v1": {
+          "eligible_molecules": 587,
+          "scores": {
+            "molecular_top100_count": 100,
+            "molecular_top100_mean": -6.9610199999999995,
+            "molecular_top1000_count": 587,
+            "molecular_top1000_mean": null
+          },
+          "portfolios": [
+            {
+              "metric": "GPDiv",
+              "status": "feasible",
+              "selected_count": 100,
+              "value": 6.583829999999999,
+              "raw_mean": -6.583829999999999,
+              "feasible_lower_bound": 6.583829999999999,
+              "upper_bound": 6.961020000000001,
+              "certified": false,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 0.000915713026188314
+            },
+            {
+              "metric": "OPDiv",
+              "status": "optimal",
+              "selected_count": 100,
+              "value": 6.58477,
+              "raw_mean": -6.58477,
+              "feasible_lower_bound": 6.58477,
+              "upper_bound": 6.584770002897271,
+              "certified": true,
+              "source": "recomputed with current strict fingerprint contract",
+              "wall_seconds": 0.02035452303243801
+            }
+          ],
+          "graph_seconds": 0.22814325196668506,
+          "historical_bound_not_reused_reason": "rdkit_version_mismatch"
+        }
+      },
+      "archive_path": "/home/mirekl/SynthonBench_ICML/synthonbench_v2_orion/three_seed_revision/druglike_v1/archives/nav_freedom_seed0_tyk2_ga_dcso_v14_screening.json.gz",
+      "archive_sha256": "4832454d00163ef1a31748ff136477e5733558dde221dc4ce480bca09ea97a55"
+    }
+  ],
+  "wall_seconds": 224.78474171104608
+}

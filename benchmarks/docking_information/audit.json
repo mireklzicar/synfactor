@@ -1,0 +1,41 @@
+{
+  "source_hashes_unchanged": true,
+  "runs": {
+    "cp64_info20_kif11_s0": {
+      "rows": 10000,
+      "unique_product_ids": 10000,
+      "unique_rows": 10000,
+      "all_queried_utilities_match_charged_oracle": true
+    },
+    "cp64_info20_kif11_s1": {
+      "rows": 10000,
+      "unique_product_ids": 10000,
+      "unique_rows": 10000,
+      "all_queried_utilities_match_charged_oracle": true
+    },
+    "cp64_info20_pyrd_s0": {
+      "rows": 10000,
+      "unique_product_ids": 10000,
+      "unique_rows": 10000,
+      "all_queried_utilities_match_charged_oracle": true
+    },
+    "cp64_info20_pyrd_s1": {
+      "rows": 10000,
+      "unique_product_ids": 10000,
+      "unique_rows": 10000,
+      "all_queried_utilities_match_charged_oracle": true
+    },
+    "cp64_info20_tgfr1_s0": {
+      "rows": 10000,
+      "unique_product_ids": 10000,
+      "unique_rows": 10000,
+      "all_queried_utilities_match_charged_oracle": true
+    },
+    "cp64_info20_tgfr1_s1": {
+      "rows": 10000,
+      "unique_product_ids": 10000,
+      "unique_rows": 10000,
+      "all_queried_utilities_match_charged_oracle": true
+    }
+  }
+}

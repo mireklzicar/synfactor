@@ -1,0 +1,14 @@
+{
+  "source_sha256": {
+    "reactions.txt": "90f73900e599c10d629dfc73dd2ec100c942d22d0a648b388a6bf7ea571ab9ea",
+    "syntons.txt": "8a7ad5977b11f015fdb94cd13c6966da94e8f2d5db447d6613226a3adb9efc0b"
+  },
+  "products": 296350180179,
+  "synthon_rows": 1822466,
+  "unique_source_structures": 380787,
+  "capping_fallback_count": 22,
+  "capping_fallback_policy": "encode unchanged source synthon if capping fails",
+  "features": "capped Morgan count512 + four RDKit descriptors; no docking labels",
+  "preparation_seconds": 128.76224930002354,
+  "reaction_count": 123
+}

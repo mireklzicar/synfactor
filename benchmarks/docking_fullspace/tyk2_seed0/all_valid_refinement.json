@@ -1,0 +1,195 @@
+{
+  "ga_dcso_v14_screening": {
+    "input_path": "/home/mirekl/DeepMedChem_Papers/synfactor/runs/docking_live_campaign/suite_info20/sf_freedom_seed0_tyk2_info20/evaluation_live/ga_dcso_v14_screening__all-valid__molecules.csv.gz",
+    "input_sha256": "795778fb95f4f470f81fad69bf6e45abbf868877424e2a4a5ae575ea9e5ffe6d",
+    "rdkit": "2026.09.2",
+    "pyscipopt": "6.3.0",
+    "source_sha256": {
+      "/home/mirekl/DeepMedChem_Papers/synfactor/experiments/docking/live_refine.py": "ee307998e9e86f55786d6ad9429941f390fc28be3f37a7a5fd4cda4aba5d87f3",
+      "/home/mirekl/SynthonBench_ICML/synthonbench_v2/scripts/analyze_diversity_portfolios.py": "c90330224f5856a195cd58ff3ff8750390c878261e99b39458a17a70b1c1afd2",
+      "/home/mirekl/SynthonBench_ICML/synthonbench_v2/scripts/refine_diversity_bounds.py": "6a579883687d77566d7da6363a8c05ccbef1022f5b8c34ea78d886fa02e8e05c",
+      "/home/mirekl/DeepMedChem_Papers/synfactor/experiments/docking/live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+    },
+    "contract": "All input molecular rows; Morgan radius2/2048/no chirality; STRICT Tc<0.30; k100; mean negative energy",
+    "eligible_molecules": 9941,
+    "active_after_exact_domination": 9352,
+    "raw_mean": -8.42479,
+    "value": 8.42479,
+    "feasible_lower_bound": 8.42479,
+    "upper_bound": 8.42479,
+    "gap": 0.0,
+    "certified": true,
+    "status": "optimal",
+    "original_full_domain_solver": {
+      "value": -8.42479,
+      "bound": -8.42479,
+      "gap": 0.0,
+      "status": "optimal",
+      "certified": true,
+      "nodes": 3,
+      "solver_seconds": 93.781484,
+      "total_seconds": 98.22453018801752,
+      "variables": 9352,
+      "cliques": 146581
+    },
+    "refinement": {},
+    "preprocess_seconds": 9.550531862012576,
+    "wall_seconds": 107.92315144697204,
+    "configured_solver_seconds": {
+      "full": 120,
+      "lp": 30,
+      "support": 30
+    },
+    "support_bound_used_globally": false
+  },
+  "spacehasten_accurate": {
+    "input_path": "/home/mirekl/DeepMedChem_Papers/synfactor/runs/docking_live_campaign/suite_info20/sf_freedom_seed0_tyk2_info20/evaluation_live/spacehasten_accurate__all-valid__molecules.csv.gz",
+    "input_sha256": "b4785c30ee1f3adcd4b530f37bf4249d86cd52c5ebe4af1e0695d4062d5fdd83",
+    "rdkit": "2026.09.2",
+    "pyscipopt": "6.3.0",
+    "source_sha256": {
+      "/home/mirekl/DeepMedChem_Papers/synfactor/experiments/docking/live_refine.py": "759b21f4a0ce31af49b05c968349ebcc5dcd760b00ed972ece87e195288d96fe",
+      "/home/mirekl/SynthonBench_ICML/synthonbench_v2/scripts/analyze_diversity_portfolios.py": "c90330224f5856a195cd58ff3ff8750390c878261e99b39458a17a70b1c1afd2",
+      "/home/mirekl/SynthonBench_ICML/synthonbench_v2/scripts/refine_diversity_bounds.py": "6a579883687d77566d7da6363a8c05ccbef1022f5b8c34ea78d886fa02e8e05c",
+      "/home/mirekl/DeepMedChem_Papers/synfactor/experiments/docking/live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+    },
+    "contract": "All input molecular rows; Morgan radius2/2048/no chirality; STRICT Tc<0.30; k100; mean negative energy",
+    "eligible_molecules": 9965,
+    "active_after_exact_domination": 8619,
+    "raw_mean": -7.3317299999999985,
+    "value": 7.3317299999999985,
+    "feasible_lower_bound": 7.3317299999999985,
+    "upper_bound": 7.378566035400854,
+    "gap": 0.04683603540085368,
+    "certified": false,
+    "status": "bounded_refinement",
+    "original_full_domain_solver": {
+      "value": -7.312440000000002,
+      "bound": -7.378566035400854,
+      "gap": 0.06612603540085171,
+      "status": "timelimit",
+      "certified": false,
+      "nodes": 1,
+      "solver_seconds": 120.005141,
+      "total_seconds": 137.58733080798993,
+      "variables": 8619,
+      "cliques": 100087
+    },
+    "refinement": {
+      "lp": {
+        "bound": -7.4593687233878585,
+        "seconds": 20.983146783022676,
+        "status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "success": true,
+        "variables": 8619,
+        "cliques": 100087
+      },
+      "support_primal_solver": {
+        "value": -7.33173,
+        "bound": -7.33173,
+        "gap": 0.0,
+        "status": "optimal",
+        "certified": true,
+        "nodes": 1,
+        "solver_seconds": 0.154969,
+        "total_seconds": 0.16373655799543485,
+        "variables": 219,
+        "cliques": 517
+      }
+    },
+    "preprocess_seconds": 26.527160362980794,
+    "wall_seconds": 189.18737139197765,
+    "configured_solver_seconds": {
+      "full": 120,
+      "lp": 30,
+      "support": 30
+    },
+    "support_bound_used_globally": false
+  },
+  "spacehasten_fast": {
+    "input_path": "/home/mirekl/DeepMedChem_Papers/synfactor/runs/docking_live_campaign/suite_info20/sf_freedom_seed0_tyk2_info20/evaluation_live/spacehasten_fast__all-valid__molecules.csv.gz",
+    "input_sha256": "146c93824df3f71c548fd18c14abcdf0b324c358c687be6c393a4d2c439499f8",
+    "rdkit": "2026.09.2",
+    "pyscipopt": "6.3.0",
+    "source_sha256": {
+      "/home/mirekl/DeepMedChem_Papers/synfactor/experiments/docking/live_refine.py": "759b21f4a0ce31af49b05c968349ebcc5dcd760b00ed972ece87e195288d96fe",
+      "/home/mirekl/SynthonBench_ICML/synthonbench_v2/scripts/analyze_diversity_portfolios.py": "c90330224f5856a195cd58ff3ff8750390c878261e99b39458a17a70b1c1afd2",
+      "/home/mirekl/SynthonBench_ICML/synthonbench_v2/scripts/refine_diversity_bounds.py": "6a579883687d77566d7da6363a8c05ccbef1022f5b8c34ea78d886fa02e8e05c",
+      "/home/mirekl/DeepMedChem_Papers/synfactor/experiments/docking/live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+    },
+    "contract": "All input molecular rows; Morgan radius2/2048/no chirality; STRICT Tc<0.30; k100; mean negative energy",
+    "eligible_molecules": 9839,
+    "active_after_exact_domination": 1594,
+    "raw_mean": -7.212629999999999,
+    "value": 7.212629999999999,
+    "feasible_lower_bound": 7.212629999999999,
+    "upper_bound": 7.212630000000002,
+    "gap": 0.0,
+    "certified": true,
+    "status": "optimal",
+    "original_full_domain_solver": {
+      "value": -7.212630000000002,
+      "bound": -7.212630000000002,
+      "gap": 0.0,
+      "status": "optimal",
+      "certified": true,
+      "nodes": 1,
+      "solver_seconds": 0.255604,
+      "total_seconds": 0.34732269699452445,
+      "variables": 1594,
+      "cliques": 2616
+    },
+    "refinement": {},
+    "preprocess_seconds": 5.2780090480227955,
+    "wall_seconds": 5.630486413021572,
+    "configured_solver_seconds": {
+      "full": 120,
+      "lp": 30,
+      "support": 30
+    },
+    "support_bound_used_globally": false
+  },
+  "synfactor": {
+    "input_path": "/home/mirekl/DeepMedChem_Papers/synfactor/runs/docking_live_campaign/suite_info20/sf_freedom_seed0_tyk2_info20/evaluation_live/synfactor__all-valid__molecules.csv.gz",
+    "input_sha256": "fd04e0dcaf573ee842209e14bf74f1be92617396630b0dee81b9bd2c774e374b",
+    "rdkit": "2026.09.2",
+    "pyscipopt": "6.3.0",
+    "source_sha256": {
+      "/home/mirekl/DeepMedChem_Papers/synfactor/experiments/docking/live_refine.py": "ee307998e9e86f55786d6ad9429941f390fc28be3f37a7a5fd4cda4aba5d87f3",
+      "/home/mirekl/SynthonBench_ICML/synthonbench_v2/scripts/analyze_diversity_portfolios.py": "c90330224f5856a195cd58ff3ff8750390c878261e99b39458a17a70b1c1afd2",
+      "/home/mirekl/SynthonBench_ICML/synthonbench_v2/scripts/refine_diversity_bounds.py": "6a579883687d77566d7da6363a8c05ccbef1022f5b8c34ea78d886fa02e8e05c",
+      "/home/mirekl/DeepMedChem_Papers/synfactor/experiments/docking/live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+    },
+    "contract": "All input molecular rows; Morgan radius2/2048/no chirality; STRICT Tc<0.30; k100; mean negative energy",
+    "eligible_molecules": 9952,
+    "active_after_exact_domination": 7885,
+    "raw_mean": -7.93245,
+    "value": 7.93245,
+    "feasible_lower_bound": 7.93245,
+    "upper_bound": 7.932449999999998,
+    "gap": 0.0,
+    "certified": true,
+    "status": "optimal",
+    "original_full_domain_solver": {
+      "value": -7.932449999999998,
+      "bound": -7.932449999999998,
+      "gap": 0.0,
+      "status": "optimal",
+      "certified": true,
+      "nodes": 1,
+      "solver_seconds": 54.923541,
+      "total_seconds": 58.6817364100134,
+      "variables": 7885,
+      "cliques": 109603
+    },
+    "refinement": {},
+    "preprocess_seconds": 11.4686195019749,
+    "wall_seconds": 70.26516236097086,
+    "configured_solver_seconds": {
+      "full": 120,
+      "lp": 30,
+      "support": 30
+    },
+    "support_bound_used_globally": false
+  }
+}

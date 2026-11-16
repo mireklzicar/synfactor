@@ -1,0 +1,118 @@
+{
+  "description": "Fixed information20 acquisition pilot; six paired Freedom1M frozen-Glide runs",
+  "structures_included": false,
+  "trace_columns": [
+    "call",
+    "row",
+    "product_id",
+    "utility"
+  ],
+  "identity_note": "product_id contains released benchmark hexadecimal IDs; no product or synthon SMILES are bundled",
+  "source_snapshots_exact": true,
+  "source_sha256": {
+    "experiments/docking/run.py": "67d1e6bd87d09c92bdff6f83f18a3196559db2b506683b1deed1a3ead99bc460",
+    "experiments/docking/information.py": "02e5bb1b15320477e1d93c873d034c6784216d159242d7fdd8b3d2dbd2903d81",
+    "experiments/docking/factor_model.py": "e07d70bb48016a9befde43824db74456b6cf20b1d2e5322e87505f07c61de753",
+    "experiments/docking/evaluate.py": "603a77a50106a6848acdc2881cbfb0ba30074bb426c6317a08d61781c6ba52ce"
+  },
+  "cells": [
+    {
+      "target": "kif11",
+      "seed": 0,
+      "source_directory": "runs/docking_information/cp64_info20_kif11_s0",
+      "packaged_directory": "benchmarks/docking_information/cells/cp64_info20_kif11_s0",
+      "observed_csv_sha256": "bb711c943efc5b27bd097d31dc36d71466c0111723a7d75f092d273820447675",
+      "history_json_sha256": "b9aa6dc6089dd39ad0e50815c30090df5f25c077c305a77263a793624768840f"
+    },
+    {
+      "target": "kif11",
+      "seed": 1,
+      "source_directory": "runs/docking_information/cp64_info20_kif11_s1",
+      "packaged_directory": "benchmarks/docking_information/cells/cp64_info20_kif11_s1",
+      "observed_csv_sha256": "3ca6e8cb13bcb03c432e312a732d97c958ab4f0684ef6ba4dc198d60e648c033",
+      "history_json_sha256": "e2e1e05091eb706246bbf17fc1439677937bb12d4d6c3c54ea10be8828278e74"
+    },
+    {
+      "target": "pyrd",
+      "seed": 0,
+      "source_directory": "runs/docking_information/cp64_info20_pyrd_s0",
+      "packaged_directory": "benchmarks/docking_information/cells/cp64_info20_pyrd_s0",
+      "observed_csv_sha256": "34d0fe5cf837a899780637efcefe802ce7162ef00767e7346895901e09f98e5d",
+      "history_json_sha256": "6265a7f9cb6ce62e24cdc8d20b54f38f1f6e2193974448f1882ae65ba10528bb"
+    },
+    {
+      "target": "pyrd",
+      "seed": 1,
+      "source_directory": "runs/docking_information/cp64_info20_pyrd_s1",
+      "packaged_directory": "benchmarks/docking_information/cells/cp64_info20_pyrd_s1",
+      "observed_csv_sha256": "e50c1f2014a460063c28ab6c88ccbf6d9578afb0f572366e7401e4935ce2880e",
+      "history_json_sha256": "b3ff6230cf4de587aaef074104ba21eb68aff91a11dcb42037adfc90ca3579a8"
+    },
+    {
+      "target": "tgfr1",
+      "seed": 0,
+      "source_directory": "runs/docking_information/cp64_info20_tgfr1_s0",
+      "packaged_directory": "benchmarks/docking_information/cells/cp64_info20_tgfr1_s0",
+      "observed_csv_sha256": "379a046f74ae2010d70460d419c66cd19e830f1d39a59fe5e54e9b13dd99250e",
+      "history_json_sha256": "76f3bce6f9ca70d5b8753477b6055215fff82a9c81120aaae4745aafa61e2801"
+    },
+    {
+      "target": "tgfr1",
+      "seed": 1,
+      "source_directory": "runs/docking_information/cp64_info20_tgfr1_s1",
+      "packaged_directory": "benchmarks/docking_information/cells/cp64_info20_tgfr1_s1",
+      "observed_csv_sha256": "eaf7d5797dbcf9b2743b7a59ee6bd5d20dc95fc87a539e41614bd60514d94393",
+      "history_json_sha256": "fb00b02ce88c6964b51eeeb0967f71b4caf9976c215a81b6523a3a1ed9fbcc30"
+    }
+  ],
+  "files": {
+    "README.md": "1a983b59ec647dfba1f06ae89691b6a81b557b0fd1a323acbdc618e20d804bcd",
+    "audit.json": "896a06cb8fb40090cbb8fac14cc5a24ff4fcde34f000773cb72a1922fe89dae4",
+    "cells/cp64_info20_kif11_s0/config.json": "bdcaabfc38064dcac16c2f34e86a24788b6d779b0b3327be0647667583482c0d",
+    "cells/cp64_info20_kif11_s0/evaluation.json": "bd33e31c6f24ddd0fd306a726efd72afe909eccba5c74a3b86201da2dcbedf21",
+    "cells/cp64_info20_kif11_s0/history.json.gz": "6b5404074c92f5b4ae73819362671de61f99ce30a44701c192e902b60a28a1ac",
+    "cells/cp64_info20_kif11_s0/observed.csv.gz": "92ba379c505fbd890ea6250fdd4afe8b1abd7d99abcb18552eed5036d029c693",
+    "cells/cp64_info20_kif11_s0/summary.json": "beb8deb789fcfda83ac374b170d76f7fb211205c3148cd42906efc1a6ce0fb20",
+    "cells/cp64_info20_kif11_s1/config.json": "b5a7407e925f76a203fd1d14879d88806e0360d554886c1d2b9c1e8508196575",
+    "cells/cp64_info20_kif11_s1/evaluation.json": "edfc70e0aff9c50df0ce53d24f3375680093d399ed126119f4386312aad20ef8",
+    "cells/cp64_info20_kif11_s1/history.json.gz": "858bff7b7cff975722514e7b8928fe80fd46465c6de889ea373de013ea83486b",
+    "cells/cp64_info20_kif11_s1/observed.csv.gz": "e730c4c235a1d3dbad40aba8016789b89e8a15adf3f0fcfae60dc478b83cc5fd",
+    "cells/cp64_info20_kif11_s1/summary.json": "51768f4f40752d9765baac853bd1b041b7b169907714281d60e97a40ea64b6bf",
+    "cells/cp64_info20_pyrd_s0/config.json": "7c99a88019d4263eeecb4c49e6a023c67d84d7ce8be0891bf2e55a56a96724e9",
+    "cells/cp64_info20_pyrd_s0/evaluation.json": "f06cb4366aff2d08090530534fdb004924891681475cc1f2a62c61eafd1f4441",
+    "cells/cp64_info20_pyrd_s0/history.json.gz": "56de740e57cdfbd91d7655de04095368d6a52c4774703bd47ef7a18c3e8039cb",
+    "cells/cp64_info20_pyrd_s0/observed.csv.gz": "78988d402666eef4f563559a1b12ff7b55eb98bcd064bf9b263ef95df0b26b6e",
+    "cells/cp64_info20_pyrd_s0/summary.json": "b2a53ef84d3dc8337a6cc321f9578a4ac20649b7a8248df7a1e05567d52f2bc1",
+    "cells/cp64_info20_pyrd_s1/config.json": "5fe42ab390ece96d34aac1ac0eb8c326d963b59bbdd299784fb61225ead0d72a",
+    "cells/cp64_info20_pyrd_s1/evaluation.json": "339955d34827cd69128b50805a234b31917d8a9206c31aeff46dd99087c70215",
+    "cells/cp64_info20_pyrd_s1/history.json.gz": "db8f2fe03ef915427ce868ec302f39ad11d77eb11c839142fd4fba44165bc15e",
+    "cells/cp64_info20_pyrd_s1/observed.csv.gz": "c3e6869aa03313264c0b461635508cd87862d08003b2d0eeefaf4d87c1906c5e",
+    "cells/cp64_info20_pyrd_s1/summary.json": "b89b54ae1f6a366415fea5c28fc6329274e68fa6fd2fba7a539e289656653b48",
+    "cells/cp64_info20_tgfr1_s0/config.json": "ab3a9cc6f49e890ecbaa1b900d58e060f6f5d3ddbe7b53a79cdc0e9bbddd044a",
+    "cells/cp64_info20_tgfr1_s0/evaluation.json": "1deb36c866daa1c0e0a933da165ebf4681bc0444412c33c79c41cc046aee30a5",
+    "cells/cp64_info20_tgfr1_s0/history.json.gz": "d2d0f516af09be331ab5148ab5b9d325f07553ada47956585f6f6fb7a6c69e82",
+    "cells/cp64_info20_tgfr1_s0/observed.csv.gz": "0dba5ef4e538c506da81fe9259dc3fa73353cc91c0f4644293c8693e8344c9a3",
+    "cells/cp64_info20_tgfr1_s0/summary.json": "a7de4c1a60b334602663d1d42f2564f12a2c5254927b43edf36aedb31c939e0e",
+    "cells/cp64_info20_tgfr1_s1/config.json": "f2c210e2f600cbc7ac4c18274510a6af97ba3d6c14ba115076a7216c68d5742b",
+    "cells/cp64_info20_tgfr1_s1/evaluation.json": "36de3c5c79424d98a08d9f6d03ede91368ca10fe7ebcf44ef3d27605e57f6283",
+    "cells/cp64_info20_tgfr1_s1/history.json.gz": "2a235eea8483a13faa5020ca3031352aa75dcf1c9a74c693906545c819dce36d",
+    "cells/cp64_info20_tgfr1_s1/observed.csv.gz": "3a63d07c4e63af244b84c49f24dde6f8451236b988cdcc4558828d6a87052152",
+    "cells/cp64_info20_tgfr1_s1/summary.json": "6fab5a66a9187c5770b6067ce422b20ff375a9267ee393532787a80b1fc2ba96",
+    "environment.json": "0d2ff5c76f02d96f899b6c04bde18e918e5898db70cac5e4868fdd022b97b476",
+    "frozen_source/__init__.py": "d74447eeef9d80ddca77d0f77eaeb9ba2e5568870ce797510598c7aa179ac875",
+    "frozen_source/evaluate.py": "603a77a50106a6848acdc2881cbfb0ba30074bb426c6317a08d61781c6ba52ce",
+    "frozen_source/factor_model.py": "e07d70bb48016a9befde43824db74456b6cf20b1d2e5322e87505f07c61de753",
+    "frozen_source/information.py": "02e5bb1b15320477e1d93c873d034c6784216d159242d7fdd8b3d2dbd2903d81",
+    "frozen_source/run.py": "67d1e6bd87d09c92bdff6f83f18a3196559db2b506683b1deed1a3ead99bc460",
+    "paired.csv": "9d4283d559c0a3466abf3d5abb750c42fd5397f26b4449068d934f6d141343eb",
+    "protocol.json": "7443e35469b29e6060827ab46a5ce63fc01f27ef194e7c6fa907e972bbbc0fee",
+    "summary.json": "d30d0c2004d4370bde7b85cea45f35888b6b2239d12729fd91955e5549bc09af"
+  },
+  "packaged_bytes": 2393688,
+  "validation": {
+    "six_traces_exact_original_sha256": true,
+    "every_trace_10000_unique_hex_ids": true,
+    "no_structures_in_trace_or_json_records": true,
+    "frozen_source_cli_imports": true
+  }
+}

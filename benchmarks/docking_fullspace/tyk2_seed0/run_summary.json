@@ -1,0 +1,17 @@
+{
+  "target": "tyk2",
+  "seed": 0,
+  "calls": 10000,
+  "unique_product_ids": 10000,
+  "search_seconds": 214.07881296187406,
+  "oracle_seconds": 868.7981198039995,
+  "grid_sha256": "0435f65ff9c7ec62f3316cee8d584b9a353c80371118437ed1d6bf1d2c1fe108",
+  "warm_charged": 1000,
+  "new_attempts": 9000,
+  "valid_calls": 9952,
+  "best_score": -11.11,
+  "new_dockings": 9000,
+  "completed_utc": "2026-11-16T17:29:27.003454+00:00",
+  "elapsed_since_initial_launch_seconds": 1551.6074323654175,
+  "elapsed_note": "Includes transport, assembly/preflight and the recorded prelaunch PATH repair. Four qualification calls are separate. No duplicate adaptive docking."
+}

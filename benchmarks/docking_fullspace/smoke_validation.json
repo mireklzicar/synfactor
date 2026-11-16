@@ -1,0 +1,23 @@
+{
+  "bridge_source_sha256": "bc49fb47d7fd92b1733e646cff9cfb17887dd0912a3156bd955b8a7684fc6ed9",
+  "guard_checks_passed": [
+    "Duplicate submissions",
+    "adaptive budget",
+    "Unresolved docking"
+  ],
+  "actual_docking_calls": 4,
+  "valid_scores": 4,
+  "warm_structures_matched": 4,
+  "oracle_seconds": 19.33411210700001,
+  "historical_score_comparison": "Read-only comparison with remote Dock-12 TYK2 seed0 results_long.csv: all four scores identical",
+  "score_deltas": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "grid_sha256": "0435f65ff9c7ec62f3316cee8d584b9a353c80371118437ed1d6bf1d2c1fe108",
+  "pose_files": 2,
+  "adaptive_jobs_launched": false,
+  "infrastructure_reconciliation": "missing-uv prelaunch failure recorded and preserved; corrected SSH PATH supplies existing uv; no uncertain resubmission"
+}

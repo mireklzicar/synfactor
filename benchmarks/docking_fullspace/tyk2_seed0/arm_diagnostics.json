@@ -1,0 +1,686 @@
+{
+  "target": "tyk2",
+  "seed": 0,
+  "charged_calls": 10000,
+  "source_sha256": {
+    "runs/docking_live_campaign/suite_info20/sf_freedom_seed0_tyk2_info20/state.json": "b9b401ef8230be0eda5301abecc3c79ef802b4c19829d53b2c98f0a9b1007c50",
+    "runs/docking_live_campaign/suite_info20/sf_freedom_seed0_tyk2_info20/config.json": "d9c32cb06b45a9e0e296002afc993183eaccf057cee276b699aea23d85a64939",
+    "runs/docking_live_campaign/suite_info20/sf_freedom_seed0_tyk2_info20/summary.json": "f2705e7d311b2d5d7f77b58c2ce85c8035f66a6eb3b10fae051af1b4e802e566",
+    "runs/docking_live_campaign/suite_info20/sf_freedom_seed0_tyk2_info20/evaluation_live/summary.json": "1688c5ab61a8803dac438ba3b13486b643271c69183330606aff526737c63f4b",
+    "runs/docking_live_campaign/suite_info20/sf_freedom_seed0_tyk2_info20/evaluation_live/synfactor__all-valid__molecules.csv.gz": "fd04e0dcaf573ee842209e14bf74f1be92617396630b0dee81b9bd2c774e374b",
+    "runs/docking_live_campaign/suite_info20/sf_freedom_seed0_tyk2_info20/evaluation_live/synfactor__druglike-v1__molecules.csv.gz": "f0f9cc54df9f15b83929b47a4d009fdaaf03858e9c3b6385a0eec042cff6684b"
+  },
+  "script_sha256": "9006a6f02da1dca97e137f3c314bbdf1e3a99da1ec1599d6fd465485d56d8060",
+  "source_code_sha256": {
+    "live.py": "a6702129ec9f6ce1286cc823dd345e4572d5b0e651baff0ac4c49d372ce71ca0",
+    "factor_model.py": "e07d70bb48016a9befde43824db74456b6cf20b1d2e5322e87505f07c61de753",
+    "cartesian.py": "022a182dbb80fcb26e10df728d913e45dd1bab452ae7c2bac5b71409978fa098",
+    "information.py": "02e5bb1b15320477e1d93c873d034c6784216d159242d7fdd8b3d2dbd2903d81",
+    "fullspace.py": "21e9c7341ff52d3107001bd34b7cac6d8d1108ef8add6c5b59cb9d1ffb731acb",
+    "run.py": "67d1e6bd87d09c92bdff6f83f18a3196559db2b506683b1deed1a3ead99bc460"
+  },
+  "arm_inference": "Ordered batch positions from recorded exploit/information/random counts; normalized oracle order preserved",
+  "caveats": [
+    "Arm means are valid-only and selection-biased, not causal comparisons.",
+    "Information gains sum across changing fitted representations; not a single neural posterior.",
+    "Validation partitions and acquired-data distributions change between rounds.",
+    "Domain contributions use best-score canonical-molecule representatives from existing evaluation."
+  ],
+  "arms": {
+    "warm": {
+      "calls": 1000,
+      "valid": 997,
+      "valid_fraction": 0.997,
+      "mean_valid_score": -4.738267898655969,
+      "median_valid_score": -4.918,
+      "best_valid_score": -8.307,
+      "reactions": 24,
+      "dominant_reaction_fraction": 0.17,
+      "valid_queries_in_reactions_absent_in_warm": 0,
+      "best_score_in_reactions_absent_in_warm": null
+    },
+    "exploit": {
+      "calls": 6300,
+      "valid": 6281,
+      "valid_fraction": 0.996984126984127,
+      "mean_valid_score": -6.8935753064798595,
+      "median_valid_score": -7.042,
+      "best_valid_score": -11.11,
+      "reactions": 13,
+      "dominant_reaction_fraction": 0.6785714285714286,
+      "valid_queries_in_reactions_absent_in_warm": 0,
+      "best_score_in_reactions_absent_in_warm": null,
+      "mean_valid_prediction_optimism": 1.3521541712092395
+    },
+    "information": {
+      "calls": 1800,
+      "valid": 1793,
+      "valid_fraction": 0.9961111111111111,
+      "mean_valid_score": -6.447696218627998,
+      "median_valid_score": -6.627,
+      "best_valid_score": -10.3,
+      "reactions": 93,
+      "dominant_reaction_fraction": 0.4161111111111111,
+      "valid_queries_in_reactions_absent_in_warm": 184,
+      "best_score_in_reactions_absent_in_warm": -7.614,
+      "mean_valid_prediction_optimism": 1.3055599055269904
+    },
+    "random": {
+      "calls": 900,
+      "valid": 881,
+      "valid_fraction": 0.9788888888888889,
+      "mean_valid_score": -4.511286188762769,
+      "median_valid_score": -4.779,
+      "best_valid_score": -8.571,
+      "reactions": 23,
+      "dominant_reaction_fraction": 0.19444444444444445,
+      "valid_queries_in_reactions_absent_in_warm": 7,
+      "best_score_in_reactions_absent_in_warm": -6.516,
+      "mean_valid_prediction_optimism": 0.11496382279823121
+    }
+  },
+  "domains": {
+    "all-valid": {
+      "unique_molecules": 9952,
+      "arms": {
+        "warm": {
+          "unique_molecules": 997,
+          "fraction_of_charged_arm": 0.997,
+          "mean_score": -4.738267898655968,
+          "best_score": -8.307
+        },
+        "exploit": {
+          "unique_molecules": 6281,
+          "fraction_of_charged_arm": 0.996984126984127,
+          "mean_score": -6.8935753064798595,
+          "best_score": -11.11
+        },
+        "information": {
+          "unique_molecules": 1793,
+          "fraction_of_charged_arm": 0.9961111111111111,
+          "mean_score": -6.447696218627998,
+          "best_score": -10.3
+        },
+        "random": {
+          "unique_molecules": 881,
+          "fraction_of_charged_arm": 0.9788888888888889,
+          "mean_score": -4.511286188762769,
+          "best_score": -8.571
+        }
+      },
+      "top_contributions": {
+        "100": {
+          "requested": 100,
+          "available": 100,
+          "complete": true,
+          "by_arm": {
+            "warm": 0,
+            "exploit": 90,
+            "information": 10,
+            "random": 0
+          },
+          "molecules_from_reactions_absent_in_warm": 0
+        },
+        "1000": {
+          "requested": 1000,
+          "available": 1000,
+          "complete": true,
+          "by_arm": {
+            "warm": 5,
+            "exploit": 837,
+            "information": 156,
+            "random": 2
+          },
+          "molecules_from_reactions_absent_in_warm": 0
+        }
+      }
+    },
+    "druglike-v1": {
+      "unique_molecules": 614,
+      "arms": {
+        "warm": {
+          "unique_molecules": 238,
+          "fraction_of_charged_arm": 0.238,
+          "mean_score": -4.775152521008404,
+          "best_score": -8.305
+        },
+        "exploit": {
+          "unique_molecules": 92,
+          "fraction_of_charged_arm": 0.014603174603174604,
+          "mean_score": -5.764749999999999,
+          "best_score": -8.216
+        },
+        "information": {
+          "unique_molecules": 144,
+          "fraction_of_charged_arm": 0.08,
+          "mean_score": -5.351895833333334,
+          "best_score": -8.043
+        },
+        "random": {
+          "unique_molecules": 140,
+          "fraction_of_charged_arm": 0.15555555555555556,
+          "mean_score": -4.777047142857143,
+          "best_score": -7.859
+        }
+      },
+      "top_contributions": {
+        "100": {
+          "requested": 100,
+          "available": 100,
+          "complete": true,
+          "by_arm": {
+            "warm": 25,
+            "exploit": 32,
+            "information": 27,
+            "random": 16
+          },
+          "molecules_from_reactions_absent_in_warm": 6
+        },
+        "1000": {
+          "requested": 1000,
+          "available": 614,
+          "complete": false,
+          "by_arm": {
+            "warm": 238,
+            "exploit": 92,
+            "information": 144,
+            "random": 140
+          },
+          "molecules_from_reactions_absent_in_warm": 81
+        }
+      }
+    }
+  },
+  "druglike_first_failure_counts": {
+    "warm": {
+      "MolWt>500.0": 420,
+      "F>1": 78,
+      "amide>2": 72,
+      "RotB>10": 71,
+      "alert:michael_enone": 28,
+      "MolLogP_out[-10.0,5.0]": 25,
+      "TPSA>140.0": 24,
+      "FractionCSP3_out[0.1,0.8]": 17,
+      "alert:nitro": 14,
+      "AromaticRings_out[1,5]": 8,
+      "HBD>5": 1,
+      "alert:n_oxide": 1
+    },
+    "exploit": {
+      "MolWt>500.0": 5890,
+      "alert:nitro": 78,
+      "RotB>10": 75,
+      "TPSA>140.0": 59,
+      "MolLogP_out[-10.0,5.0]": 28,
+      "amide>2": 28,
+      "F>1": 20,
+      "FractionCSP3_out[0.1,0.8]": 8,
+      "HBA>10": 1,
+      "AromaticRings_out[1,5]": 1,
+      "alert:michael_enone": 1
+    },
+    "information": {
+      "MolWt>500.0": 1455,
+      "MolLogP_out[-10.0,5.0]": 52,
+      "amide>2": 30,
+      "F>1": 27,
+      "TPSA>140.0": 26,
+      "alert:nitro": 25,
+      "FractionCSP3_out[0.1,0.8]": 18,
+      "RotB>10": 13,
+      "alert:aldehyde": 1,
+      "AromaticRings_out[1,5]": 1,
+      "alert:n_oxide": 1
+    },
+    "random": {
+      "MolWt>500.0": 500,
+      "RotB>10": 61,
+      "F>1": 49,
+      "amide>2": 46,
+      "MolLogP_out[-10.0,5.0]": 21,
+      "FractionCSP3_out[0.1,0.8]": 20,
+      "TPSA>140.0": 17,
+      "alert:michael_enone": 10,
+      "AromaticRings_out[1,5]": 8,
+      "alert:nitro": 8,
+      "HBD>5": 1
+    }
+  },
+  "reaction_coverage": {
+    "warm": 24,
+    "final": 93,
+    "available": 123,
+    "first_new_reaction_discoveries_by_arm": {
+      "warm": 0,
+      "exploit": 0,
+      "information": 69,
+      "random": 0
+    },
+    "reactions_queried_only_by_information": 63
+  },
+  "information": {
+    "selected": 1800,
+    "total_gain_nats": 531.7401184074115,
+    "cold_reaction_selections": 69,
+    "cold_reaction_gain_nats": 470.50195360183716,
+    "cold_reaction_fraction_of_gain": 0.8848344093558602,
+    "cold_gain_scale_explanation": "An unseen one-hot column has RMS floor 0.001, implying prior feature variance 1e6 with precision 1. Its gain is approximately 0.5*log(1+1e6/noise_variance).",
+    "cold_gain_formula_max_absolute_error": 4.65705820573703e-07
+  },
+  "rounds": [
+    {
+      "iteration": 1,
+      "acquired_before": 1000,
+      "validation_nmse": 0.8862020111083985,
+      "selected_epoch": 2,
+      "training_epochs": 17,
+      "validation_count": 200,
+      "information_selected": 200,
+      "information_gain_nats": 215.5128510352224,
+      "information_noise_variance": 1.0373468509860615,
+      "reactions_before": 24,
+      "newly_queried_reactions": 29,
+      "reactions_after": 53,
+      "arms": {
+        "exploit": {
+          "calls": 700,
+          "valid": 697,
+          "valid_fraction": 0.9957142857142857,
+          "mean_valid_score": -6.420377905308464,
+          "best_valid_score": -9.519,
+          "reactions": 2,
+          "mean_valid_prediction": 9.59952918152556,
+          "mean_valid_prediction_optimism": 3.179151276217096
+        },
+        "information": {
+          "calls": 200,
+          "valid": 200,
+          "valid_fraction": 1.0,
+          "mean_valid_score": -5.8952271,
+          "best_valid_score": -8.429,
+          "reactions": 40,
+          "mean_valid_prediction": 8.085590770244599,
+          "mean_valid_prediction_optimism": 2.190363670244598
+        },
+        "random": {
+          "calls": 100,
+          "valid": 99,
+          "valid_fraction": 0.99,
+          "mean_valid_score": -4.262721212121212,
+          "best_valid_score": -7.769,
+          "reactions": 14,
+          "mean_valid_prediction": 4.83640617312807,
+          "mean_valid_prediction_optimism": 0.5736849610068582
+        }
+      }
+    },
+    {
+      "iteration": 2,
+      "acquired_before": 2000,
+      "validation_nmse": 0.7181068420410156,
+      "selected_epoch": 3,
+      "training_epochs": 18,
+      "validation_count": 400,
+      "information_selected": 200,
+      "information_gain_nats": 110.4430460203439,
+      "information_noise_variance": 1.176316628683256,
+      "reactions_before": 53,
+      "newly_queried_reactions": 14,
+      "reactions_after": 67,
+      "arms": {
+        "exploit": {
+          "calls": 700,
+          "valid": 694,
+          "valid_fraction": 0.9914285714285714,
+          "mean_valid_score": -5.196388040345822,
+          "best_valid_score": -9.331,
+          "reactions": 11,
+          "mean_valid_prediction": 8.39298515979426,
+          "mean_valid_prediction_optimism": 3.196597119448439
+        },
+        "information": {
+          "calls": 200,
+          "valid": 200,
+          "valid_fraction": 1.0,
+          "mean_valid_score": -5.054774,
+          "best_valid_score": -8.314,
+          "reactions": 49,
+          "mean_valid_prediction": 7.583087834119797,
+          "mean_valid_prediction_optimism": 2.528313834119797
+        },
+        "random": {
+          "calls": 100,
+          "valid": 96,
+          "valid_fraction": 0.96,
+          "mean_valid_score": -4.511673958333334,
+          "best_valid_score": -7.755,
+          "reactions": 14,
+          "mean_valid_prediction": 4.89983144402504,
+          "mean_valid_prediction_optimism": 0.3881574856917063
+        }
+      }
+    },
+    {
+      "iteration": 3,
+      "acquired_before": 3000,
+      "validation_nmse": 0.7924564615885417,
+      "selected_epoch": 2,
+      "training_epochs": 17,
+      "validation_count": 600,
+      "information_selected": 200,
+      "information_gain_nats": 39.93848250992596,
+      "information_noise_variance": 1.6259192001968839,
+      "reactions_before": 67,
+      "newly_queried_reactions": 5,
+      "reactions_after": 72,
+      "arms": {
+        "exploit": {
+          "calls": 700,
+          "valid": 696,
+          "valid_fraction": 0.9942857142857143,
+          "mean_valid_score": -6.770662212643678,
+          "best_valid_score": -10.61,
+          "reactions": 4,
+          "mean_valid_prediction": 7.937697787394469,
+          "mean_valid_prediction_optimism": 1.1670355747507906
+        },
+        "information": {
+          "calls": 200,
+          "valid": 199,
+          "valid_fraction": 0.995,
+          "mean_valid_score": -6.454768844221106,
+          "best_valid_score": -9.181,
+          "reactions": 24,
+          "mean_valid_prediction": 7.557767086891673,
+          "mean_valid_prediction_optimism": 1.1029982426705671
+        },
+        "random": {
+          "calls": 100,
+          "valid": 99,
+          "valid_fraction": 0.99,
+          "mean_valid_score": -4.670304343434343,
+          "best_valid_score": -7.839,
+          "reactions": 14,
+          "mean_valid_prediction": 4.473897849670564,
+          "mean_valid_prediction_optimism": -0.19640649376377917
+        }
+      }
+    },
+    {
+      "iteration": 4,
+      "acquired_before": 4000,
+      "validation_nmse": 0.7280694580078125,
+      "selected_epoch": 2,
+      "training_epochs": 17,
+      "validation_count": 800,
+      "information_selected": 200,
+      "information_gain_nats": 25.699076174292713,
+      "information_noise_variance": 1.5185973435425202,
+      "reactions_before": 72,
+      "newly_queried_reactions": 3,
+      "reactions_after": 75,
+      "arms": {
+        "exploit": {
+          "calls": 700,
+          "valid": 700,
+          "valid_fraction": 1.0,
+          "mean_valid_score": -6.801604285714285,
+          "best_valid_score": -9.799,
+          "reactions": 3,
+          "mean_valid_prediction": 7.827407564435687,
+          "mean_valid_prediction_optimism": 1.0258032787214006
+        },
+        "information": {
+          "calls": 200,
+          "valid": 199,
+          "valid_fraction": 0.995,
+          "mean_valid_score": -6.317321608040201,
+          "best_valid_score": -8.789,
+          "reactions": 26,
+          "mean_valid_prediction": 7.483204216214281,
+          "mean_valid_prediction_optimism": 1.1658826081740796
+        },
+        "random": {
+          "calls": 100,
+          "valid": 100,
+          "valid_fraction": 1.0,
+          "mean_valid_score": -4.959358,
+          "best_valid_score": -8.471,
+          "reactions": 14,
+          "mean_valid_prediction": 4.648881440162659,
+          "mean_valid_prediction_optimism": -0.31047655983734135
+        }
+      }
+    },
+    {
+      "iteration": 5,
+      "acquired_before": 5000,
+      "validation_nmse": 0.6690361938476562,
+      "selected_epoch": 2,
+      "training_epochs": 17,
+      "validation_count": 1000,
+      "information_selected": 200,
+      "information_gain_nats": 31.433502786327153,
+      "information_noise_variance": 1.3882254700717376,
+      "reactions_before": 75,
+      "newly_queried_reactions": 4,
+      "reactions_after": 79,
+      "arms": {
+        "exploit": {
+          "calls": 700,
+          "valid": 696,
+          "valid_fraction": 0.9942857142857143,
+          "mean_valid_score": -7.102781609195403,
+          "best_valid_score": -10.71,
+          "reactions": 5,
+          "mean_valid_prediction": 7.867427358682129,
+          "mean_valid_prediction_optimism": 0.7646457494867258
+        },
+        "information": {
+          "calls": 200,
+          "valid": 196,
+          "valid_fraction": 0.98,
+          "mean_valid_score": -6.404817346938776,
+          "best_valid_score": -10.17,
+          "reactions": 21,
+          "mean_valid_prediction": 7.6159504506052755,
+          "mean_valid_prediction_optimism": 1.2111331036665
+        },
+        "random": {
+          "calls": 100,
+          "valid": 95,
+          "valid_fraction": 0.95,
+          "mean_valid_score": -4.40564947368421,
+          "best_valid_score": -8.571,
+          "reactions": 14,
+          "mean_valid_prediction": 4.796134860892045,
+          "mean_valid_prediction_optimism": 0.3904853872078343
+        }
+      }
+    },
+    {
+      "iteration": 6,
+      "acquired_before": 6000,
+      "validation_nmse": 0.6519352722167969,
+      "selected_epoch": 2,
+      "training_epochs": 17,
+      "validation_count": 1200,
+      "information_selected": 200,
+      "information_gain_nats": 29.770194553304464,
+      "information_noise_variance": 1.4255766073667289,
+      "reactions_before": 79,
+      "newly_queried_reactions": 4,
+      "reactions_after": 83,
+      "arms": {
+        "exploit": {
+          "calls": 700,
+          "valid": 698,
+          "valid_fraction": 0.9971428571428571,
+          "mean_valid_score": -7.600942550143266,
+          "best_valid_score": -9.908,
+          "reactions": 4,
+          "mean_valid_prediction": 8.1740322768859,
+          "mean_valid_prediction_optimism": 0.5730897267426324
+        },
+        "information": {
+          "calls": 200,
+          "valid": 199,
+          "valid_fraction": 0.995,
+          "mean_valid_score": -7.293580904522614,
+          "best_valid_score": -9.39,
+          "reactions": 12,
+          "mean_valid_prediction": 7.9152800521658895,
+          "mean_valid_prediction_optimism": 0.6216991476432762
+        },
+        "random": {
+          "calls": 100,
+          "valid": 96,
+          "valid_fraction": 0.96,
+          "mean_valid_score": -4.390552107291666,
+          "best_valid_score": -7.471,
+          "reactions": 14,
+          "mean_valid_prediction": 4.538488335907459,
+          "mean_valid_prediction_optimism": 0.1479362286157926
+        }
+      }
+    },
+    {
+      "iteration": 7,
+      "acquired_before": 7000,
+      "validation_nmse": 0.6319693647112166,
+      "selected_epoch": 3,
+      "training_epochs": 18,
+      "validation_count": 1400,
+      "information_selected": 200,
+      "information_gain_nats": 31.913067696848884,
+      "information_noise_variance": 1.277029216547155,
+      "reactions_before": 83,
+      "newly_queried_reactions": 4,
+      "reactions_after": 87,
+      "arms": {
+        "exploit": {
+          "calls": 700,
+          "valid": 700,
+          "valid_fraction": 1.0,
+          "mean_valid_score": -7.309331428571428,
+          "best_valid_score": -10.83,
+          "reactions": 7,
+          "mean_valid_prediction": 8.101082808630807,
+          "mean_valid_prediction_optimism": 0.7917513800593784
+        },
+        "information": {
+          "calls": 200,
+          "valid": 200,
+          "valid_fraction": 1.0,
+          "mean_valid_score": -6.56814,
+          "best_valid_score": -9.528,
+          "reactions": 27,
+          "mean_valid_prediction": 7.738208312988281,
+          "mean_valid_prediction_optimism": 1.1700683129882812
+        },
+        "random": {
+          "calls": 100,
+          "valid": 100,
+          "valid_fraction": 1.0,
+          "mean_valid_score": -4.45742,
+          "best_valid_score": -7.542,
+          "reactions": 14,
+          "mean_valid_prediction": 4.319223659038544,
+          "mean_valid_prediction_optimism": -0.13819634096145625
+        }
+      }
+    },
+    {
+      "iteration": 8,
+      "acquired_before": 8000,
+      "validation_nmse": 0.5551993083953858,
+      "selected_epoch": 2,
+      "training_epochs": 17,
+      "validation_count": 1600,
+      "information_selected": 200,
+      "information_gain_nats": 17.261601597303525,
+      "information_noise_variance": 1.328054255685373,
+      "reactions_before": 87,
+      "newly_queried_reactions": 2,
+      "reactions_after": 89,
+      "arms": {
+        "exploit": {
+          "calls": 700,
+          "valid": 700,
+          "valid_fraction": 1.0,
+          "mean_valid_score": -7.326954285714287,
+          "best_valid_score": -11.11,
+          "reactions": 6,
+          "mean_valid_prediction": 8.129365122658866,
+          "mean_valid_prediction_optimism": 0.80241083694458
+        },
+        "information": {
+          "calls": 200,
+          "valid": 200,
+          "valid_fraction": 1.0,
+          "mean_valid_score": -6.785844999999999,
+          "best_valid_score": -9.547,
+          "reactions": 19,
+          "mean_valid_prediction": 7.892774655818939,
+          "mean_valid_prediction_optimism": 1.1069296558189392
+        },
+        "random": {
+          "calls": 100,
+          "valid": 97,
+          "valid_fraction": 0.97,
+          "mean_valid_score": -4.36870412371134,
+          "best_valid_score": -7.859,
+          "reactions": 13,
+          "mean_valid_prediction": 4.573444371370925,
+          "mean_valid_prediction_optimism": 0.2047402476595849
+        }
+      }
+    },
+    {
+      "iteration": 9,
+      "acquired_before": 9000,
+      "validation_nmse": 0.5733736589219836,
+      "selected_epoch": 2,
+      "training_epochs": 17,
+      "validation_count": 1800,
+      "information_selected": 200,
+      "information_gain_nats": 29.76829603384249,
+      "information_noise_variance": 1.2744192261210767,
+      "reactions_before": 89,
+      "newly_queried_reactions": 4,
+      "reactions_after": 93,
+      "arms": {
+        "exploit": {
+          "calls": 700,
+          "valid": 700,
+          "valid_fraction": 1.0,
+          "mean_valid_score": -7.499074285714287,
+          "best_valid_score": -10.04,
+          "reactions": 4,
+          "mean_valid_prediction": 8.184975472858975,
+          "mean_valid_prediction_optimism": 0.6859011871446882
+        },
+        "information": {
+          "calls": 200,
+          "valid": 200,
+          "valid_fraction": 1.0,
+          "mean_valid_score": -7.257546500000001,
+          "best_valid_score": -10.3,
+          "reactions": 17,
+          "mean_valid_prediction": 7.9031780397892,
+          "mean_valid_prediction_optimism": 0.6456315397891998
+        },
+        "random": {
+          "calls": 100,
+          "valid": 99,
+          "valid_fraction": 0.99,
+          "mean_valid_score": -4.560415151515151,
+          "best_valid_score": -7.362,
+          "reactions": 11,
+          "mean_valid_prediction": 4.564242801280937,
+          "mean_valid_prediction_optimism": 0.0038276497657852284
+        }
+      }
+    }
+  ]
+}

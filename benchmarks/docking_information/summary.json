@@ -1,0 +1,138 @@
+{
+  "completed_pairs": 6,
+  "planned_pairs": 6,
+  "complete": true,
+  "comparison": "fixed information20% arm vs frozen CP64+diversity.5 and fresh matched-budget GA-v0; no information hyperparameter tuning",
+  "interpretation": "conditional frozen-feature Gaussian information gain, not exact neural-network information gain",
+  "portfolio": "k100, Morgan2/2048, maxTc0.4, finite-score eligibility, canonical molecules",
+  "opdiv_time_limit_seconds": 30,
+  "paired_csv": "runs/docking_information/paired.csv",
+  "all_initial_ids_match_frozen": true,
+  "all_info_calls_10000": true,
+  "certified_info_opdiv_runs": 6,
+  "information_choices_per_run": [
+    1800,
+    1800,
+    1800,
+    1800,
+    1800,
+    1800
+  ],
+  "info_runtime_seconds": {
+    "mean": 5.831805197172798,
+    "min": 5.654683845990803,
+    "max": 6.022840536024887
+  },
+  "comparisons": {
+    "frozen": {
+      "top100_wins": 5,
+      "mean_top100_improvement": -0.014432118833333618,
+      "gpdiv_wins": 3,
+      "mean_gpdiv_delta": -0.012828880999999903,
+      "opdiv_proven_wins": 3,
+      "opdiv_proven_losses": 3,
+      "mean_opdiv_lower_delta": -0.01525871816666798
+    },
+    "ga0": {
+      "top100_wins": 3,
+      "mean_top100_improvement": 0.09309983533333217,
+      "gpdiv_wins": 6,
+      "mean_gpdiv_delta": 0.23433804349999945,
+      "opdiv_proven_wins": 6,
+      "opdiv_proven_losses": 0,
+      "mean_opdiv_lower_delta": 0.22097529383333248
+    }
+  },
+  "runs": [
+    {
+      "target": "kif11",
+      "seed": 0,
+      "info_raw_top100": -8.635993796,
+      "info_gpdiv": 8.040122061999998,
+      "info_opdiv_lower_bound": 8.070648005999999,
+      "info_opdiv_upper_bound": 8.07064800991904,
+      "info_opdiv_status": "optimal",
+      "info_opdiv_certified": true,
+      "info_calls": 10000,
+      "info_runtime_seconds": 6.022840536024887,
+      "info_information_gain_nats": 26.72399400640279,
+      "info_information_selected": 1800
+    },
+    {
+      "target": "kif11",
+      "seed": 1,
+      "info_raw_top100": -8.470352347,
+      "info_gpdiv": 7.88434898,
+      "info_opdiv_lower_bound": 7.927003164,
+      "info_opdiv_upper_bound": 7.927003167773624,
+      "info_opdiv_status": "optimal",
+      "info_opdiv_certified": true,
+      "info_calls": 10000,
+      "info_runtime_seconds": 5.817758320015855,
+      "info_information_gain_nats": 29.714081207639538,
+      "info_information_selected": 1800
+    },
+    {
+      "target": "pyrd",
+      "seed": 0,
+      "info_raw_top100": -11.112859649999997,
+      "info_gpdiv": 10.711413510000002,
+      "info_opdiv_lower_bound": 10.733823509999999,
+      "info_opdiv_upper_bound": 10.733823515072505,
+      "info_opdiv_status": "optimal",
+      "info_opdiv_certified": true,
+      "info_calls": 10000,
+      "info_runtime_seconds": 5.907648174965288,
+      "info_information_gain_nats": 29.481572393793613,
+      "info_information_selected": 1800
+    },
+    {
+      "target": "pyrd",
+      "seed": 1,
+      "info_raw_top100": -11.169950590000001,
+      "info_gpdiv": 10.679680289999999,
+      "info_opdiv_lower_bound": 10.72904176,
+      "info_opdiv_upper_bound": 10.729041765248716,
+      "info_opdiv_status": "optimal",
+      "info_opdiv_certified": true,
+      "info_calls": 10000,
+      "info_runtime_seconds": 5.853509828040842,
+      "info_information_gain_nats": 31.104745006887242,
+      "info_information_selected": 1800
+    },
+    {
+      "target": "tgfr1",
+      "seed": 0,
+      "info_raw_top100": -9.593641580000002,
+      "info_gpdiv": 9.254792861,
+      "info_opdiv_lower_bound": 9.289774497,
+      "info_opdiv_upper_bound": 9.289774501129994,
+      "info_opdiv_status": "optimal",
+      "info_opdiv_certified": true,
+      "info_calls": 10000,
+      "info_runtime_seconds": 5.734390477999114,
+      "info_information_gain_nats": 31.401365544181317,
+      "info_information_selected": 1800
+    },
+    {
+      "target": "tgfr1",
+      "seed": 1,
+      "info_raw_top100": -9.542616781,
+      "info_gpdiv": 9.22943807,
+      "info_opdiv_lower_bound": 9.263043435,
+      "info_opdiv_upper_bound": 9.263043439101523,
+      "info_opdiv_status": "optimal",
+      "info_opdiv_certified": true,
+      "info_calls": 10000,
+      "info_runtime_seconds": 5.654683845990803,
+      "info_information_gain_nats": 31.72792220301926,
+      "info_information_selected": 1800
+    }
+  ],
+  "information_total_gain_nats_per_run": {
+    "mean": 30.02561339365396,
+    "min": 26.72399400640279,
+    "max": 31.72792220301926
+  },
+  "decision": "Keep frozen CP acquisition as default; information20 is a tested optional heuristic, with no consistent gain over frozen CP in these six pairs."
+}
