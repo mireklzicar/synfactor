@@ -88,3 +88,29 @@ bounded candidate-generation helper, not an additional source of docking labels.
 It is not enabled in the two frozen pilot arms. On the warm-start model it
 generated about 76,000 routes from 1.6 million substitutions in under a second;
 any acquisition benefit still needs a separate experiment.
+
+Enable these proposals with `--fiber-anchors raw` or `--fiber-anchors gpdiv`.
+`--disagreement-count 0` gives the raw policy 1,000 greedy exploitation queries.
+`--chiral-xgb` is an independent optional predictor-feature variant; acquisition
+and portfolio evaluation still use the original nonchiral fingerprints.
+
+## Explicit explore-then-exploit development branch
+
+`tyk2_branch` can preserve a verified prefix of the portfolio policy and start a
+separate continuation. Inherited queries remain charged; no later parent labels
+are copied. This is a development branch, not an independent replicate.
+
+```bash
+python -m experiments.docking.tyk2_branch \
+  --parent runs/tyk2_portfolio_s0 --inherited-rounds 3 \
+  --out runs/tyk2_explore_exploit_s0
+python -m experiments.docking.tyk2_run \
+  --out runs/tyk2_explore_exploit_s0 --policy raw \
+  --fiber-anchors gpdiv --disagreement-count 0 --rounds 4
+```
+
+The example inherits 4,000 attempts and prepares one new 1,000-query batch.
+Only `--execute` submits it; continuing through `--rounds 9` reaches 10,000
+total attempts, including the inherited prefix. Lineage binds parent identity,
+query evidence and history hashes. Optional model settings must remain fixed
+through this continuation, and all branches should be disclosed in reporting.

@@ -1,4 +1,6 @@
 import copy
+from contextlib import redirect_stderr
+import io
 import json
 from pathlib import Path
 from types import SimpleNamespace
@@ -7,12 +9,53 @@ import unittest
 from unittest.mock import Mock, patch
 
 import numpy as np
-from rdkit import DataStructs
+from rdkit import Chem, DataStructs
+from rdkit.Chem import rdFingerprintGenerator
 
 from experiments.docking import tyk2_run as driver
 
 
 class Tyk2DriverTests(unittest.TestCase):
+    def test_variant_cli_defaults_and_portfolio_disagreement_guard(self):
+        with patch('sys.argv',['tyk2_run','--out','unused']),patch.object(driver,'run') as run, \
+             patch.object(driver.torch,'set_num_threads'):
+            driver.main()
+            args=run.call_args.args[0]
+            self.assertEqual(args.fiber_anchors,'none');self.assertFalse(args.chiral_xgb)
+            self.assertEqual(args.disagreement_count,100)
+        for extra in (['--policy','portfolio','--disagreement-count','0'],['--disagreement-count','1001']):
+            with patch('sys.argv',['tyk2_run','--out','unused',*extra]),patch.object(driver,'run') as run, \
+                 redirect_stderr(io.StringIO()),self.assertRaises(SystemExit):
+                driver.main()
+            run.assert_not_called()
+
+    def test_fiber_union_preserves_alignment_and_removes_observed_and_duplicate_routes(self):
+        pool=dict(product_ids=['old','base','overlap'],tuples=np.arange(9).reshape(3,3),
+            reaction_ids=np.array([0,1,2]),cp_scores=np.array([0.,1.,2.]),
+            cp_predictions=np.array([[0.],[1.],[2.]]),source=['global']*3,
+            parent_product_ids=[None]*3,diagnostics={'seconds':2.})
+        fibers=dict(product_ids=['overlap','new','new'],tuples=np.arange(9,18).reshape(3,3),
+            reaction_ids=np.array([3,4,5]),cp_scores=np.array([10.,11.,12.]),
+            source=['cp_observed_fiber']*3,parent_product_ids=['old']*3,
+            variable_slots=np.array([0,2,1]),diagnostics={'seconds':1.})
+        merged=driver.append_fiber_pool(pool,fibers,[{'product_id':'old'}])
+        self.assertEqual(merged['product_ids'],['base','overlap','new'])
+        np.testing.assert_array_equal(merged['cp_scores'],[1.,2.,11.])
+        np.testing.assert_array_equal(merged['cp_predictions'],[[1.],[2.],[11.]])
+        np.testing.assert_array_equal(merged['tuples'][-1],[12,13,14])
+        np.testing.assert_array_equal(merged['reaction_ids'],[1,2,4])
+        np.testing.assert_array_equal(merged['variable_slots'],[-1,-1,2])
+        self.assertEqual(merged['parent_product_ids'],[None,None,'old'])
+        self.assertEqual(merged['diagnostics']['fiber_added'],1)
+
+    def test_chiral_features_distinguish_enantiomers_without_changing_nonchiral_contract(self):
+        smiles=['F[C@](Cl)(Br)I','F[C@@](Cl)(Br)I']
+        chiral=driver.chiral_product_matrix(smiles)
+        generator=rdFingerprintGenerator.GetMorganGenerator(radius=2,fpSize=2048,includeChirality=False)
+        nonchiral=driver.fp_matrix([generator.GetFingerprint(Chem.MolFromSmiles(s)) for s in smiles])
+        self.assertFalse(np.array_equal(chiral[0],chiral[1]))
+        np.testing.assert_array_equal(nonchiral[0],nonchiral[1])
+
     def test_cached_proposal_cannot_drop_structure_binding_or_repeat_molecules(self):
         ids=[f'p{i}' for i in range(1000)]
         proposal=dict(target='tyk2',seed=0,run_id='run',batch_id='batch_01',product_ids=ids,
@@ -43,8 +86,11 @@ class Tyk2DriverTests(unittest.TestCase):
             def fit(self,rows,rids,y,**kwargs):fitted['cp']=y.copy();return {}
         class XGB:
             def __init__(self,*args,**kwargs):self.model=SimpleNamespace(save_model=lambda path:None)
-            def fit_features(self,features,y,**kwargs):fitted['xgb']=y.copy();return {}
-            def predict_features(self,features):return np.arange(len(features),0,-1,dtype=float)
+            def fit_features(self,features,y,**kwargs):
+                fitted['xgb']=y.copy();fitted.setdefault('fit_features',[]).append(features.copy());return {}
+            def predict_features(self,features):
+                fitted.setdefault('prediction_features',[]).append(features.copy())
+                return np.arange(len(features),0,-1,dtype=float)
         class Assembly:
             last_stats={}
             def assemble(self,ids):
@@ -59,7 +105,8 @@ class Tyk2DriverTests(unittest.TestCase):
         space=SimpleNamespace(features=np.zeros((1,1)),reactions=['r'],
                               decode=lambda ids:(np.zeros((len(ids),3),int),np.zeros(len(ids),int)))
         pool=dict(product_ids=[f'p{i}' for i in range(2005)],cp_scores=np.arange(2005,dtype=float),
-                  source=['global_cp_0']*2005,diagnostics={})
+                  source=['global_cp_0']*2005,diagnostics={},tuples=np.zeros((2005,3),int),
+                  reaction_ids=np.zeros(2005,int))
         config=dict(seed=0,tail_weight=1,weight_cp=False,policy='raw',global_k=2005,
                     local_hits=0,local_per_hit=0,random_pool_count=0)
         with tempfile.TemporaryDirectory() as tmp, \
@@ -71,6 +118,32 @@ class Tyk2DriverTests(unittest.TestCase):
             portfolio_dir=Path(tmp)/'portfolio';portfolio_dir.mkdir()
             portfolio_ids,_,portfolio_diagnostics=driver.prepare_round(
                 space,Assembly(),history,{**config,'policy':'portfolio'},1,portfolio_dir)
+            variant_dir=Path(tmp)/'variant';variant_dir.mkdir()
+            fibers=dict(product_ids=['p2005','p1','w0'],tuples=np.zeros((3,3),int),
+                reaction_ids=np.zeros(3,int),cp_scores=np.array([-1.,10000.,20000.]),
+                source=['cp_observed_fiber']*3,parent_product_ids=['w1']*3,
+                variable_slots=np.array([0,1,2]),diagnostics={})
+            def chiral_features(smiles):
+                values=np.zeros((len(smiles),2048),np.uint8);values[:,-1]=1;return values
+            with patch.object(driver,'cp_fiber_candidates',return_value=fibers) as fiber_call, \
+                 patch.object(driver,'chiral_product_matrix',side_effect=chiral_features) as chiral_call, \
+                 patch.object(driver,'select_batch',wraps=driver.select_batch) as selector:
+                variant_ids,_,variant_diagnostics=driver.prepare_round(space,Assembly(),history,
+                    {**config,'fiber_anchors':'gpdiv','chiral_xgb':True,'disagreement_count':0},1,variant_dir)
+                self.assertIs(fiber_call.call_args.args[2],history)
+                observed_fps=fiber_call.call_args.kwargs['observed_fingerprints']
+                self.assertEqual(len(observed_fps),13);self.assertIsNone(observed_fps[-1])
+                self.assertEqual(list(observed_fps[0].GetOnBits()),[0])
+                self.assertEqual(chiral_call.call_args_list[0].args[0],[f'w{i}' for i in range(11,-1,-1)])
+                self.assertEqual(chiral_call.call_args_list[1].args[0][:2],['p1','p2'])
+                self.assertTrue(all(not fp.GetBit(2047) for fp in selector.call_args.kwargs['product_fingerprints']))
+                self.assertEqual(selector.call_args.kwargs['n_exploit'],1000)
+                self.assertEqual(selector.call_args.kwargs['n_disagreement'],0)
+                import pandas as pd
+                merged=pd.read_csv(variant_dir/'candidate_pool.csv.gz').set_index('product_id')
+                self.assertEqual(merged.loc['p2005','cp'],-1.)
+                self.assertEqual(merged.loc['p2005','candidate_parent_product_id'],'w1')
+                self.assertEqual(merged.loc['p2005','candidate_variable_slot'],0)
         np.testing.assert_array_equal(fitted['cp'],np.arange(12,0,-1))
         np.testing.assert_array_equal(fitted['xgb'],fitted['cp'])
         self.assertIs(builder.call_args.args[2],history)
@@ -80,6 +153,13 @@ class Tyk2DriverTests(unittest.TestCase):
         self.assertEqual(len(ids),1000)
         self.assertEqual(diagnostics['selection']['counts'],{'exploit':900,'rank_disagreement':100})
         self.assertEqual(diagnostics['train_count'],12)
+        self.assertFalse(diagnostics['chiral_xgb']);self.assertEqual(diagnostics['fiber_anchors'],'none')
+        self.assertFalse(fitted['fit_features'][0][:,-1].any())
+        self.assertTrue(fitted['fit_features'][-1][:,-1].all())
+        self.assertTrue(fitted['prediction_features'][-1][:,-1].all())
+        self.assertEqual(variant_diagnostics['selection']['counts'],{'exploit':1000})
+        self.assertEqual(len(variant_ids),1000)
+        self.assertNotIn('w0',variant_ids)
         self.assertEqual(len(portfolio_diagnostics['selection']['groups']),9)
         self.assertEqual(len(portfolio_ids),1000)
         # One-hot true-product fingerprints produce100 distinct families per
@@ -129,6 +209,10 @@ class Tyk2DriverTests(unittest.TestCase):
             self.assertEqual(len({r['product_id'] for r in state['history']}),3000)
             self.assertEqual(state['rounds'][-1]['calls'],3000)
             self.assertFalse((args.out/'CELL_DONE').exists())
+            config=json.loads((args.out/'config.json').read_text())
+            self.assertEqual(config['fiber_anchors'],'none');self.assertFalse(config['chiral_xgb'])
+            self.assertEqual(config['disagreement_count'],100)
+            self.assertIn('tyk2_fibers.py',config['code_sha256'])
 
 
 if __name__=='__main__':unittest.main()
