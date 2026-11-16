@@ -14,6 +14,12 @@ nonredundant batch selection under a frozen-feature uncertainty approximation.
 The [full Freedom / Dock-12 integration](LIVE.md) streams Cartesian GPU scoring
 and connects selected routes to the existing live Glide oracle.
 
+The newer [TYK2 two-model experiment](TYK2.md) trains CP64 and full-product
+Morgan XGBoost independently on the same observed docking labels. It separates
+raw-score exploitation from diverse-portfolio acquisition, without a druglike
+filter. See the [literature notes](MODEL_OPTIMIZATION_READING.md) for surrogate
+overoptimization, information acquisition and training-distribution adaptation.
+
 ## Selected method
 
 - Capped-synthon Morgan count features (512 bins) and four RDKit descriptors.
