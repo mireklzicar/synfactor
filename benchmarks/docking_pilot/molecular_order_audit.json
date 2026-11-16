@@ -1,0 +1,26 @@
+{
+  "10M_ga_dcso_rdk_v12": {
+    "duplicate_molecules": 984,
+    "different_score_duplicate_molecules": 0,
+    "max_score_span": 0,
+    "archive_ids_sorted": true
+  },
+  "10M_ga_dcso": {
+    "duplicate_molecules": 589,
+    "different_score_duplicate_molecules": 0,
+    "max_score_span": 0,
+    "archive_ids_sorted": true
+  },
+  "100M_ga_dcso_rdk_v12": {
+    "duplicate_molecules": 43,
+    "different_score_duplicate_molecules": 0,
+    "max_score_span": 0,
+    "archive_ids_sorted": true
+  },
+  "100M_ga_dcso": {
+    "duplicate_molecules": 0,
+    "different_score_duplicate_molecules": 0,
+    "max_score_span": 0,
+    "archive_ids_sorted": true
+  }
+}

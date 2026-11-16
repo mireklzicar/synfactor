@@ -1,0 +1,9 @@
+{
+  "reason": "Two warm-start queries (calls48 and921) used later-row product-ID alias scores rather than first-row native .sidx oracle. Entire search must be rerun.",
+  "invalid_for_comparison": true,
+  "replacement_policy": "first source row per product ID",
+  "identified_calls": [
+    48,
+    921
+  ]
+}

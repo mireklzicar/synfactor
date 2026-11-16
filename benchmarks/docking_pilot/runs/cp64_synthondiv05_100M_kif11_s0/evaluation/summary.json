@@ -1,0 +1,103 @@
+{
+  "target": "kif11",
+  "score_table": "/home/mirekl/SynthonBench_ICML/hf_synthonbench_dataset/scores/surrogate_100M.parquet",
+  "score_kind": "frozen_docking_surrogate",
+  "raw_score_column": "kif11_predicted_dock_score",
+  "table_rows": 99851700,
+  "observed_source": "/home/mirekl/DeepMedChem_Papers/synfactor/runs/docking_pilot/cp64_synthondiv05_100M_kif11_s0/observed.csv",
+  "observed_sha256": "abd3edeee3b4337f698a6e49d5c4c3fdbee0058d4590b817336aa57f649f6a93",
+  "archive": {
+    "submitted_calls": 10000,
+    "input_rows": 10000,
+    "unique_observed_ids": 10000
+  },
+  "scores": {
+    "matched_ids": 10000,
+    "finite_raw_scores": 10000,
+    "nonfinite_raw_scores": 0,
+    "route_raw_top1_mean": -8.745435,
+    "route_raw_top1_count": 1,
+    "route_raw_top10_mean": -8.657721200000001,
+    "route_raw_top10_count": 10,
+    "route_raw_top100_mean": -8.471081309999999,
+    "route_raw_top100_count": 100,
+    "route_raw_top1000_mean": -8.174434603,
+    "route_raw_top1000_count": 1000,
+    "global_raw_top100_hits": 58,
+    "global_raw_top100_recall": 0.58,
+    "global_raw_top100_dcrf": 5791.3985999999995,
+    "global_raw_top1000_hits": 446,
+    "global_raw_top1000_recall": 0.446,
+    "global_raw_top1000_dcrf": 4453.38582,
+    "molecular_raw_top1_mean": -8.745435,
+    "molecular_raw_top1_count": 1,
+    "molecular_raw_top10_mean": -8.657721200000001,
+    "molecular_raw_top10_count": 10,
+    "molecular_raw_top100_mean": -8.471081309999999,
+    "molecular_raw_top100_count": 100,
+    "molecular_raw_top1000_mean": -8.174434603,
+    "molecular_raw_top1000_count": 1000
+  },
+  "identity": {
+    "invalid_smiles_excluded": 0,
+    "duplicate_molecules_excluded": 0,
+    "eligibility_excluded": 0,
+    "unique_eligible_molecules": 10000
+  },
+  "product_id_identity": {
+    "policy": "first source row, matching released .sidx",
+    "duplicate_queried_ids": 3,
+    "excluded_alias_rows": 3,
+    "indexed_oracle_verified": true
+  },
+  "portfolio_eligibility": "finite",
+  "fingerprint": {
+    "type": "Morgan",
+    "radius": 2,
+    "n_bits": 2048,
+    "chirality": false
+  },
+  "portfolio_utility": "negative frozen docking-surrogate score; higher is better",
+  "duplicates": "canonical isomeric molecule; first representative in supplied ID order retained (historical JSON archives are sorted sets, not query order)",
+  "ties": "raw score then product_id; equality to similarity ceiling is allowed",
+  "reference_tail": {
+    "indexed_oracle_verified": true,
+    "manifest": "/home/mirekl/SynthonBench_ICML/hf_synthonbench_dataset/scores/surrogate_100M.parquet.topk/manifest.json",
+    "manifest_sha256": "3dc75572d2544b04e62811f222c89ad1928fc5bbd8edb8f2fd0e297703227770",
+    "path": "/home/mirekl/SynthonBench_ICML/hf_synthonbench_dataset/scores/surrogate_100M.parquet.topk/topk__kif11_predicted_dock_score__minimize.csv.gz",
+    "reference_rows": 1000,
+    "tie_policy": "released sidecar order: score then product_id",
+    "prefix_sha256": "7018f25c3fc6889142d23ff9619fed2cd5f07aa3026e8816a476791d4abcd4d7"
+  },
+  "loading": {
+    "membership_filter": "pyarrow.dataset product_id.isin(queried_ids)",
+    "use_threads": false,
+    "batch_size": 200000,
+    "pre_buffer": false,
+    "batch_readahead": 0,
+    "fragment_readahead": 0,
+    "materialized_queried_rows": 10000
+  },
+  "time_limit_scope": "seconds per CP-SAT solve; graph/model construction excluded",
+  "opdiv_version": "0.1.0",
+  "peak_rss_mib": 1650.546875,
+  "wall_seconds": 15.219604732003063,
+  "portfolios": [
+    {
+      "metric": "GPDiv",
+      "k": 100,
+      "max_similarity": 0.4,
+      "candidate_count": 10000,
+      "status": "feasible",
+      "selected_count": 100,
+      "value": 7.4394009,
+      "metric_value": 7.4394009,
+      "feasible_lower_bound": 7.4394009,
+      "value_is_certified_opdiv": false,
+      "upper_bound": 8.47108131,
+      "gap": 1.0316804100000008,
+      "wall_seconds": 0.3187309490167536
+    }
+  ],
+  "fingerprint_graph_seconds": 4.575030450010672
+}

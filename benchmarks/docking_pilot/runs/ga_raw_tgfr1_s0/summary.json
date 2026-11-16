@@ -1,0 +1,89 @@
+{
+  "method": "ga_dcso",
+  "implementation": "synthon_bench_internal.baselines.ga_dcso.GADCSO",
+  "target": "tgfr1",
+  "scale": "1M",
+  "kind": "glide",
+  "seed": 0,
+  "objective_column": "tgfr1_glide_raw",
+  "objective_direction": "minimize",
+  "utility": "negative raw score",
+  "budget": 10000,
+  "submitted_calls": 10000,
+  "unique_queried_products": 10000,
+  "duplicate_attempts": 0,
+  "best_utility": 10.432096,
+  "best_raw_score": -10.432096,
+  "setup_seconds": 0.4181924290023744,
+  "run_seconds": 11.84761278697988,
+  "nonfinite_oracle_values_replaced": 924,
+  "nonfinite_raw_score_policy": 0.0,
+  "eligibility": "no chemistry or docking-success prefilter; all allowed reaction tuples",
+  "oracle_access": "unique charged query via unchanged public GlobalSynthonTask/run_optimizer",
+  "batch_sizes": [
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000
+  ],
+  "diagnostics": {
+    "optimizer": "ga_dcso",
+    "algorithm": "ga_dcso",
+    "version": "v0",
+    "iterations_planned": 10,
+    "iterations_started": 10,
+    "candidate_pool_size": 2048,
+    "surrogate_fit_count": 9,
+    "surrogate": "extra_trees",
+    "ranked_pool_count": 18432,
+    "random_backfill_count": 399,
+    "n_observed": 10000,
+    "ga_population_size": 96
+  },
+  "source": {
+    "repository": "/home/mirekl/SynthonBench_ICML/synthon_bench_internal",
+    "commit": "0d7d28b6382135a7f37afe09d8f1ce6cfc721a1c",
+    "loaded_source_sha256": {
+      "/home/mirekl/SynthonBench_ICML/synthon_bench_internal/archived/src/synthon_bench_internal/baselines/ga_dcso.py": "eed3530e07ccf4598855a599caab1d9320746906de7fc32ae4cd3795eb43ec0b",
+      "/home/mirekl/SynthonBench_ICML/synthon_bench_internal/archived/src/synthon_bench_internal/baselines/features.py": "4f876362af481521f5b874972da2d52c1f447bed5d5d3e6de4243da46243f1e9",
+      "/home/mirekl/SynthonBench_ICML/synthon_bench_internal/archived/src/synthon_bench_internal/bigscale.py": "4336f404c5aed2410fffebf4ee8eb983270be192a9ef8632c192de41d8e3c51c"
+    }
+  },
+  "public_harness": {
+    "repository": "/home/mirekl/SynthonBench_ICML/synthonbench",
+    "commit": "24de45c0bbcac360868e03f3e6fb86eceef94afc",
+    "loaded_source_sha256": {
+      "/home/mirekl/SynthonBench_ICML/synthonbench/src/synthonbench/ids.py": "d24576a0e518efc9344bc627a31ea829437b9b59cc52611f4cbc7d0139fa42ca",
+      "/home/mirekl/SynthonBench_ICML/synthonbench/src/synthonbench/space.py": "7046627c5e6b0cd80de4071e8484f5229f4df9864db7215c3d9a100518b0ee3c",
+      "/home/mirekl/SynthonBench_ICML/synthonbench/src/synthonbench/task.py": "63e7adead10629fdbdece2d139331d0b21125b35bd88ca1bdc65152bba6074b8",
+      "/home/mirekl/SynthonBench_ICML/synthonbench/src/synthonbench/runner.py": "eb2156605fc41a9ab35ab3c7dc7dc476d37cdd736680f4fc9930181a59a642ef"
+    }
+  },
+  "versions": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.9.1"
+  },
+  "score_table": "/home/mirekl/SynthonBench_ICML/hf_synthonbench_dataset/scores/glide_1M.parquet",
+  "score_index_manifest": {
+    "key_hash": "hex product_id parsed as 128-bit key; otherwise blake2b-128(product_id utf-8)",
+    "n_rows": 990610,
+    "product_id_column": "product_id",
+    "score_columns": [
+      "kif11_glide_le",
+      "pyrd_glide_le",
+      "tgfr1_glide_le",
+      "kif11_glide_raw",
+      "pyrd_glide_raw",
+      "tgfr1_glide_raw"
+    ],
+    "source_table": "hf_synthonbench_dataset/scores/glide_1M.parquet",
+    "version": 1
+  }
+}

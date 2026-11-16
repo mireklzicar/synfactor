@@ -32,6 +32,14 @@ convolution control; native SpaceProp was unavailable without a license.
 See the [pilot results](benchmarks/comparison_pilot/README.md) for the separate
 dataset, limitations and reproducible commands.
 
+A [budgeted docking-search pilot](benchmarks/docking_pilot/README.md) uses the
+same factorization idea for iterative optimization: fit on queried docking
+scores, score the space, and acquire the next batch. On Freedom 1M, CP64 with a
+soft diversity penalty improved certified OPDiv100 over GA-DCSO v0 in all six
+target/seed runs at a 10,000-query budget. This is an initial benchmark, with
+separate stronger-baseline and 10M/100M surrogate-scale comparisons;
+[code and protocol](experiments/docking/README.md) include the limitations.
+
 For research discussions about factorized representations, scientific search, or evaluation, contact [Miroslav Lžičař](mailto:lzicar2000@gmail.com). For reproducibility questions and bug reports, please [open an issue](https://github.com/mireklzicar/synfactor/issues).
 
 ## Quick start

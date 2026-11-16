@@ -4,5 +4,8 @@ __pycache__/
 .ruff_cache/
 *.pyc
 runs/
+# Selected, compressed benchmark traces and metadata are published artifacts.
+!benchmarks/docking_pilot/runs/
+!benchmarks/docking_pilot/runs/**
 models/
 .DS_Store

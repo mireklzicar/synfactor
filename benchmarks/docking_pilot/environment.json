@@ -1,0 +1,23 @@
+{
+  "training": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.14.1",
+    "pyarrow": "18.1.0",
+    "torch": "2.9.0",
+    "rdkit": "2025.9.1",
+    "lightgbm": "4.6.0",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.9.4"
+  },
+  "evaluation": {
+    "numpy": "2.4.6",
+    "pandas": "3.1.1",
+    "pyarrow": "26.0.1",
+    "rdkit": "2026.9.2",
+    "ortools": "9.15.6755",
+    "opdiv": "0.1.0"
+  },
+  "opdiv_commit": "cc3e70050d25ab6dd07b5fe55a56d2cb7fcb73f1",
+  "hardware": "NVIDIA GeForce RTX 4090 24GB; local CPU"
+}

@@ -1,0 +1,18 @@
+{
+  "frozen_utc": "2026-11-16T02:56:37.444213+00:00",
+  "development_cell": "kif11 seed0, 1M measured Glide",
+  "selected": "CP64+additive, diversity0.5, exploration0.1,180epochs,no reranker,no ensemble, Morgan512+descriptors synthon features",
+  "confirmation_cells": [
+    "kif11 seed0 (development recheck)",
+    "kif11 seed1",
+    "pyrd seed0",
+    "pyrd seed1",
+    "tgfr1 seed0",
+    "tgfr1 seed1"
+  ],
+  "warmstart": "exact native GA1000-query start; alias-resolved product IDs",
+  "code_sha256": {
+    "experiments/docking/run.py": "c362865bfb9c3a324c1c3e806379b6cc1749ee368dbce189987a27ccaf4e63a7",
+    "experiments/docking/factor_model.py": "4485b7f19bc93eb21e750eedbec3bc6cbd382afeaffb56c40d387bc5123f5588"
+  }
+}

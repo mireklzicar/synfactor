@@ -1,0 +1,7 @@
+# Optional research integration, in addition to ../../requirements.txt.
+pyarrow==18.1.0
+scikit-learn==1.9.1
+lightgbm==4.6.0
+matplotlib==3.9.4
+# Native GA-DCSO v12 additionally requires a CUDA-capable XGBoost installation.
+xgboost==3.2.0

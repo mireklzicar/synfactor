@@ -1,0 +1,3 @@
+metric,k,max_similarity,candidate_count,status,selected_count,value,metric_value,feasible_lower_bound,value_is_certified_opdiv,upper_bound,gap,wall_seconds
+GPDiv,100,0.4,9076,feasible,100,8.85364693,8.85364693,8.85364693,False,9.324081095999999,0.47043416599999865,0.33132469502743334
+OPDiv,100,0.4,9076,optimal,100,8.889591697,8.889591697,8.889591697,True,8.889591701018071,4.018071209088703e-09,3.4837868180475198

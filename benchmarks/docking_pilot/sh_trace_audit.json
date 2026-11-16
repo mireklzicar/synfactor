@@ -1,0 +1,50 @@
+[
+  {
+    "target": "kif11",
+    "method": "spacehasten_iterative",
+    "allocator": "product_weighted",
+    "budget": 10000,
+    "queried_count": 10000,
+    "unique_queried_count": 10000,
+    "csv_rows": 10000,
+    "unique_ids": 10000,
+    "min_call": 1,
+    "max_call": 10000,
+    "contiguous_call_index": true,
+    "runtime_seconds": 79.32697461199132,
+    "duplicates_reported": 0,
+    "source": "/home/mirekl/SynthonBench_ICML/synthon_bench_diversity/results/mvp_all_scales/glide1m/runs/utility/spacehasten_iterative/seed_0/diversity_glide1m_kif11_utility/spacehasten_iterative_product_weighted/seed_0"
+  },
+  {
+    "target": "pyrd",
+    "method": "spacehasten_iterative",
+    "allocator": "product_weighted",
+    "budget": 10000,
+    "queried_count": 10000,
+    "unique_queried_count": 10000,
+    "csv_rows": 10000,
+    "unique_ids": 10000,
+    "min_call": 1,
+    "max_call": 10000,
+    "contiguous_call_index": true,
+    "runtime_seconds": 72.82528943399666,
+    "duplicates_reported": 0,
+    "source": "/home/mirekl/SynthonBench_ICML/synthon_bench_diversity/results/mvp_all_scales/glide1m/runs/utility/spacehasten_iterative/seed_0/diversity_glide1m_pyrd_utility/spacehasten_iterative_product_weighted/seed_0"
+  },
+  {
+    "target": "tgfr1",
+    "method": "spacehasten_iterative",
+    "allocator": "product_weighted",
+    "budget": 10000,
+    "queried_count": 10000,
+    "unique_queried_count": 10000,
+    "csv_rows": 10000,
+    "unique_ids": 10000,
+    "min_call": 1,
+    "max_call": 10000,
+    "contiguous_call_index": true,
+    "runtime_seconds": 70.17136483400827,
+    "duplicates_reported": 0,
+    "source": "/home/mirekl/SynthonBench_ICML/synthon_bench_diversity/results/mvp_all_scales/glide1m/runs/utility/spacehasten_iterative/seed_0/diversity_glide1m_tgfr1_utility/spacehasten_iterative_product_weighted/seed_0"
+  }
+]

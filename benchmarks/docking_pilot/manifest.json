@@ -1,0 +1,88 @@
+{
+  "query_archives": [
+    {
+      "run": "cp64_div05_kif11_s0",
+      "observed_sha256": "c4ef0fe2431a30b7fa75576dab1eac6d9d137b9b62c7dfab8fc4be604f0bd100"
+    },
+    {
+      "run": "ga_raw_kif11_s0",
+      "observed_sha256": "10f1ce75a88f4c3b6a2af3a044f1facd4c6b5e64f69bbd9f617825d3572a9cbd"
+    },
+    {
+      "run": "cp64_div05_kif11_s1",
+      "observed_sha256": "76b2f92fd88b7fb5d691839f8dd16f8400b078c2e781815fa6f2386d6970e337"
+    },
+    {
+      "run": "ga_raw_kif11_s1",
+      "observed_sha256": "9306a07ae4ce443e286240786d9391f5ea8be6c8770e30cd6729021237bfd257"
+    },
+    {
+      "run": "cp64_div05_pyrd_s0",
+      "observed_sha256": "2395c6b194ec56961a7cbc50de59b726e62b73c65b37554d677101a974a44a33"
+    },
+    {
+      "run": "ga_raw_pyrd_s0",
+      "observed_sha256": "ca72f267fb052899e3c57e57d6ecef51a4ec731fa07187cc3f4acfcbd8d352aa"
+    },
+    {
+      "run": "cp64_div05_pyrd_s1",
+      "observed_sha256": "30b1816587f173edd84b6fa24e66244c5cce1343b7272eee63bec7febe59c03f"
+    },
+    {
+      "run": "ga_raw_pyrd_s1",
+      "observed_sha256": "a50a0faa84dce271463eec5d386bbe7f21c3dc522dc7c4e90a81bba5c7b5b6e5"
+    },
+    {
+      "run": "cp64_div05_tgfr1_s0",
+      "observed_sha256": "6a22c6412dadbaa903e3098125bc937991396f4ebe9d8d19d1cae18274dcce1e"
+    },
+    {
+      "run": "ga_raw_tgfr1_s0",
+      "observed_sha256": "864202c188796f84f81fbc1ef88b9914c36bf9250b6d778cf0a36753bdc8468c"
+    },
+    {
+      "run": "cp64_div05_tgfr1_s1",
+      "observed_sha256": "e33efd7860a792aac6babb17fb77659422b78339afbde73c021af70ab808dffa"
+    },
+    {
+      "run": "ga_raw_tgfr1_s1",
+      "observed_sha256": "4ed52d1efa1bdaf817f3d8a15c7d7006996e3a4d066f7408959804e1c7287011"
+    },
+    {
+      "run": "ga12_raw_kif11_s0",
+      "observed_sha256": "fdab913fc62d0c317810b3de4d65ca4b30be0e13e823137f049a4df680946766"
+    },
+    {
+      "run": "sh_raw_kif11_s0",
+      "observed_sha256": "dd053b32714f6a0a4a386d322d081d6227c73b66d91bdc77ed73156c94793e8c"
+    },
+    {
+      "run": "cp64_10M_kif11_s0",
+      "observed_sha256": "2fb071f099ff78fd101d9927d8d968f2bfb1a8e847edc05d4f1375d442c76c02"
+    },
+    {
+      "run": "cp64_div05_10M_kif11_s0",
+      "observed_sha256": "a59a79cdbe0ad86eb574149aa8daa613e2ea156851da837d075be61dc64ea603"
+    },
+    {
+      "run": "cp64_100M_kif11_s0_unique",
+      "observed_sha256": "6f9802428539f5ef08c9c95bcf4aa969d6216bcf93e96f5b9a335003b82d094a"
+    },
+    {
+      "run": "cp64_synthondiv05_100M_kif11_s0",
+      "observed_sha256": "abd3edeee3b4337f698a6e49d5c4c3fdbee0058d4590b817336aa57f649f6a93"
+    }
+  ],
+  "source_sha256": {
+    "experiments/docking/__init__.py": "e16b2dee6113fafb8e95c03df3176046ca2d9e8bf87deb07d3cfd43766054e7a",
+    "experiments/docking/baseline_run.py": "e9ea6227e41acb3839b7931293720dead4b385ab7a84057971f915405d3179a4",
+    "experiments/docking/evaluate.py": "603a77a50106a6848acdc2881cbfb0ba30074bb426c6317a08d61781c6ba52ce",
+    "experiments/docking/factor_model.py": "4485b7f19bc93eb21e750eedbec3bc6cbd382afeaffb56c40d387bc5123f5588",
+    "experiments/docking/large_evaluate.py": "68aac2162e528281dfc31fdcef97159b34e57c8cbf1afa5c5eb2f0391dc88529",
+    "experiments/docking/prepare.py": "ebd7b0e75f1663478e38810e3a05176a0d8538d4443d7da7608d4d0e6839aa92",
+    "experiments/docking/report.py": "79252f2c775e44ffa34777407bbe9a309ba8caf5288330b0ee690ca5aee097d7",
+    "experiments/docking/run.py": "df1c1e244f2984a7f122cacf6be07bd0b0eb971318a6bc33bb128de5d54f2e8f",
+    "experiments/docking/spacehasten_run.py": "7d783987de5d1d53dd8972ef61deb19d0f9d5d72435c8147a914b8dc54a836f5"
+  },
+  "note": "Original frozen_run.py is archived with its verified frozen SHA. Later driver changes add lazy fingerprint loading and duplicate-ID handling for 100M; see audit.md and README.md."
+}

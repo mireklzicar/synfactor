@@ -1,0 +1,57 @@
+{
+  "policy": "First physical source row per product_id, verified against released stable sorted .sidx lookup",
+  "label_free_cache_repair": true,
+  "caches": {
+    "1M_v2": {
+      "version": 1,
+      "policy": "first source row per product_id, matching released .sidx",
+      "source_rows": 990610,
+      "unique_product_ids": 990610,
+      "duplicate_product_ids": 0,
+      "aliased_rows": 0,
+      "label_access": false,
+      "identity_repair_seconds": 0.005199035978876054
+    },
+    "10M": {
+      "version": 1,
+      "policy": "first source row per product_id, matching released .sidx",
+      "source_rows": 10022100,
+      "unique_product_ids": 10022100,
+      "duplicate_product_ids": 0,
+      "aliased_rows": 0,
+      "label_access": false,
+      "identity_repair_seconds": 0.16886435699416324
+    },
+    "100M_cp": {
+      "version": 1,
+      "policy": "first source row per product_id, matching released .sidx",
+      "source_rows": 99851700,
+      "unique_product_ids": 99845070,
+      "duplicate_product_ids": 6630,
+      "aliased_rows": 6630,
+      "label_access": false,
+      "identity_repair_seconds": 10.76349364197813
+    }
+  },
+  "warm_start_100M": {
+    "native_GlobalGAProposer_first_1000_exact_order_match": true,
+    "seed": 104729,
+    "GA0_archived_membership": 1000,
+    "GA12_archived_membership": 501,
+    "archive_note": "Historical JSON IDs are sorted sets. GA12 does not share the same initial1000; do not claim matched starts."
+  },
+  "corrected_100M": {
+    "run": "runs/docking_pilot/cp64_100M_kif11_s0_unique",
+    "every_queried_utility_verified_against_sidx": true,
+    "queried_ids": 10000,
+    "previous_invalid_run": "runs/docking_pilot/cp64_100M_kif11_s0",
+    "invalid_original_calls": [
+      48,
+      921
+    ]
+  },
+  "reference_tail_100M": {
+    "first_1000_ids_unique": true,
+    "all_scores_match_canonical_sidx_oracle": true
+  }
+}
