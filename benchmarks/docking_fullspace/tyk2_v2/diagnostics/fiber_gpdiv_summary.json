@@ -1,0 +1,19 @@
+{
+  "anchor_policy": "gpdiv",
+  "anchor_requested": 100,
+  "anchor_count": 100,
+  "anchor_similarity_threshold": 0.3,
+  "anchor_reactions": 13,
+  "returned_reactions": 13,
+  "fibers": 299,
+  "per_fiber": 256,
+  "visited_substitutions": 1605562,
+  "blocks": 299,
+  "returned_routes": 76079,
+  "complete": true,
+  "seconds": 0.6397950550308451,
+  "ranking": "CP utility descending; global synthon row ascending",
+  "precision": "float32 MVM IEEE; includes additive, reaction offset and target normalization",
+  "direct_prediction_max_abs_error_100": 4.76837158203125e-07,
+  "scope": "Label-free optional helper benchmark; not used by the live pilot arms"
+}

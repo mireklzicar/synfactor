@@ -1,0 +1,560 @@
+{
+  "contract": {
+    "target": "tyk2",
+    "seed": 0,
+    "grid_sha256": "0435f65ff9c7ec62f3316cee8d584b9a353c80371118437ed1d6bf1d2c1fe108",
+    "warm_sha256": "6c32d21a1de9429b0b2957922daaf486d4f39f0791241dcda079a36adad14179",
+    "rdkit": "2026.09.2",
+    "fingerprint": "Morgan radius2/2048/no chirality; strict Tc<0.30; k100"
+  },
+  "source_evaluations": [
+    {
+      "artifact": "cells/tyk2_explore_exploit_fibers_s0/evaluation_10k",
+      "summary_sha256": "9eb73028b3476e2f5a02148183a896ca0cbc4e3616f2099896a0a564ac589e3e",
+      "comparison_sha256": "1f1321e7563419bae4a55c4f1d68f2f73e71450697aaee5e1e0141a441b8e017",
+      "config_sha256": "8b1f37d56752d623c7d5e8926af83c4f612209a2a74dc8e819fee7e660e74daf",
+      "method": "synfactor_v2_explore_exploit",
+      "lineage": {
+        "lineage_sha256": "bc4454b4d3e540bfac31f70973471af10d58a8eca6984f9f8f28ed41975f288d",
+        "parent_run_id": "tyk2_portfolio_uniform_s0",
+        "destination_run_id": "tyk2_explore_exploit_fibers_s0",
+        "inherited_rounds": 3,
+        "inherited_calls": 4000,
+        "prefix_sha256": "6bdcdb03bc3854d7dbe3f3702025b6923cd16043ec379f2bd37c1ce61ea82ccd",
+        "parent_state_sha256": "b7161ededae12c3d00f1d7c894199d374082cd9681a9952dde923eea88828257",
+        "parent_config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+        "development_fork": true,
+        "independent_replicate": false
+      },
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "f9337e248cb8843d2f01643de377f4158f58c51ad461618005d172e46fb034ff",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_explore_exploit_fibers_s0/evaluation_4k",
+      "summary_sha256": "ec911469b8ffad0e55322e6960fbd58f49f226ecf8b803bba51104432d08821f",
+      "comparison_sha256": "f72dee4ebe4d0945f932201ba41b1778d8e78b33369c79da210b92f254ab0cf2",
+      "config_sha256": "8b1f37d56752d623c7d5e8926af83c4f612209a2a74dc8e819fee7e660e74daf",
+      "method": "synfactor_v2_explore_exploit",
+      "lineage": {
+        "lineage_sha256": "bc4454b4d3e540bfac31f70973471af10d58a8eca6984f9f8f28ed41975f288d",
+        "parent_run_id": "tyk2_portfolio_uniform_s0",
+        "destination_run_id": "tyk2_explore_exploit_fibers_s0",
+        "inherited_rounds": 3,
+        "inherited_calls": 4000,
+        "prefix_sha256": "6bdcdb03bc3854d7dbe3f3702025b6923cd16043ec379f2bd37c1ce61ea82ccd",
+        "parent_state_sha256": "b7161ededae12c3d00f1d7c894199d374082cd9681a9952dde923eea88828257",
+        "parent_config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+        "development_fork": true,
+        "independent_replicate": false
+      },
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "f9337e248cb8843d2f01643de377f4158f58c51ad461618005d172e46fb034ff",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_explore_exploit_fibers_s0/evaluation_5k",
+      "summary_sha256": "4c6b6b77b89159632effe953cead2387e322105488aa7aed0f90e7614391188d",
+      "comparison_sha256": "ca41276d441a167ec6be363e5a657a1d4852b2d41d68b7feeb0e528584c80440",
+      "config_sha256": "8b1f37d56752d623c7d5e8926af83c4f612209a2a74dc8e819fee7e660e74daf",
+      "method": "synfactor_v2_explore_exploit",
+      "lineage": {
+        "lineage_sha256": "bc4454b4d3e540bfac31f70973471af10d58a8eca6984f9f8f28ed41975f288d",
+        "parent_run_id": "tyk2_portfolio_uniform_s0",
+        "destination_run_id": "tyk2_explore_exploit_fibers_s0",
+        "inherited_rounds": 3,
+        "inherited_calls": 4000,
+        "prefix_sha256": "6bdcdb03bc3854d7dbe3f3702025b6923cd16043ec379f2bd37c1ce61ea82ccd",
+        "parent_state_sha256": "b7161ededae12c3d00f1d7c894199d374082cd9681a9952dde923eea88828257",
+        "parent_config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+        "development_fork": true,
+        "independent_replicate": false
+      },
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "f9337e248cb8843d2f01643de377f4158f58c51ad461618005d172e46fb034ff",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_explore_exploit_fibers_s0/evaluation_6k",
+      "summary_sha256": "0a11e4cae05981985bea2f3aa95940328542d5b2eeae2b84eb541785a0188629",
+      "comparison_sha256": "e454245bb1de3985876fe00a440ae2080edcba36983b7f2c56c871f77af9d217",
+      "config_sha256": "8b1f37d56752d623c7d5e8926af83c4f612209a2a74dc8e819fee7e660e74daf",
+      "method": "synfactor_v2_explore_exploit",
+      "lineage": {
+        "lineage_sha256": "bc4454b4d3e540bfac31f70973471af10d58a8eca6984f9f8f28ed41975f288d",
+        "parent_run_id": "tyk2_portfolio_uniform_s0",
+        "destination_run_id": "tyk2_explore_exploit_fibers_s0",
+        "inherited_rounds": 3,
+        "inherited_calls": 4000,
+        "prefix_sha256": "6bdcdb03bc3854d7dbe3f3702025b6923cd16043ec379f2bd37c1ce61ea82ccd",
+        "parent_state_sha256": "b7161ededae12c3d00f1d7c894199d374082cd9681a9952dde923eea88828257",
+        "parent_config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+        "development_fork": true,
+        "independent_replicate": false
+      },
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "f9337e248cb8843d2f01643de377f4158f58c51ad461618005d172e46fb034ff",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_explore_exploit_fibers_s0/evaluation_7k",
+      "summary_sha256": "8a4b09422c51b854dd96e19bf776caf9d31d8418577f02dd0cc907b55ca6de15",
+      "comparison_sha256": "2f93e7cb176a94f4910a860f4308a12995f3972b55ef2c2fbf85b8c25c3cbf95",
+      "config_sha256": "8b1f37d56752d623c7d5e8926af83c4f612209a2a74dc8e819fee7e660e74daf",
+      "method": "synfactor_v2_explore_exploit",
+      "lineage": {
+        "lineage_sha256": "bc4454b4d3e540bfac31f70973471af10d58a8eca6984f9f8f28ed41975f288d",
+        "parent_run_id": "tyk2_portfolio_uniform_s0",
+        "destination_run_id": "tyk2_explore_exploit_fibers_s0",
+        "inherited_rounds": 3,
+        "inherited_calls": 4000,
+        "prefix_sha256": "6bdcdb03bc3854d7dbe3f3702025b6923cd16043ec379f2bd37c1ce61ea82ccd",
+        "parent_state_sha256": "b7161ededae12c3d00f1d7c894199d374082cd9681a9952dde923eea88828257",
+        "parent_config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+        "development_fork": true,
+        "independent_replicate": false
+      },
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "f9337e248cb8843d2f01643de377f4158f58c51ad461618005d172e46fb034ff",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_explore_exploit_fibers_s0/evaluation_8k",
+      "summary_sha256": "e071466f344fee28091c7920cefd55d37feecabaf41b76a9565c88010875441d",
+      "comparison_sha256": "21e1f01f2ba1d9f464cae969c98f4397627ac0d1a23eb57559b05eebdef49e71",
+      "config_sha256": "8b1f37d56752d623c7d5e8926af83c4f612209a2a74dc8e819fee7e660e74daf",
+      "method": "synfactor_v2_explore_exploit",
+      "lineage": {
+        "lineage_sha256": "bc4454b4d3e540bfac31f70973471af10d58a8eca6984f9f8f28ed41975f288d",
+        "parent_run_id": "tyk2_portfolio_uniform_s0",
+        "destination_run_id": "tyk2_explore_exploit_fibers_s0",
+        "inherited_rounds": 3,
+        "inherited_calls": 4000,
+        "prefix_sha256": "6bdcdb03bc3854d7dbe3f3702025b6923cd16043ec379f2bd37c1ce61ea82ccd",
+        "parent_state_sha256": "b7161ededae12c3d00f1d7c894199d374082cd9681a9952dde923eea88828257",
+        "parent_config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+        "development_fork": true,
+        "independent_replicate": false
+      },
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "f9337e248cb8843d2f01643de377f4158f58c51ad461618005d172e46fb034ff",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_explore_exploit_fibers_s0/evaluation_9k",
+      "summary_sha256": "f7abfbf78a411cb8ea2495063b21296f15535c8c909601a834bd8097e6bd54fc",
+      "comparison_sha256": "b0d4752270fa57ce193bc700d64fbd2583c0f3e1f68546d3d85ebf8da7d2a0f0",
+      "config_sha256": "8b1f37d56752d623c7d5e8926af83c4f612209a2a74dc8e819fee7e660e74daf",
+      "method": "synfactor_v2_explore_exploit",
+      "lineage": {
+        "lineage_sha256": "bc4454b4d3e540bfac31f70973471af10d58a8eca6984f9f8f28ed41975f288d",
+        "parent_run_id": "tyk2_portfolio_uniform_s0",
+        "destination_run_id": "tyk2_explore_exploit_fibers_s0",
+        "inherited_rounds": 3,
+        "inherited_calls": 4000,
+        "prefix_sha256": "6bdcdb03bc3854d7dbe3f3702025b6923cd16043ec379f2bd37c1ce61ea82ccd",
+        "parent_state_sha256": "b7161ededae12c3d00f1d7c894199d374082cd9681a9952dde923eea88828257",
+        "parent_config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+        "development_fork": true,
+        "independent_replicate": false
+      },
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "f9337e248cb8843d2f01643de377f4158f58c51ad461618005d172e46fb034ff",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_portfolio_uniform_s0/evaluation_10k",
+      "summary_sha256": "c22de313a49f3c9b339149717f4719d1046043a04cf45b47f8bb23ff7db761e1",
+      "comparison_sha256": "164b2ee639196c6b05ff52ef67f9ef6847e38fdabae35e804d0dfa8db0fc5b1f",
+      "config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+      "method": "synfactor_v2_portfolio",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_portfolio_uniform_s0/evaluation_2k",
+      "summary_sha256": "9e224361c50669b8cd1811aed23a0f385992fc2a7c7b22aa25809368de8d2a56",
+      "comparison_sha256": "047f98b5212b7fc0d9ff9d272de1d1bc83fb69e77b46b837afb24afce7937064",
+      "config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+      "method": "synfactor_v2_portfolio",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_portfolio_uniform_s0/evaluation_3k",
+      "summary_sha256": "8097b7abd8510d1fc52096b5682c08b82cbfc149feec4b03cb32d5ad0cf911bb",
+      "comparison_sha256": "106fb4dcab44cf69302d95f436c5b62ec0e44a3e0f470b26569f1c18a6d7b7ef",
+      "config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+      "method": "synfactor_v2_portfolio",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_portfolio_uniform_s0/evaluation_4k",
+      "summary_sha256": "53cc2452b34da01211fee8cfbe8f4a2b7a53c5f04434a92341b6f85874e4bc1c",
+      "comparison_sha256": "f72dee4ebe4d0945f932201ba41b1778d8e78b33369c79da210b92f254ab0cf2",
+      "config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+      "method": "synfactor_v2_portfolio",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_portfolio_uniform_s0/evaluation_5k",
+      "summary_sha256": "0e4f345a34336ca555c4331b14d8bb6868c3c011ccb43280898b469bb6587d0c",
+      "comparison_sha256": "091176c4b7b64241c8537b63872b15f4df9df3757ae525a337949c98801847fe",
+      "config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+      "method": "synfactor_v2_portfolio",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_portfolio_uniform_s0/evaluation_6k",
+      "summary_sha256": "44bcf6f9a9306c52e96fce938652aafb4c1b67371f6588b9d2ecdd8b7d3e9a6a",
+      "comparison_sha256": "33f97b4d0fc3cc0aa78ba2feedc8e784a999c1900807246816104890f755d0e1",
+      "config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+      "method": "synfactor_v2_portfolio",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_portfolio_uniform_s0/evaluation_7k",
+      "summary_sha256": "2a231b8690e1e0401f94f7b82a6538347c9798f359e9e747591eb6e438a5c896",
+      "comparison_sha256": "d1b93146396af803a7da8086545a579ec52d15e9d26c3f5861da9b5768c7531c",
+      "config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+      "method": "synfactor_v2_portfolio",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_portfolio_uniform_s0/evaluation_8k",
+      "summary_sha256": "d9b001e57747c73de6768fca1f507316c30f265ceff89069c281633cb5d3dfde",
+      "comparison_sha256": "cba9ab0746a1c5c4fcc8e086b5fcbf343db3a75feefa2a57d412dbf9f7cedc71",
+      "config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+      "method": "synfactor_v2_portfolio",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_portfolio_uniform_s0/evaluation_9k",
+      "summary_sha256": "7e61ec0c9958fa54fa10c455b20fe52480614d450a80618ba5775f682f9c4edc",
+      "comparison_sha256": "af127eb74744c148319f86718bb8eb8c10e869d77ed3ba24e82fb41bb727b317",
+      "config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+      "method": "synfactor_v2_portfolio",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_raw_uniform_s0/evaluation_10k",
+      "summary_sha256": "022083664c6ad0e569eeb458f28b11f70187980157fa1ea9ab52cc17e28347a5",
+      "comparison_sha256": "c8a08a563988880ac5e8714409f390035fb247658e113c65ae54384577e7be11",
+      "config_sha256": "007c37a12511718def7b02ed1521387fe7a07efedf9238528fc9168d50d9040d",
+      "method": "synfactor_v2_raw",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_raw_uniform_s0/evaluation_2k",
+      "summary_sha256": "f07739f38486cbafe4a151eb86b87a4c663eb9004c7be5bdb1411ead802609f8",
+      "comparison_sha256": "06d516c4744cb9f3ece617c0931f28a132508d8584f78ec1a2a3c60b61d0ff5d",
+      "config_sha256": "007c37a12511718def7b02ed1521387fe7a07efedf9238528fc9168d50d9040d",
+      "method": "synfactor_v2_raw",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_raw_uniform_s0/evaluation_3k",
+      "summary_sha256": "f0bf81105172eed64a1d55cee33835d97cb2fc651026cd448d3b7b0c0047aca6",
+      "comparison_sha256": "a926814e446f5da25700bce27743eb50db01f70ccd9dbf1c41a2dc37593e04cc",
+      "config_sha256": "007c37a12511718def7b02ed1521387fe7a07efedf9238528fc9168d50d9040d",
+      "method": "synfactor_v2_raw",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_raw_uniform_s0/evaluation_4k",
+      "summary_sha256": "479cd7656c5fbb4961341e9d1e93ec868981c1b91c564ef141cde93dfee4bb2d",
+      "comparison_sha256": "9e6d40f4a84203f5a080f65baf210ae3c49764f679eca175395124d116ca1e22",
+      "config_sha256": "007c37a12511718def7b02ed1521387fe7a07efedf9238528fc9168d50d9040d",
+      "method": "synfactor_v2_raw",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_raw_uniform_s0/evaluation_5k",
+      "summary_sha256": "0fce3dbc4a89f8c55851c8b6625689289dde3f5a0ddfb0dcb85c7b9ea75fddbf",
+      "comparison_sha256": "fbdb1c524101a0d6ab121d548e62c318b6ef8f24108fb6e98a45eaf959d89389",
+      "config_sha256": "007c37a12511718def7b02ed1521387fe7a07efedf9238528fc9168d50d9040d",
+      "method": "synfactor_v2_raw",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_raw_uniform_s0/evaluation_6k",
+      "summary_sha256": "20474af594e08f349491741711a43b9ccfaadea08dfeec3e53ead597b204bba8",
+      "comparison_sha256": "3a0d31c8a43e231406703459e61afe96abf5af7573d254811b95ce26f7e3b430",
+      "config_sha256": "007c37a12511718def7b02ed1521387fe7a07efedf9238528fc9168d50d9040d",
+      "method": "synfactor_v2_raw",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_raw_uniform_s0/evaluation_7k",
+      "summary_sha256": "0e22bb4822b018b43b94b08b77e3fe260306cd5d877af41578fc2da01c936e4e",
+      "comparison_sha256": "7426ec98b14552d9f67fd6d31390257c5bb15a9ebf23d5303d093f7b7a2ca82e",
+      "config_sha256": "007c37a12511718def7b02ed1521387fe7a07efedf9238528fc9168d50d9040d",
+      "method": "synfactor_v2_raw",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_raw_uniform_s0/evaluation_8k",
+      "summary_sha256": "42f910ce77438daa9681a5f00bd80e2629add3cd831e699c0e5b97da163afe59",
+      "comparison_sha256": "d71b22bbf93c8bfce8c2313be6f97bdc61206aedf92d898219dc3d24274fe4a4",
+      "config_sha256": "007c37a12511718def7b02ed1521387fe7a07efedf9238528fc9168d50d9040d",
+      "method": "synfactor_v2_raw",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    },
+    {
+      "artifact": "cells/tyk2_raw_uniform_s0/evaluation_9k",
+      "summary_sha256": "e61339dba7ee2d703ed0a1f12b6761747bd29323d6e16e961b75b8c7c21297b7",
+      "comparison_sha256": "f6463f3166f7ff7ec58e34bf5f9b3772160cbf3c5777eaad501f26afc8eb2b4f",
+      "config_sha256": "007c37a12511718def7b02ed1521387fe7a07efedf9238528fc9168d50d9040d",
+      "method": "synfactor_v2_raw",
+      "lineage": null,
+      "evaluator_source_sha256": {
+        "tyk2_evaluate.py": "8dcd63e55dcf3edd52fb08c9cf3beb40cde9b8d8c4fb9891059ece8f62de5ce9",
+        "live_evaluate.py": "d7e3d18318a8280c9b08eb95cc18baffa79a0dd8afad2804eea48c36349b641f"
+      }
+    }
+  ],
+  "policy_progress": [
+    {
+      "method": "synfactor_v2_explore_exploit",
+      "policy": "raw",
+      "charged_calls": 10000,
+      "lineage": {
+        "lineage_sha256": "bc4454b4d3e540bfac31f70973471af10d58a8eca6984f9f8f28ed41975f288d",
+        "parent_run_id": "tyk2_portfolio_uniform_s0",
+        "destination_run_id": "tyk2_explore_exploit_fibers_s0",
+        "inherited_rounds": 3,
+        "inherited_calls": 4000,
+        "prefix_sha256": "6bdcdb03bc3854d7dbe3f3702025b6923cd16043ec379f2bd37c1ce61ea82ccd",
+        "parent_state_sha256": "b7161ededae12c3d00f1d7c894199d374082cd9681a9952dde923eea88828257",
+        "parent_config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+        "development_fork": true,
+        "independent_replicate": false
+      },
+      "inherited_calls": 4000,
+      "new_calls_after_inherited_prefix": 6000,
+      "completed_adaptive_rounds": 9,
+      "local_search_seconds": 1116.8815963909728,
+      "timed_remote_oracle_seconds": 725.0163216389992,
+      "full_budget_complete": true,
+      "config": {
+        "target": "tyk2",
+        "seed": 0,
+        "policy": "raw",
+        "tail_weight": 1,
+        "weight_cp": false,
+        "global_k": 100000,
+        "local_hits": 100,
+        "local_per_hit": 512,
+        "random_pool_count": 10000,
+        "budget": 10000,
+        "warm_charged": 1000,
+        "batch_size": 1000,
+        "grid_sha256": "0435f65ff9c7ec62f3316cee8d584b9a353c80371118437ed1d6bf1d2c1fe108",
+        "warm": {
+          "ids_sha256": "43882047808138191452ce6fab9a4de4a4be5be51dc425ef1788201919b99894",
+          "matrix_sha256": "97c2c84b032976b600793fd38c62dcc4e86de8c9b257d08d771042640b08c9c0",
+          "csv_sha256": "6c32d21a1de9429b0b2957922daaf486d4f39f0791241dcda079a36adad14179",
+          "candidates_sha256": "1ea0408e3dc891a604436cce702c9bad30ff54056a87e506901a06b3b2541597"
+        },
+        "druglike_filter": false,
+        "distillation": false,
+        "code_sha256": {
+          "tyk2_run.py": "6afc93336dd506f26db46ea29dc5a2d4a5681feab7176d084c211b987949c1b1",
+          "tyk2_models.py": "d13d284fae8cf09f7f4a13d5e8c0324fe229d7504624ef106c24bed7ef36d633",
+          "tyk2_acquisition.py": "823f1fd60c70246b2e3574948118add79597450bcd9d8a9c79febcc6f1e5036d",
+          "tyk2_assembly.py": "9c883028f2e71d902bc59fc9a4f2e45a59df881dd00cddc5bc82e27b3d3ada6c",
+          "tyk2_fibers.py": "d7d70e4234374732b199b7e73f8e3c99d7741074c08033fee76a1140348effdb",
+          "tyk2_branch.py": "d1e7dfdca54525155e297b3b68f5442882727b39c6a72529181773e8322b3bb4",
+          "factor_model.py": "e07d70bb48016a9befde43824db74456b6cf20b1d2e5322e87505f07c61de753",
+          "cartesian.py": "022a182dbb80fcb26e10df728d913e45dd1bab452ae7c2bac5b71409978fa098",
+          "fullspace.py": "21e9c7341ff52d3107001bd34b7cac6d8d1108ef8add6c5b59cb9d1ffb731acb",
+          "live.py": "ffd62d914e834c3aa38794c381f7a70795626168aacbbfdf09cb0e47e455d8e2"
+        },
+        "chiral_xgb": false,
+        "disagreement_count": 0,
+        "fiber_anchor_count": 100,
+        "fiber_anchors": "gpdiv",
+        "fiber_per_slot": 256
+      },
+      "config_sha256": "8b1f37d56752d623c7d5e8926af83c4f612209a2a74dc8e819fee7e660e74daf",
+      "state_sha256": "0d476710356707a61eee169920414fcfce0f7cfb9e90c86f656357f353c81466"
+    },
+    {
+      "method": "synfactor_v2_portfolio",
+      "policy": "portfolio",
+      "charged_calls": 10000,
+      "lineage": null,
+      "inherited_calls": 0,
+      "new_calls_after_inherited_prefix": null,
+      "completed_adaptive_rounds": 9,
+      "local_search_seconds": 1157.1858880219515,
+      "timed_remote_oracle_seconds": 819.8459882320003,
+      "full_budget_complete": true,
+      "config": {
+        "target": "tyk2",
+        "seed": 0,
+        "policy": "portfolio",
+        "tail_weight": 1,
+        "weight_cp": false,
+        "global_k": 100000,
+        "local_hits": 100,
+        "local_per_hit": 512,
+        "random_pool_count": 10000,
+        "budget": 10000,
+        "warm_charged": 1000,
+        "batch_size": 1000,
+        "grid_sha256": "0435f65ff9c7ec62f3316cee8d584b9a353c80371118437ed1d6bf1d2c1fe108",
+        "warm": {
+          "ids_sha256": "43882047808138191452ce6fab9a4de4a4be5be51dc425ef1788201919b99894",
+          "matrix_sha256": "97c2c84b032976b600793fd38c62dcc4e86de8c9b257d08d771042640b08c9c0",
+          "csv_sha256": "6c32d21a1de9429b0b2957922daaf486d4f39f0791241dcda079a36adad14179",
+          "candidates_sha256": "1ea0408e3dc891a604436cce702c9bad30ff54056a87e506901a06b3b2541597"
+        },
+        "druglike_filter": false,
+        "distillation": false,
+        "code_sha256": {
+          "tyk2_run.py": "ae83632c77dfba0124ba4bd857a3cfdc12769c4c5746e37ce72fa0d0fc11ce8d",
+          "tyk2_models.py": "d13d284fae8cf09f7f4a13d5e8c0324fe229d7504624ef106c24bed7ef36d633",
+          "tyk2_acquisition.py": "823f1fd60c70246b2e3574948118add79597450bcd9d8a9c79febcc6f1e5036d",
+          "tyk2_assembly.py": "9c883028f2e71d902bc59fc9a4f2e45a59df881dd00cddc5bc82e27b3d3ada6c",
+          "factor_model.py": "e07d70bb48016a9befde43824db74456b6cf20b1d2e5322e87505f07c61de753",
+          "cartesian.py": "022a182dbb80fcb26e10df728d913e45dd1bab452ae7c2bac5b71409978fa098",
+          "fullspace.py": "21e9c7341ff52d3107001bd34b7cac6d8d1108ef8add6c5b59cb9d1ffb731acb",
+          "live.py": "ffd62d914e834c3aa38794c381f7a70795626168aacbbfdf09cb0e47e455d8e2"
+        }
+      },
+      "config_sha256": "438ee3f8018f441cf50466bd8d1b6a7d7e73eba86f3c6f6ab6eaea8895e38851",
+      "state_sha256": "f9637fc550c40524028a8159a7d6274471ce8047aae09b9b46ec3f64b485282a"
+    },
+    {
+      "method": "synfactor_v2_raw",
+      "policy": "raw",
+      "charged_calls": 10000,
+      "lineage": null,
+      "inherited_calls": 0,
+      "new_calls_after_inherited_prefix": null,
+      "completed_adaptive_rounds": 9,
+      "local_search_seconds": 1014.1002733969945,
+      "timed_remote_oracle_seconds": 1156.3571270950088,
+      "full_budget_complete": true,
+      "config": {
+        "target": "tyk2",
+        "seed": 0,
+        "policy": "raw",
+        "tail_weight": 1,
+        "weight_cp": false,
+        "global_k": 100000,
+        "local_hits": 100,
+        "local_per_hit": 512,
+        "random_pool_count": 10000,
+        "budget": 10000,
+        "warm_charged": 1000,
+        "batch_size": 1000,
+        "grid_sha256": "0435f65ff9c7ec62f3316cee8d584b9a353c80371118437ed1d6bf1d2c1fe108",
+        "warm": {
+          "ids_sha256": "43882047808138191452ce6fab9a4de4a4be5be51dc425ef1788201919b99894",
+          "matrix_sha256": "97c2c84b032976b600793fd38c62dcc4e86de8c9b257d08d771042640b08c9c0",
+          "csv_sha256": "6c32d21a1de9429b0b2957922daaf486d4f39f0791241dcda079a36adad14179",
+          "candidates_sha256": "1ea0408e3dc891a604436cce702c9bad30ff54056a87e506901a06b3b2541597"
+        },
+        "druglike_filter": false,
+        "distillation": false,
+        "code_sha256": {
+          "tyk2_run.py": "ae83632c77dfba0124ba4bd857a3cfdc12769c4c5746e37ce72fa0d0fc11ce8d",
+          "tyk2_models.py": "d13d284fae8cf09f7f4a13d5e8c0324fe229d7504624ef106c24bed7ef36d633",
+          "tyk2_acquisition.py": "823f1fd60c70246b2e3574948118add79597450bcd9d8a9c79febcc6f1e5036d",
+          "tyk2_assembly.py": "9c883028f2e71d902bc59fc9a4f2e45a59df881dd00cddc5bc82e27b3d3ada6c",
+          "factor_model.py": "e07d70bb48016a9befde43824db74456b6cf20b1d2e5322e87505f07c61de753",
+          "cartesian.py": "022a182dbb80fcb26e10df728d913e45dd1bab452ae7c2bac5b71409978fa098",
+          "fullspace.py": "21e9c7341ff52d3107001bd34b7cac6d8d1108ef8add6c5b59cb9d1ffb731acb",
+          "live.py": "ffd62d914e834c3aa38794c381f7a70795626168aacbbfdf09cb0e47e455d8e2"
+        }
+      },
+      "config_sha256": "007c37a12511718def7b02ed1521387fe7a07efedf9238528fc9168d50d9040d",
+      "state_sha256": "22abde7f9768a2089e6d1ffa8c667b6d23f851d554ec7d3c3eb82be2ccd95953"
+    }
+  ],
+  "skipped": [],
+  "updated_utc": "2026-11-16T22:28:49.554428+00:00",
+  "latest_common_evaluated_budget": 10000,
+  "latest_matched_development_branch_budget": 10000,
+  "reference_policy_budgets_are_separate": true,
+  "development_branch_is_independent": false,
+  "development_evidence_only": true,
+  "raw_molecules_exported": false,
+  "source_script_sha256": "834999ace53a83cd71e4b557bffa656db3d65fb957b05bea88fe925aee098bcd",
+  "timing_scope": "Local search and timed remote oracle only; excludes initialization/preflight/transport and untimed remote assembly"
+}

@@ -1,0 +1,148 @@
+--- a/experiments/docking/tyk2_run.py
++++ b/experiments/docking/tyk2_run.py
+@@ -20 +19,0 @@
+-from rdkit.Chem import rdFingerprintGenerator
+@@ -28 +26,0 @@
+-from .tyk2_fibers import cp_fiber_candidates
+@@ -45,71 +42,0 @@
+-def chiral_product_matrix(smiles, batch_size=4096):
+-    """Optional XGB-only Morgan bits; acquisition/evaluation stay nonchiral."""
+-    if batch_size<1:
+-        raise ValueError('Fingerprint batch size must be positive')
+-    result=np.empty((len(smiles),2048),np.uint8)
+-    generator=rdFingerprintGenerator.GetMorganGenerator(radius=2,fpSize=2048,includeChirality=True)
+-    for start in range(0,len(smiles),batch_size):
+-        molecules=[Chem.MolFromSmiles(s) if isinstance(s,str) else None for s in smiles[start:start+batch_size]]
+-        if any(m is None for m in molecules):
+-            raise ValueError('Invalid assembled SMILES in chiral XGB features')
+-        result[start:start+len(molecules)]=fp_matrix(generator.GetFingerprints(molecules,numThreads=4))
+-    return result
+-
+-
+-def append_fiber_pool(pool, fibers, history):
+-    """Stable route union; preserve every aligned score, source and parent field."""
+-    seen={r['product_id'] for r in history}
+-    arrays=('tuples','reaction_ids','cp_scores','cp_predictions','variable_slots')
+-    lists=('product_ids','source','parent_product_ids')
+-    pieces={key:[] for key in (*arrays,*lists)}
+-    kept=[]
+-    for part in (pool,fibers):
+-        ids=list(part['product_ids']);n=len(ids)
+-        values=dict(part)
+-        values.setdefault('cp_predictions',np.asarray(part['cp_scores'])[:,None])
+-        values.setdefault('variable_slots',np.full(n,-1,np.int64))
+-        values.setdefault('parent_product_ids',[None]*n)
+-        if any(len(values[key])!=n for key in (*arrays,*lists)):
+-            raise ValueError('Candidate pool metadata is not aligned')
+-        if np.asarray(values['cp_predictions']).shape!=(n,1):
+-            raise ValueError('Driver fiber union requires one independently fitted CP model')
+-        selected=[]
+-        for i,pid in enumerate(ids):
+-            if pid not in seen:
+-                selected.append(i);seen.add(pid)
+-        indices=np.asarray(selected,np.int64);kept.append(len(indices))
+-        for key in arrays:pieces[key].append(np.asarray(values[key])[indices])
+-        for key in lists:pieces[key].extend(values[key][i] for i in indices)
+-    merged={key:np.concatenate(pieces[key],axis=0) for key in arrays}
+-    merged.update({key:pieces[key] for key in lists})
+-    merged['diagnostics']=dict(pool['diagnostics'],fiber=fibers['diagnostics'],
+-        fiber_added=kept[1],fiber_duplicates_removed=len(fibers['product_ids'])-kept[1],
+-        pool_size=len(merged['product_ids']),source_counts=dict(Counter(merged['source'])),
+-        reaction_count=len(np.unique(merged['reaction_ids'])),
+-        seconds=pool['diagnostics'].get('seconds',0)+fibers['diagnostics'].get('seconds',0))
+-    return merged
+-
+-
+-def validate_proposal(proposal, history, space, *, target, seed, run_id, batch_id):
+-    """Recheck a fresh or resumed proposal before any irreversible oracle work."""
+-    identity = dict(target=target, seed=seed, run_id=run_id, batch_id=batch_id)
+-    if any(proposal.get(k)!=v for k,v in identity.items()):
+-        raise ValueError('Committed proposal belongs to another experiment')
+-    ids = proposal.get('product_ids')
+-    if (not isinstance(ids,list) or len(ids)!=1000 or any(not isinstance(pid,str) for pid in ids)
+-            or len(set(ids))!=1000 or set(ids)&{r['product_id'] for r in history}):
+-        raise ValueError('Committed proposal violates the charged ledger')
+-    supplied = proposal.get('submitted_smiles')
+-    if not isinstance(supplied,dict) or set(supplied)!=set(ids):
+-        raise ValueError('Committed proposal must bind every route to its assembled structure')
+-    keys = [canonical(supplied[pid]) for pid in ids]
+-    if (any(key is None or key!=supplied[pid] for pid,key in zip(ids,keys))
+-            or len(set(keys))!=1000):
+-        raise ValueError('Committed proposal structures must be canonical, valid and distinct')
+-    observed_keys = {canonical(r.get('smiles')) for r in history}
+-    if set(keys)&observed_keys:
+-        raise ValueError('Committed proposal repeats an already charged molecule')
+-    space.decode(ids)
+-    return ids
+-
+-
+@@ -118,7 +44,0 @@
+-    fiber_policy=config.get('fiber_anchors','none')
+-    chiral_xgb=config.get('chiral_xgb',False)
+-    disagreement_count=config.get('disagreement_count',100)
+-    if (fiber_policy not in ('none','raw','gpdiv') or not 0<=disagreement_count<=1000
+-            or int(disagreement_count)!=disagreement_count
+-            or (config['policy']=='portfolio' and disagreement_count!=100)):
+-        raise ValueError('Need valid fiber policy and raw disagreement count0–1000; portfolio requires100')
+@@ -139,6 +59 @@
+-    train_fps=assembly.fingerprints(train_ids)
+-    train_features=(chiral_product_matrix([r['smiles'] for r in train_products])
+-                    if chiral_xgb else fp_matrix(train_fps))
+-    xgb_fit = xgb.fit_features(train_features, y, sample_weight=weights)
+-    xgb_fit['fingerprint']=dict(radius=2,bits=2048,include_chirality=bool(chiral_xgb))
+-    del train_features
++    xgb_fit = xgb.fit_features(fp_matrix(assembly.fingerprints(train_ids)), y, sample_weight=weights)
+@@ -152,8 +66,0 @@
+-    if fiber_policy!='none':
+-        # Only valid charged rows can be anchors. Their true-product fingerprints
+-        # are aligned back to full history, including charged failures as None.
+-        observed_fps=[None]*len(history)
+-        for i,fp in zip(train_indices,train_fps):observed_fps[int(i)]=fp
+-        fibers=cp_fiber_candidates(space,cp,history,anchor_policy=fiber_policy,anchor_count=100,
+-            per_fiber=256,observed_fingerprints=observed_fps if fiber_policy=='gpdiv' else None)
+-        pool=append_fiber_pool(pool,fibers,history)
+@@ -168 +75 @@
+-    xgb_predictions = xgb.predict_features(chiral_product_matrix(smiles) if chiral_xgb else fp_matrix(fps))
++    xgb_predictions = xgb.predict_features(fp_matrix(fps))
+@@ -176,2 +83 @@
+-        result = select_batch(**common, mode='raw', n_exploit=1000-disagreement_count,
+-                              n_disagreement=disagreement_count)
++        result = select_batch(**common, mode='raw', n_exploit=900, n_disagreement=100)
+@@ -181 +87 @@
+-        # Nine greedy portfolios share a query budget. Strict Tc<.30
++        # Ten independent greedy portfolios share a query budget. Strict Tc<.30
+@@ -206,3 +111,0 @@
+-    if fiber_policy!='none':
+-        frame['candidate_parent_product_id']=[pool['parent_product_ids'][i] for i in valid]
+-        frame['candidate_variable_slot']=pool['variable_slots'][valid]
+@@ -219,3 +122 @@
+-        search_seconds=time.perf_counter()-started,druglike_filter=False,distillation=False,
+-        fiber_anchors=fiber_policy,chiral_xgb=bool(chiral_xgb),disagreement_count=disagreement_count,
+-        acquisition_fingerprint=dict(radius=2,bits=2048,include_chirality=False))
++        search_seconds=time.perf_counter()-started,druglike_filter=False,distillation=False)
+@@ -244 +145 @@
+-                    'tyk2_fibers.py','tyk2_branch.py','factor_model.py','cartesian.py','fullspace.py','live.py']
++                    'factor_model.py','cartesian.py','fullspace.py','live.py']
+@@ -248,2 +148,0 @@
+-            fiber_anchors=getattr(args,'fiber_anchors','none'),chiral_xgb=getattr(args,'chiral_xgb',False),
+-            disagreement_count=getattr(args,'disagreement_count',100),fiber_anchor_count=100,fiber_per_slot=256,
+@@ -261,4 +159,0 @@
+-        if (args.out/'lineage.json').exists():
+-            from .tyk2_branch import verify_lineage, verify_run_bindings
+-            lineage=verify_lineage(args.out,state,config)
+-            verify_run_bindings(args.out,config,len(state['rounds']),lineage)
+@@ -275,2 +170,5 @@
+-            ids=validate_proposal(proposal,state['history'],space,target='tyk2',seed=args.seed,
+-                                  run_id=args.out.name,batch_id=folder.name)
++            if any(proposal[k]!=v for k,v in dict(target='tyk2',seed=args.seed,run_id=args.out.name,batch_id=folder.name).items()):
++                raise ValueError('Committed proposal belongs to another experiment')
++            ids=proposal['product_ids']
++            if len(ids)!=1000 or len(set(ids))!=1000 or set(ids)&{r['product_id'] for r in state['history']}:
++                raise ValueError('Committed proposal violates the charged ledger')
+@@ -314,3 +211,0 @@
+-    p.add_argument('--fiber-anchors',choices=['none','raw','gpdiv'],default='none')
+-    p.add_argument('--chiral-xgb',action='store_true',help='Use chiral Morgan bits for XGB only; portfolio similarity remains nonchiral')
+-    p.add_argument('--disagreement-count',type=int,default=100,help='Raw policy exploration count0–1000; portfolio policy requires100')
+@@ -327,2 +221,0 @@
+-    if not 0<=args.disagreement_count<=1000 or (args.policy=='portfolio' and args.disagreement_count!=100):
+-        p.error('Raw disagreement count must be0–1000; portfolio policy requires100')

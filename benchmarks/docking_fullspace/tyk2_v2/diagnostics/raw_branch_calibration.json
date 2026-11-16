@@ -1,0 +1,126 @@
+{
+  "protocol": "CPU-only checkpoint/prediction analysis using shared warm and acquired rawbranch batch1 only; no model refits or new labels",
+  "limitations": [
+    "Adaptive selection-biased source comparisons; not causal arm effects.",
+    "Fingerprint collisions suggest a possible feature limitation; chirality-aware ranking benefit is untested."
+  ],
+  "calibration": {
+    "candidate_source": {
+      "global_cp_0": {
+        "n": 765,
+        "valid": 765,
+        "mean_raw_score": -6.306432549019609,
+        "best_raw_score": -9.831,
+        "new_batch_top100_count": 83,
+        "cp_mean_optimism": 1.667181911895425,
+        "xgb_mean_optimism": 1.2472920019607843,
+        "cp_spearman": 0.01609248723671215,
+        "xgb_spearman": -0.006398994798164586
+      },
+      "observed_hit_neighbor": {
+        "n": 235,
+        "valid": 235,
+        "mean_raw_score": -5.616354468085106,
+        "best_raw_score": -9.174,
+        "new_batch_top100_count": 17,
+        "cp_mean_optimism": -0.2811308782978725,
+        "xgb_mean_optimism": 1.7145026646808512,
+        "cp_spearman": 0.265237602411106,
+        "xgb_spearman": 0.13468014324926147
+      }
+    },
+    "acquisition_source": {
+      "exploit": {
+        "n": 900,
+        "valid": 900,
+        "mean_raw_score": -6.247827666666668,
+        "best_raw_score": -9.831,
+        "new_batch_top100_count": 98,
+        "cp_mean_optimism": 1.4433102098888888,
+        "xgb_mean_optimism": 1.3106763674444442,
+        "cp_spearman": 0.09774724655068506,
+        "xgb_spearman": -0.053953122483362106
+      },
+      "rank_disagreement": {
+        "n": 100,
+        "valid": 100,
+        "mean_raw_score": -5.212193000000001,
+        "best_raw_score": -8.396,
+        "new_batch_top100_count": 2,
+        "cp_mean_optimism": -0.8965078270000002,
+        "xgb_mean_optimism": 1.77477777,
+        "cp_spearman": 0.18805506217034845,
+        "xgb_spearman": 0.08726362765497835
+      }
+    }
+  },
+  "cp_validation": {
+    "fit": {
+      "n": 798,
+      "nmse": 0.5044976031700174,
+      "spearman": 0.7088356363653276
+    },
+    "validation": {
+      "n": 199,
+      "nmse": 1.146456827111034,
+      "spearman": 0.2550514981188916
+    },
+    "constant_train_mean_validation_nmse": 1.2050561642283177,
+    "selected_epoch": 1
+  },
+  "fingerprints": {
+    "False": {
+      "unique_vectors": 697,
+      "duplicate_groups": 294,
+      "rows_in_duplicate_groups": 597
+    },
+    "True": {
+      "unique_vectors": 991,
+      "duplicate_groups": 3,
+      "rows_in_duplicate_groups": 12
+    }
+  },
+  "nonchiral_duplicate_score_ranges": {
+    "mean": 1.0268489795918367,
+    "maximum": 7.5466,
+    "groups_over_one_unit": 108
+  },
+  "candidate_pool": {
+    "pool_size": 161200,
+    "observed_count": 1000,
+    "sweeps": [
+      {
+        "total_products": 296350180179,
+        "visited_products": 296350180179,
+        "blocks": 15817,
+        "excluded_routes": 1000,
+        "complete": true,
+        "block_rows": 4096,
+        "block_cols": 8192,
+        "precision": "float32 GEMM, IEEE",
+        "tie_policy": "score descending; reaction index then local Cartesian ordinal",
+        "wall_seconds": 19.94537162099732,
+        "returned_routes": 100000
+      }
+    ],
+    "source_counts": {
+      "global_cp_0": 100000,
+      "observed_hit_neighbor": 51200,
+      "uniform_route": 10000
+    },
+    "reaction_count": 49,
+    "seconds": 22.090758629026823
+  },
+  "selected_candidate_sources": {
+    "observed_hit_neighbor": 235,
+    "global_cp_0": 765
+  },
+  "selected_dominant_reaction_fraction": 0.868,
+  "source_sha256": {
+    "runs/tyk2_v2/cells/tyk2_raw_uniform_s0/state.json": "f657778d01289b0089afbc336dc285ff7276d03e3eb831f6bb2d9d9355e745f2",
+    "runs/tyk2_v2/cells/tyk2_raw_uniform_s0/batch_01/selected.csv": "135ef1b0d81c0cb77b081761f5130fa9b86e52e661ecde7bd6c742839dddda6b",
+    "runs/tyk2_v2/cells/tyk2_raw_uniform_s0/batch_01/cp.pt": "3d704865d155f8cf2228c91ce9298b06ca478b2d5121afd30879ea9a622b0f75",
+    "runs/tyk2_v2/cells/tyk2_raw_uniform_s0/batch_01/candidate_pool.csv.gz": "9f58f7b0cb5b30a80a4b01d04493f0ee19a46d75b68ca03d46f766a33f77f4fc",
+    "/home/mirekl/DeepMedChem_Papers/synfactor/runs/tyk2_v2/offline_models/raw_branch_calibration.py": "af3d06b37bb643db4f18f92bab91a2656309b76f38aab21f352512495a842bf6"
+  }
+}

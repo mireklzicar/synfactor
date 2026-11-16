@@ -1,0 +1,21 @@
+{
+  "branch": "runs/tyk2_v2/cells/tyk2_portfolio_uniform_s0",
+  "charged_prefix_used": 4000,
+  "test_batches": [
+    2,
+    3
+  ],
+  "models": "Saved per-batch nonchiral full-product XGB; no refits",
+  "parents": "Prior valid top100 sorted by raw score then product ID; same reaction, exactly one differing synthon",
+  "parent_assignment": "Highest chiral Morgan radius2/2048 Tanimoto; ties use higher observed parent utility then product ID",
+  "formula": "corrected(candidate)=base(candidate)+Tc_chiral(candidate,parent)^3*(observed_parent_utility-base(parent))",
+  "formula_variants_tested": 1,
+  "new_oracle_queries": 0,
+  "future_rows_used": 0,
+  "caveats": [
+    "Reconstructed compatible parent need not equal the unrecorded proposal-generating parent.",
+    "Conditional development analysis of already selected local pools, not causal acquisition benefit.",
+    "No test labels enter parent choice, base predictions or corrections. No property gate or standardization."
+  ],
+  "rdkit": "2025.09.1"
+}

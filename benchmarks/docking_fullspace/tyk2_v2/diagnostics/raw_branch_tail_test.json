@@ -1,0 +1,74 @@
+{
+  "protocol": {
+    "training": "Only997 valid shared-warm labels; no acquired-rawbatch labels used in either fit or weights",
+    "test": "All1000 newly acquired valid observations from frozen tyk2_raw_uniform_s0 batch1. Adaptive selection-biased retrospective diagnostic, not independent validation.",
+    "parameter_changes": "Only sample weights: uniform vs acquired-warm rank-tail weights, maximum ratio2, fourth power, mean normalized1",
+    "tie_policy": "prediction descending then product_id",
+    "tree_hyperparameters": "Same pinned GA-v14 XGB preset,256 trees/depth8/eta.05/subsample.8/colsample.8; seed0;CPU4threads",
+    "druglike_filter": false,
+    "new_oracle_queries": 0
+  },
+  "models": {
+    "uniform": {
+      "fit_seconds": 0.4069328690529801,
+      "rmse": 1.8245425262005999,
+      "spearman": 0.07926590178679796,
+      "mean_prediction_optimism": 1.3570865080078125,
+      "reranked_top100_raw_mean": -6.206250000000001,
+      "recall_of_realized_best100": 0.13,
+      "top100_source_counts": {
+        "global_cp_0": 82,
+        "observed_hit_neighbor": 18
+      },
+      "max_abs_error_against_frozen_live_prediction": 3.651733404552715e-07,
+      "by_source": {
+        "global_cp_0": {
+          "n": 765,
+          "rmse": 1.6969895683083946,
+          "spearman": -0.006398994798164586,
+          "reranked_top100_raw_mean": -6.31639
+        },
+        "observed_hit_neighbor": {
+          "n": 235,
+          "rmse": 2.1888777166933475,
+          "spearman": 0.13468014324926147,
+          "reranked_top100_raw_mean": -5.740400000000001
+        }
+      }
+    },
+    "tail2": {
+      "fit_seconds": 0.3562582660233602,
+      "rmse": 1.7248479502938845,
+      "spearman": -0.007291838573332549,
+      "mean_prediction_optimism": 1.1778601147850036,
+      "reranked_top100_raw_mean": -6.134729999999999,
+      "recall_of_realized_best100": 0.09,
+      "top100_source_counts": {
+        "global_cp_0": 69,
+        "observed_hit_neighbor": 31
+      },
+      "by_source": {
+        "global_cp_0": {
+          "n": 765,
+          "rmse": 1.5564629490223258,
+          "spearman": -0.05448497752561356,
+          "reranked_top100_raw_mean": -6.150194
+        },
+        "observed_hit_neighbor": {
+          "n": 235,
+          "rmse": 2.184889221787324,
+          "spearman": 0.1955041198008518,
+          "reranked_top100_raw_mean": -5.911735
+        }
+      }
+    }
+  },
+  "reranked_top100_overlap": 36,
+  "realized_best100_raw_mean": -8.08531,
+  "source_sha256": {
+    "runs/tyk2_v2/cells/tyk2_raw_uniform_s0/state.json": "f657778d01289b0089afbc336dc285ff7276d03e3eb831f6bb2d9d9355e745f2",
+    "runs/tyk2_v2/cells/tyk2_raw_uniform_s0/batch_01/selected.csv": "135ef1b0d81c0cb77b081761f5130fa9b86e52e661ecde7bd6c742839dddda6b",
+    "experiments/docking/tyk2_models.py": "d13d284fae8cf09f7f4a13d5e8c0324fe229d7504624ef106c24bed7ef36d633",
+    "/home/mirekl/DeepMedChem_Papers/synfactor/runs/tyk2_v2/offline_models/raw_branch_tail_test.py": "b23614709db71f0483783092bfcc746f315cae8d46ba5b7605d474d749685ba7"
+  }
+}

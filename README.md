@@ -51,7 +51,14 @@ this surrogate-scoring measurement from actual docking and search quality.
 The [first full-space TYK2 result](benchmarks/docking_fullspace/tyk2_seed0/README.md)
 beats both SpaceHASTEN variants on OPDiv, trails GA-DCSO v14 on unfiltered
 scores/OPDiv, and has a small druglike-portfolio advantage over GA. This is one
-target and seed; the twelve-target pilot is in progress.
+target and seed; the broader pilot is paused while the TYK2 search is revised.
+The [follow-up TYK2 experiments](benchmarks/docking_fullspace/tyk2_v2/README.md)
+train CP64 and full-product XGBoost independently on acquired docking scores,
+with separate raw-score and portfolio policies and no druglike filter.
+At 10,000 charged attempts, an explore/exploit continuation reaches mean
+top-100 **−10.915 versus GA's −10.666**, while the separate portfolio policy
+reaches certified OPDiv100 **8.98048 versus 8.42479**. These are seed-0
+development results with different policies for the two objectives.
 
 For research discussions about factorized representations, scientific search, or evaluation, contact [Miroslav Lžičař](mailto:lzicar2000@gmail.com). For reproducibility questions and bug reports, please [open an issue](https://github.com/mireklzicar/synfactor/issues).
 

@@ -1,0 +1,8 @@
+method,label,target,seed,charged_calls,OPDiv_feasible_lower_bound,OPDiv_upper_bound,OPDiv_gap,OPDiv_selected_count,OPDiv_status,OPDiv_certified
+synfactor_v2_raw,SynFactor + product XGB: raw,tyk2,0,10000,7.457220000000001,7.457220000000001,1.7763568394002505e-15,100.0,optimal,True
+synfactor_v2_portfolio,SynFactor + product XGB: portfolio,tyk2,0,10000,8.980479999999998,8.980480000000005,8.881784197001252e-15,100.0,optimal,True
+ga_dcso_v14_screening,GA-DCSO v14,tyk2,0,10000,8.42479,8.42479,0.0,100,optimal,True
+spacehasten_fast,SpaceHASTEN fast,tyk2,0,10000,7.212629999999999,7.212630000000002,2.6645352591003757e-15,100,optimal,True
+spacehasten_accurate,SpaceHASTEN accurate,tyk2,0,10000,7.312439999999999,7.377173897985106,0.06473389798510709,100,bounded,False
+synfactor_v1,SynFactor v1,tyk2,0,10000,7.93245,7.93245,0.0,100,optimal,True
+synfactor_v2_explore_exploit,Explore/exploit + CP fibers (4K inherited),tyk2,0,10000,8.379349999999999,8.379350000000004,0.0,100.0,optimal,True

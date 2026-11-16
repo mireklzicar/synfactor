@@ -1,0 +1,17 @@
+{
+  "training": "Only valid rows in charged prefix 0:3000: warm+batch1+batch2",
+  "training_labels": 2995,
+  "test": "Batch3 and batch4 separately; both fully excluded from fitting, uniform fixed models",
+  "parameters": "Exact GA-v14 XGB preset, CPU4 threads, seed0; only includeChirality changes",
+  "features": "Original product SMILES, Morgan radius2/2048 bits; no standardization, no property filter",
+  "labels": "Observed higher-better utility=-raw docking score, valid finite |score|<100",
+  "tie_order": "Product ID sorted before stable predicted-rank selection",
+  "new_oracle_queries": 0,
+  "future_rows_used": 0,
+  "rdkit_version": "2025.09.1",
+  "caveats": [
+    "Conditional development diagnostic on acquired pools selected by the nonchiral live campaign.",
+    "No counterfactual acquisition gain or out-of-pool generalization is established.",
+    "Batch4 live predictions used more training labels; frozen-live equality applies only to batch3."
+  ]
+}

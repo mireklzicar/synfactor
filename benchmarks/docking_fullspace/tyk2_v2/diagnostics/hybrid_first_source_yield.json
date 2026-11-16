@@ -1,0 +1,23 @@
+{
+  "scope": "Descriptive selected-pool source yield, not causal ablation",
+  "sources": {
+    "cp_observed_fiber": {
+      "n": 220,
+      "mean_raw_score": -7.2340990909090905,
+      "best": -10.76,
+      "new_batch_top100_count": 17
+    },
+    "global_cp_0": {
+      "n": 120,
+      "mean_raw_score": -7.511716666666667,
+      "best": -10.7,
+      "new_batch_top100_count": 10
+    },
+    "observed_hit_neighbor": {
+      "n": 652,
+      "mean_raw_score": -7.320225,
+      "best": -11.16,
+      "new_batch_top100_count": 73
+    }
+  }
+}

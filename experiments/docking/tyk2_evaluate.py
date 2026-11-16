@@ -77,8 +77,15 @@ def verify_partial(path, rounds, benchmark_repo, target='tyk2', seed=0):
                 or protocol.get('target') != target or protocol.get('seed') != seed):
             raise ValueError('Oracle protocol target/seed/grid/hash mismatch')
     check(load_json(root/'remote_preflight.json'))
+    lineage=None
+    if (root/'lineage.json').exists():
+        from .tyk2_branch import verify_lineage, verify_run_bindings
+        lineage=verify_lineage(root,payload,config)
+        verify_run_bindings(root,config,rounds,lineage)
     evidence = dict(state_sha256=sha(path), config_sha256=sha(root/'config.json'),
                     warm_sources=hashes, response_sha256={})
+    if lineage is not None:
+        evidence['lineage']=lineage
     for iteration in range(1,rounds+1):
         folder=root/f'batch_{iteration:02d}'
         proposal,response=load_json(folder/'proposal.json'),load_json(folder/'normalized.json')

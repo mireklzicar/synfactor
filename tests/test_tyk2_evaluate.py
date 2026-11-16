@@ -72,6 +72,13 @@ class Tyk2EvaluateTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'Warm'):
                 e.verify_partial(self.root/'state.json',1,self.root)
 
+    def test_partial_identity_cannot_ignore_invalid_development_lineage(self):
+        _,warm,hashes=self.evidence()
+        self.dump(self.root/'lineage.json',{})
+        with patch.object(e,'warm_evidence',return_value=(warm,hashes)):
+            with self.assertRaisesRegex(ValueError,'lineage'):
+                e.verify_partial(self.root/'state.json',1,self.root)
+
     def test_partial_identity_rejects_changed_batch_score(self):
         rows,warm,hashes=self.evidence()
         rows[-1]['score']=-999.

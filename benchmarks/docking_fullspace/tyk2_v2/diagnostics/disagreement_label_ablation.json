@@ -1,0 +1,198 @@
+{
+  "protocol": {
+    "training_branches": [
+      "warm+batch1 all valid",
+      "warm+batch1 exploitation only; omit100 disagreement labels"
+    ],
+    "training_counts": [
+      1997,
+      1897
+    ],
+    "labels": "Direct observed utility=-raw docking score; valid finite |score|<100; no distillation or property gate",
+    "fit": "Fixed GA-v14 XGB preset, uniform sample weights, seed0, CPU4 threads; no early stopping or holdout tuning",
+    "test": "Already observed raw branch batch2 only; score-blind product-ID tie order",
+    "future_rows_used": 0,
+    "new_oracle_queries": 0,
+    "caveats": [
+      "Different training counts: additional100 labels may help through data quantity, not disagreement-specific information.",
+      "Batch2 selection depended on the all-label model, so these conditional retrospective metrics do not establish causal acquisition benefit.",
+      "No counterfactual campaign, budget-matched win, or result on unqueried molecules is claimed."
+    ]
+  },
+  "models": {
+    "all_valid": {
+      "n": 998,
+      "rmse": 1.519154274340481,
+      "spearman": 0.1348377352238476,
+      "mean_optimism": 0.7490976603727781,
+      "predicted_top10_actual_raw_mean": -6.42336,
+      "realized_top10_recall": 0.0,
+      "realized_best10_raw_mean": -10.370000000000001,
+      "predicted_top100_actual_raw_mean": -7.423666000000001,
+      "realized_top100_recall": 0.17,
+      "realized_best100_raw_mean": -9.390130000000001,
+      "training_labels": 1997,
+      "fit_seconds": 0.565053372993134,
+      "params": {
+        "n_estimators": 256,
+        "max_depth": 8,
+        "learning_rate": 0.05,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "objective": "reg:squarederror",
+        "tree_method": "hist",
+        "verbosity": 0,
+        "random_state": 0,
+        "n_jobs": 4,
+        "device": "cpu"
+      },
+      "by_candidate_source": {
+        "global_cp_0": {
+          "n": 698,
+          "rmse": 1.3870740445666367,
+          "spearman": 0.01593368049472544,
+          "mean_optimism": 0.6244056060681712,
+          "predicted_top10_actual_raw_mean": -6.42336,
+          "realized_top10_recall": 0.0,
+          "realized_best10_raw_mean": -10.3321,
+          "predicted_top100_actual_raw_mean": -7.448955999999999,
+          "realized_top100_recall": 0.19,
+          "realized_best100_raw_mean": -9.26343
+        },
+        "observed_hit_neighbor": {
+          "n": 300,
+          "rmse": 1.7891151584525111,
+          "spearman": 0.27238321633635326,
+          "mean_optimism": 1.0392145067214964,
+          "predicted_top10_actual_raw_mean": -7.518599999999999,
+          "realized_top10_recall": 0.1,
+          "realized_best10_raw_mean": -9.6918,
+          "predicted_top100_actual_raw_mean": -7.166239999999998,
+          "realized_top100_recall": 0.45,
+          "realized_best100_raw_mean": -8.1871
+        }
+      },
+      "by_acquisition_source": {
+        "exploit": {
+          "n": 898,
+          "rmse": 1.4544464040364842,
+          "spearman": 0.03830250174392943,
+          "mean_optimism": 0.6906378496786003,
+          "predicted_top10_actual_raw_mean": -6.42336,
+          "realized_top10_recall": 0.0,
+          "realized_best10_raw_mean": -10.370000000000001,
+          "predicted_top100_actual_raw_mean": -7.423666000000001,
+          "realized_top100_recall": 0.17,
+          "realized_best100_raw_mean": -9.38378
+        },
+        "rank_disagreement": {
+          "n": 100,
+          "rmse": 2.008910078922635,
+          "spearman": 0.17395609248716093,
+          "mean_optimism": 1.2740667604064941,
+          "predicted_top10_actual_raw_mean": -6.293799999999999,
+          "realized_top10_recall": 0.1,
+          "realized_best10_raw_mean": -8.168000000000001,
+          "predicted_top100_actual_raw_mean": -6.224639999999999,
+          "realized_top100_recall": 1.0,
+          "realized_best100_raw_mean": -6.224639999999999
+        }
+      },
+      "max_abs_difference_from_frozen_live_predictions": 4.6350097626657316e-07
+    },
+    "omit_disagreement": {
+      "n": 998,
+      "rmse": 1.4659752612979882,
+      "spearman": 0.19110319370037357,
+      "mean_optimism": 0.6432878705126012,
+      "predicted_top10_actual_raw_mean": -7.5738,
+      "realized_top10_recall": 0.0,
+      "realized_best10_raw_mean": -10.370000000000001,
+      "predicted_top100_actual_raw_mean": -7.8126,
+      "realized_top100_recall": 0.34,
+      "realized_best100_raw_mean": -9.390130000000001,
+      "training_labels": 1897,
+      "fit_seconds": 0.48553265497321263,
+      "params": {
+        "n_estimators": 256,
+        "max_depth": 8,
+        "learning_rate": 0.05,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "objective": "reg:squarederror",
+        "tree_method": "hist",
+        "verbosity": 0,
+        "random_state": 0,
+        "n_jobs": 4,
+        "device": "cpu"
+      },
+      "by_candidate_source": {
+        "global_cp_0": {
+          "n": 698,
+          "rmse": 1.3342226194262534,
+          "spearman": 0.14188577600998917,
+          "mean_optimism": 0.5014161885794391,
+          "predicted_top10_actual_raw_mean": -7.8419,
+          "realized_top10_recall": 0.0,
+          "realized_best10_raw_mean": -10.3321,
+          "predicted_top100_actual_raw_mean": -7.821860000000002,
+          "realized_top100_recall": 0.34,
+          "realized_best100_raw_mean": -9.26343
+        },
+        "observed_hit_neighbor": {
+          "n": 300,
+          "rmse": 1.7342054867369368,
+          "spearman": 0.3215860068575896,
+          "mean_optimism": 0.9733759838104247,
+          "predicted_top10_actual_raw_mean": -7.7294,
+          "realized_top10_recall": 0.3,
+          "realized_best10_raw_mean": -9.6918,
+          "predicted_top100_actual_raw_mean": -7.174940000000001,
+          "realized_top100_recall": 0.48,
+          "realized_best100_raw_mean": -8.1871
+        }
+      },
+      "by_acquisition_source": {
+        "exploit": {
+          "n": 898,
+          "rmse": 1.4099342266624137,
+          "spearman": 0.1353075751928507,
+          "mean_optimism": 0.5906133666924219,
+          "predicted_top10_actual_raw_mean": -7.5738,
+          "realized_top10_recall": 0.0,
+          "realized_best10_raw_mean": -10.370000000000001,
+          "predicted_top100_actual_raw_mean": -7.8126,
+          "realized_top100_recall": 0.34,
+          "realized_best100_raw_mean": -9.38378
+        },
+        "rank_disagreement": {
+          "n": 100,
+          "rmse": 1.8964125545053017,
+          "spearman": 0.28792256627087753,
+          "mean_optimism": 1.1163049148178101,
+          "predicted_top10_actual_raw_mean": -7.0851,
+          "realized_top10_recall": 0.2,
+          "realized_best10_raw_mean": -8.168000000000001,
+          "predicted_top100_actual_raw_mean": -6.224639999999999,
+          "realized_top100_recall": 1.0,
+          "realized_best100_raw_mean": -6.224639999999999
+        }
+      }
+    }
+  },
+  "conditional_deltas_positive_means_all_labels_better": {
+    "rmse_improvement_from_100_disagreement_labels": -0.05317901304249273,
+    "spearman_improvement_from_100_disagreement_labels": -0.056265458476525976,
+    "top100_raw_score_improvement_from_100_disagreement_labels": -0.388933999999999,
+    "top100_recall_improvement_from_100_disagreement_labels": -0.17
+  },
+  "top100_predicted_set_overlap": 29,
+  "used_history_prefix_sha256": "b8fd496831a2a6418c6ca73660ee11c3e8539bde430a7470b517a793b3d94797",
+  "source_sha256": {
+    "runs/tyk2_v2/cells/tyk2_raw_uniform_s0/state.json": "7d8743af3d49f404c1e222fab88e1d8fd57d7630540df5a856cb890ea303bc7e",
+    "runs/tyk2_v2/cells/tyk2_raw_uniform_s0/batch_01/selected.csv": "135ef1b0d81c0cb77b081761f5130fa9b86e52e661ecde7bd6c742839dddda6b",
+    "runs/tyk2_v2/cells/tyk2_raw_uniform_s0/batch_02/selected.csv": "d51f318527515e8bfa7307458ce63ff3c47e3929ba9438d11ef2d648038b6d73",
+    "experiments/docking/tyk2_models.py": "d13d284fae8cf09f7f4a13d5e8c0324fe229d7504624ef106c24bed7ef36d633",
+    "/home/mirekl/DeepMedChem_Papers/synfactor/runs/tyk2_v2/offline_models/disagreement_label_ablation.py": "53e9664a450f35253ba23b44c6692e393107e50b343576614af40e97fdbf0af9"
+  }
+}

@@ -1,0 +1,4 @@
+method,label,charged_calls,search_seconds,oracle_seconds,timed_stage_sum_seconds
+synfactor_v2_explore_exploit,Explore/exploit + CP fibers (4K inherited),10000,1116.8815963909728,725.0163216389992,1841.897918029972
+synfactor_v2_portfolio,SynFactor + product XGB: portfolio,10000,1157.1858880219515,819.8459882320003,1977.0318762539519
+synfactor_v2_raw,SynFactor + product XGB: raw,10000,1014.1002733969945,1156.3571270950088,2170.457400492003
